@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Log In</title>
+        <title>Signup</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" >
@@ -16,12 +16,12 @@
     </a>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li>
             <a class="nav-link" href="{{route('login.index')}}">Login
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
             <a class="nav-link" href="{{route('signup.index')}}">Signup</a>
             </li>
         </ul>
@@ -32,17 +32,20 @@
 
 <div class="container">
     <div class="row">
-        <form class="col-md-6 offset-md-3">
+        <form class="col-md-4 offset-md-4">
             <br><br><br><br><br>
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" class="form-control" placeholder="Enter Username">
+            <div >
+                <a href="{{route('signup.gamer')}}">Sign Up as Gamer</a>
             </div>
-            <div class="form-group">
-                <label >Password</label>
-                <input type="password" class="form-control " placeholder="Password">
+            <br><br>
+            <div >
+                <a href="#">Sign Up as Game Developer</a>
             </div>
-            <button type="submit" class="btn btn-outline-success">Sign in</button>
+            <br><br>
+            <div >
+                <a href="#">Sign Up as Moderator</a>
+            </div>
+            
         </form> 
     </div>
 </div>
