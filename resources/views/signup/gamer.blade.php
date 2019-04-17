@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" >
     </head>
-    <body style="background-color:#80ffbf">
+    <body>
 {{--*******************Navbar Starts*******************--}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
@@ -36,39 +36,39 @@
                 <h3>Signup as Gamer</h3>
                 <div class="form-group">
                     <label ">Username</label>
-                    <input type="text" class="form-control" placeholder="Enter Username...">
+                    <input type="text" class="form-control" placeholder="Enter Username..." name="USERNAME">
                 </div>
                 <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" class="form-control" placeholder="Full Name...">
+                        <input type="text" class="form-control" placeholder="Full Name..." name="G_NAME">
                 </div>
                 <div class="form-group">
                         <label>Email</label>
-                        <input type="text" class="form-control" placeholder="Email...">
+                        <input type="text" class="form-control" placeholder="Email..." name="G_EMAIL">
                 </div>
                 <div class="form-group">
                         <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country...">
+                        <input type="text" class="form-control" placeholder="Country..." name="G_COUNTRY">
                 </div>
                 <div class="form-group">
                         <label>Mobile</label>
-                        <input type="text" class="form-control" placeholder="Mobile...">
+                        <input type="text" class="form-control" placeholder="Mobile..." name="G_MOBILE">
                 </div>
                 <div class="form-group">
                         <label>Gender</label><br>
                             <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="male">Male
+                                <input type="radio" class="form-check-input" value="male" name="G_DOB">Male
                             </label>
                             </div>
                             <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="female">Female
+                                <input type="radio" class="form-check-input" value="female" name="G_DOB">Female
                             </label>
                             </div>
                             <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="others">Others
+                                <input type="radio" class="form-check-input" value="others" name="G_DOB">Others
                             </label>
                             </div>
                 </div>
@@ -78,8 +78,16 @@
                 </div>
                 <div class="form-group">
                         <label>Credit Card</label>
-                        <input type="text" class="form-control" placeholder="Credit Card No...">
+                        <input type="text" class="form-control" placeholder="Credit Card No..." name="G_CREDIT_CARD">
                 </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password...">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Confirm Paasword..." name="PASSWORD">
+        </div>
                 <div class="custom-file">
                         <input type="file" class="custom-file-input" id="imageFile">
                         <label class="custom-file-label">Choose file</label>
