@@ -5,3 +5,5 @@ php artisan make:controller RegistrationController
 php artisan make:controller LoginController
 php artisan make:controller HomeController
 
+php artisan make:Middleware VerifyUserSession
+
