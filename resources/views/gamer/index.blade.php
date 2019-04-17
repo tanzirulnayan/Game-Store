@@ -12,7 +12,7 @@
         <h1>Game Store</h1>
         <br><br>
         <h1 align="center" > Welcome {{session('loggedUser')}} !!!</h1>
-        
-        
+        <br><br>
+        <a href={{route('logout.index')}}>Logout</a>
     </body>
 </html>
