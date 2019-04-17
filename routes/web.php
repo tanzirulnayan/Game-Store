@@ -14,7 +14,21 @@ Route::post('/signup/Gamer', 'SignupController@gamerToDB');
 Route::get('/signup/Developer', 'SignupController@developer')->name('signup.developer');
 Route::get('/signup/Moderator', 'SignupController@moderator')->name('signup.moderator');
 
-
 /**************************** Login Page ****************************/
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify');
+
+
+/****************************UNDER SESSION CHECK****************************/
+Route::group(["middleware"=>['session']], function(){
+
+/**************************** GAMER ****************************/
+Route::get('/Gamer/Home', 'GamerController@index')->name('gamer.index');
+
+
+
+
+
+
+/****************************UNDER SESSION CHECK END****************************/
+});

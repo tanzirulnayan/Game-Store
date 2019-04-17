@@ -30,15 +30,15 @@
 
 <div class="container">
     <div class="row">
-        <form class="col-md-6 offset-md-3">
+        <form class="col-md-6 offset-md-3" method="POST">
             <br><br><br><br><br>
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" placeholder="Enter Username">
+                <input type="text" class="form-control" placeholder="Enter Username" name="USERNAME">
             </div>
             <div class="form-group">
-                <label >Password</label>
-                <input type="password" class="form-control " placeholder="Password">
+                <label>Password</label>
+                <input type="password" class="form-control " placeholder="Password" name="PASSWORD">
             </div>
             <button type="submit" class="btn btn-outline-success">Sign in</button>
         </form> 
