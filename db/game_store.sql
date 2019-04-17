@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2019 at 07:19 PM
+-- Generation Time: Apr 17, 2019 at 06:20 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -152,9 +152,10 @@ CREATE TABLE `hotline_messages` (
 --
 
 CREATE TABLE `login_credentials` (
-  `USERNAME` varchar(100) NOT NULL,
-  `PASSWORD` varchar(200) NOT NULL,
-  `USER_TYPE` varchar(100) NOT NULL
+  `USERNAME` varchar(50) NOT NULL,
+  `PASSWORD` varchar(100) NOT NULL,
+  `USER_TYPE` varchar(50) NOT NULL,
+  `STATUS` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
