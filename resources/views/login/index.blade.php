@@ -11,9 +11,7 @@
 {{--*******************Navbar Starts*******************--}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
-    <a class="navbar-brand" href="{{route('landingPage.index')}}">
-        <img src="{{ asset('logo/logo.png') }}" alt="Logo"> Game Store
-    </a>
+    <a class="navbar-brand" href="{{route('landingPage.index')}}"> Game Store</a>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">

@@ -11,9 +11,7 @@
 {{--*******************Navbar Starts*******************--}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
-    <a class="navbar-brand" href="{{route('landingPage.index')}}">
-        <img src="{{ asset('logo/logo.png') }}" alt="Logo"> Game Store
-    </a>
+    <a class="navbar-brand" href="{{route('landingPage.index')}}"> Game Store</a>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li>
@@ -32,7 +30,7 @@
 
 <div class="container">
         <div class="row">
-            <form class="col-md-6 offset-md-3">
+            <form class="col-md-6 offset-md-3" method="POST" enctype="multipart/form-data">
                 <h3>Signup as Gamer</h3>
                 <div class="form-group">
                     <label ">Username</label>
@@ -48,7 +46,12 @@
                 </div>
                 <div class="form-group">
                         <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country..." name="G_COUNTRY">
+                        <select name="G_COUNTRY" class="form-control">
+                            <option value="name" disabled selected>Select Country</option>
+                            @foreach($country as $cr)
+                                <option value="{{$cr['country_name']}}">{{$cr['country_name']}}</option>
+                            @endforeach
+                        </select>
                 </div>
                 <div class="form-group">
                         <label>Mobile</label>
@@ -58,23 +61,23 @@
                         <label>Gender</label><br>
                             <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="male" name="G_DOB">Male
+                                <input type="radio" class="form-check-input" value="male" name="G_GENDER">Male
                             </label>
                             </div>
                             <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="female" name="G_DOB">Female
+                                <input type="radio" class="form-check-input" value="female" name="G_GENDER">Female
                             </label>
                             </div>
                             <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" value="others" name="G_DOB">Others
+                                <input type="radio" class="form-check-input" value="others" name="G_GENDER">Others
                             </label>
                             </div>
                 </div>
                 <div class="form-group">
                         <label>Date Of Birth</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" name="G_DOB">
                 </div>
                 <div class="form-group">
                         <label>Credit Card</label>
@@ -87,10 +90,10 @@
             <div class="form-group">
                 <label>Confirm Password</label>
                 <input type="password" class="form-control" placeholder="Confirm Paasword..." name="PASSWORD">
-        </div>
+            </div>
                 <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="imageFile">
-                        <label class="custom-file-label">Choose file</label>
+                    <label class="custom-file-label">Choose file</label>
+                    <input type="file" class="custom-file-input" name="G_IMAGE">    
                 </div>
                 <br><br>
                 <button type="submit" class="btn btn-outline-success">Submit</button>

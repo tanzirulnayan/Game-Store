@@ -11,6 +11,8 @@
         
         <h1>Game Store</h1>
         <a href="{{route('login.index')}}">Login</a>
+        <br>
+        <a href="{{route('signup.index')}}">Signup</a>
         
         <script src="" async defer></script>
     </body>
