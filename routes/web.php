@@ -28,7 +28,8 @@ Route::group(["middleware"=>['session']], function(){
 /**************************** GAMER ****************************/
 Route::get('/Gamer/Home', 'GamerController@index')->name('gamer.index');
 
-
+/**************************** DEVELOPER ****************************/
+Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
 
 
 
