@@ -37,7 +37,7 @@
             </div>
             <br><br>
             <div >
-                <a href="#">Sign Up as Game Developer</a>
+                <a href="{{route('signup.developer')}}">Sign Up as Game Developer</a>
             </div>
             <br><br>
             <div >

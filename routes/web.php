@@ -10,8 +10,8 @@ Route::get('/', 'LandingPageController@index')->name('landingPage.index');
 Route::get('/signup', 'SignupController@index')->name('signup.index');
 Route::get('/signup/Gamer', 'SignupController@gamer')->name('signup.gamer');
 Route::post('/signup/Gamer', 'SignupController@gamerToDB');
-
 Route::get('/signup/Developer', 'SignupController@developer')->name('signup.developer');
+Route::post('/signup/Developer', 'SignupController@developerToDB');
 Route::get('/signup/Moderator', 'SignupController@moderator')->name('signup.moderator');
 
 /**************************** Login ****************************/
