@@ -89,8 +89,8 @@
                   <br>
                   <label class="form-check-label">
                       <span class="form-check-sign"></span>
-                      Need an account? 
-                      <a href="{{route('signup.index')}}">Signup</a>.
+                      <p class="text-success">Need an account? </p>
+                      <a href="{{route('signup.index')}}">Signup</a>
                    </label>
                 </div>
               </div>

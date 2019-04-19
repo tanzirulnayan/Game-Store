@@ -32,6 +32,19 @@
           <li class="nav-item">
               <a class="nav-link" href="{{route('developer.index')}}">HOME</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p>
+                <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
+              </p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
+              <a class="dropdown-item" href="#">EDIT Profile</a>
+              <a class="dropdown-item" href="#">CHANGE Picture</a>
+              <a class="dropdown-item" href="#">CHANGE Password</a>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
           </li>
@@ -40,20 +53,19 @@
     </div>
   </nav>
   {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  
-          </div>
-          <div class="register-bg"></div>
-          <div id="square1" class="square square-1"></div>
-          <div id="square2" class="square square-2"></div>
-          <div id="square3" class="square square-3"></div>
-          <div id="square4" class="square square-4"></div>
-          <div id="square5" class="square square-5"></div>
-          <div id="square6" class="square square-6"></div>
-          <div id="square7" class="square square-7"></div>
-          <div id="square8" class="square square-8"></div>
-        </div>
-      </div>
-    </div>
+  {{-- -- ------------------------------------- Cards -------------------------------------- --}}
+      <div id="square1" class="square square-1"></div>
+      <div id="square2" class="square square-2"></div>
+      <div id="square3" class="square square-3"></div>
+      <div id="square4" class="square square-4"></div>
+      <div id="square5" class="square square-5"></div>
+      <div id="square6" class="square square-6"></div>
+      <div id="square7" class="square square-7"></div>
+      <div id="square8" class="square square-8"></div>
+    {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
+
+
+
     {{-- <footer class="footer">
       <div class="container">
         <div class="row">

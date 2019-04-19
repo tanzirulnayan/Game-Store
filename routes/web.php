@@ -30,6 +30,7 @@ Route::get('/Gamer/Home', 'GamerController@index')->name('gamer.index');
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
+Route::get('/Developer/View_Profile', 'DeveloperController@viewProfile')->name('developer.viewProfile');
 
 
 
