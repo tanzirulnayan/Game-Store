@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
   <title>
-      Change Picture | Developer
+      Change Logo | Developer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -43,7 +43,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
             <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
-            <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Picture</a>
+            <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
             <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
           </div>
         </li>
@@ -64,7 +64,6 @@
           <div class="col-lg-6 col-md-6">
             <h1 class="profile-title text-left">{{$data->DEV_NAME}}</h1>
             <h5 class="text-on-back">{{$data->USERNAME}}</h5>
-            <h3>{{$data->DEV_DESCRIPTION}}.</h3>
           </div>
           <div class="col-lg-4 col-md-6 ml-auto mr-auto">
             <div class="card card-coin card-plain">
@@ -75,7 +74,7 @@
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
                   <a class="nav-link active" data-toggle="tab" href="#linka">
-                    Change Picture
+                    Change Logo
                   </a>
                 </li>
               </ul>

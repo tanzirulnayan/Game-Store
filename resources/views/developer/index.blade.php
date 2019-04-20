@@ -41,7 +41,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
               <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
-              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Picture</a>
+              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
               <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
             </div>
           </li>
