@@ -34,6 +34,7 @@ Route::get('/Developer/View_Profile', 'DeveloperController@viewProfile')->name('
 Route::get('/Developer/EDIT_Profile', 'DeveloperController@editProfile')->name('developer.editProfile');
 Route::post('/Developer/EDIT_Profile', 'DeveloperController@editProfileToDB');
 Route::get('/Developer/Change_Picture', 'DeveloperController@changePicture')->name('developer.changePicture');
+Route::post('/Developer/Change_Picture', 'DeveloperController@changePictureToDB');
 Route::get('/Developer/Change_Password', 'DeveloperController@changePassword')->name('developer.changePassword');
 
 

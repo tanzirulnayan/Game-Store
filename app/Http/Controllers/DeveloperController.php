@@ -23,7 +23,7 @@ class DeveloperController extends Controller
         return view('developer.editProfile')->with("data", $data); 
     }
     public function editProfileToDB(Request $req){
-        $update = Developer::find(session("loggedUser"));
+        $update                       = Developer::find(session("loggedUser"));
         $update->DEV_NAME             = $req->DEV_NAME;
         $update->DEV_DESCRIPTION      = $req->DEV_DESCRIPTION;
         $update->DEV_ADDRESS          = $req->DEV_ADDRESS;
@@ -33,12 +33,23 @@ class DeveloperController extends Controller
         $update->save(); 
         return redirect()->route('developer.viewProfile'); 
     }
-    public function changePicture(Request $req){
+    public function changePicture(){
 
         $data = Developer::find(session("loggedUser"));
         return view('developer.changePicture')->with("data", $data); 
     }
-    public function changePassword(Request $req){
+    public function changePictureToDB(Request $req){
+       
+        $file = $req->file('DEV_LOGO');
+        $name = "developerLogo_" . uniqid() . "." . $file->getClientOriginalExtension();
+        $file->move('Image_Folder', $name);
+
+        $changePicture                = Developer::find(session("loggedUser"));
+        $changePicture->DEV_LOGO      = "Image_Folder/" . $name;
+        $changePicture->save();
+        return redirect()->route('developer.viewProfile');
+    }
+    public function changePassword(){
 
         $data = Developer::find(session("loggedUser"));
         return view('developer.changePassword')->with("data", $data); 
