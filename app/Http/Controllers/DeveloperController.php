@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Developer;
+use App\LoginCredential;
 
 class DeveloperController extends Controller
 {
@@ -50,9 +51,18 @@ class DeveloperController extends Controller
         return redirect()->route('developer.viewProfile');
     }
     public function changePassword(){
-
         $data = Developer::find(session("loggedUser"));
         return view('developer.changePassword')->with("data", $data); 
+    }
+    public function changePasswordToDB(Request $req){
+        $changePassword = LoginCredential::find(session("loggedUser"));
+
+        if($req->OLD_PASSWORD == $changePassword->PASSWORD){
+            $changePassword->PASSWORD = $req->CONFIRM_PASSWORD;
+            $changePassword->save();
+            return redirect()->route('logout.index');
+        }
+      
     }
 
 

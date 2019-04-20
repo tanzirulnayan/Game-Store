@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
   <title>
-      Change Logo | Developer
+      Change Password | Developer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -74,19 +74,38 @@
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
                   <a class="nav-link active" data-toggle="tab" href="#">
-                    Change Logo
+                    Change Password
                   </a>
                 </li>
               </ul>
-              <form method="POST" enctype="multipart/form-data">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="tim-icons icon-upload"></i>
+              <form method="POST">
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-lock-circle"></i>
+                    </div>
                   </div>
+                  <input type="text" class="form-control" name="OLD_PASSWORD"placeholder="OLD Password...">
                 </div>
-                <input type="file" name="DEV_LOGO" class="form-control">
-              </div>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-lock-circle"></i>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" name="NEW_PASSWORD"placeholder="NEW Password...">
+                </div>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-lock-circle"></i>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" name="CONFIRM_PASSWORD"placeholder="Confirm Password...">
+                </div>
               <button class="btn btn-primary btn-round" type="submit">
                 <i class="tim-icons icon-settings-gear-63"></i> CHANGE
               </button>
