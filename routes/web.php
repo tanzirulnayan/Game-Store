@@ -31,6 +31,10 @@ Route::get('/Gamer/Home', 'GamerController@index')->name('gamer.index');
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
 Route::get('/Developer/View_Profile', 'DeveloperController@viewProfile')->name('developer.viewProfile');
+Route::get('/Developer/EDIT_Profile', 'DeveloperController@editProfile')->name('developer.editProfile');
+Route::post('/Developer/EDIT_Profile', 'DeveloperController@editProfileToDB');
+Route::get('/Developer/Change_Picture', 'DeveloperController@changePicture')->name('developer.changePicture');
+Route::get('/Developer/Change_Password', 'DeveloperController@changePassword')->name('developer.changePassword');
 
 
 

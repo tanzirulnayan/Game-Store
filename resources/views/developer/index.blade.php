@@ -40,9 +40,9 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
-              <a class="dropdown-item" href="#">EDIT Profile</a>
-              <a class="dropdown-item" href="#">CHANGE Picture</a>
-              <a class="dropdown-item" href="#">CHANGE Password</a>
+              <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
+              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Picture</a>
+              <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
             </div>
           </li>
           <li class="nav-item">

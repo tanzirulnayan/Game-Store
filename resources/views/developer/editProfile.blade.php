@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
   <title>
-      View Profile | Developer
+      Edit Profile | Developer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -87,7 +87,7 @@
                 <h5 class="text-on-back">{{$data->USERNAME}}</h5>
               </div>
               <div class="card-body">
-                <form>
+                <form method="POST">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -98,15 +98,30 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Name</label>
-                        <h3 class="text-info">{{$data->DEV_NAME}}</h3>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-single-02"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="DEV_NAME" 
+                          value="{{$data->DEV_NAME}}">
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label>Description</label>
-                        <h3 class="text-danger">{{$data->DEV_DESCRIPTION}}</h3>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-paper"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="DEV_DESCRIPTION" value="{{$data->DEV_DESCRIPTION}}">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -114,7 +129,14 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Email</label>
-                        <h3 class="text-primary">{{$data->DEV_EMAIL}}</h3>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-email-85"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="DEV_EMAIL" value="{{$data->DEV_EMAIL}}" >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -122,7 +144,14 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <h3 class="text-info">{{$data->DEV_ADDRESS}}</h3>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-square-pin"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="DEV_ADDRESS" value="{{$data->DEV_ADDRESS}}">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -130,7 +159,14 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label>Website</label>
-                          <h3 class="text-warning">{{$data->DEV_WEBSITE}}</h3>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="tim-icons icon-tablet-2"></i>
+                              </div>
+                            </div>
+                            <input type="text" class="form-control" name="DEV_WEBSITE" value="{{$data->DEV_WEBSITE}}">
+                          </div>
                         </div>
                       </div>
                   </div>
@@ -138,10 +174,20 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Credit Card Number</label>
-                        <h3 class="text-info">{{$data->DEV_CREDIT_CARD}}</h3>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-money-coins"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="DEV_CREDIT_CARD" value="{{$data->DEV_CREDIT_CARD}}">
+                        </div>
                       </div>
                     </div>
                 </div>
+                <button class="btn btn-primary btn-round" type="submit">
+                  <i class="tim-icons icon-settings-gear-63"></i> UPDATE
+                </button>
                 </form>
               </div>
             </div>

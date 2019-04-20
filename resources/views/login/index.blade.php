@@ -84,7 +84,7 @@
                     </div>
                     <button class="btn btn-primary btn-round" type="submit">
                         <i class="tim-icons icon-controller"></i> Login
-                      </button>
+                    </button>
                   </form>
                   <br>
                   <label class="form-check-label">
