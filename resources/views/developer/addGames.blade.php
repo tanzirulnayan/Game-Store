@@ -103,6 +103,26 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
+                        <label>NAME</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-tablet-2"></i>
+                            </div>
+                          </div>
+                         <select name="type" class="form-control" style="background-color:#171941">
+                            <option value="no" disabled selected>Game Type</option>
+                            @foreach($list as $tp)
+                                <option value="{{$tp['TYPE_ID']}}">{{$tp['TYPE_NAME']}}</option>
+                            @endforeach
+                        </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
                         <label>DESCRIPTION</label>
                         <div class="input-group">
                           <div class="input-group-prepend">

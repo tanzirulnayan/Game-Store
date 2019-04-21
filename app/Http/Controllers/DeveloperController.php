@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Developer;
 use App\LoginCredential;
+use App\Game;
+use App\GameType;
+use App\UploadHistory;
 
 class DeveloperController extends Controller
 {
@@ -64,11 +67,55 @@ class DeveloperController extends Controller
     }
     public function addGames(){
         $data = Developer::find(session("loggedUser"));
-        return view('developer.addGames')->with("data", $data); 
+        $list = GameType::all();
+        return view('developer.addGames')->with("data", $data) 
+                                           ->with("list", $list);
     }
 
-    public function addGamesToDB(){
+    public function addGamesToDB(Request $req){
+
+        $gameFile       = $req->file('GAME_FILES');
+        $unique         = uniqid(); 
+        $nameFile       = $req->GAME_NAME . "_FILE_" . $unique . "." . 
+                         $gameFile->getClientOriginalExtension();
+        $gameFile->move('game_files/'.$req->GAME_NAME, $nameFile);
+
+        $gameLogo       = $req->file('GAME_LOGO');
+        $nameLogo       = $req->GAME_NAME . "_LOGO_" . $unique . "." . 
+                         $gameLogo->getClientOriginalExtension();
+        $gameLogo->move('game_files/'.$req->GAME_NAME, $nameLogo);
        
+        $gameSS         = $req->file('GAME_SS');
+        $nameSS         = $req->GAME_NAME . "_SS_" . $unique . "." . 
+                         $gameSS->getClientOriginalExtension();
+        $gameSS->move('game_files/'.$req->GAME_NAME, $nameSS);
+
+        $game = new Game();
+        $game->GAME_ID              = session("loggedUser"). '_' .$req->GAME_NAME;
+        $game->GAME_NAME            = $req->GAME_NAME;
+        $game->TYPE_ID              = $req->type;
+        $game->GAME_PRICE           = $req->GAME_PRICE;
+        $game->GAME_DESCRIPTION     = $req->GAME_DESCRIPTION;
+        $game->GAME_FILES           = "game_files/". $req->GAME_NAME. '/' . $nameFile;
+        $game->GAME_REQ_OS          = $req->GAME_REQ_OS;
+        $game->GAME_REQ_CPU         = $req->GAME_REQ_CPU;
+        $game->GAME_REQ_RAM         = $req->GAME_REQ_RAM;
+        $game->GAME_REQ_HDD         = $req->GAME_REQ_HDD;
+        $game->GAME_REQ_GPU         = $req->GAME_REQ_GPU;
+        $game->GAME_REQ_NETWORK     = $req->GAME_REQ_NETWORK;
+        $game->GAME_LOGO            = "game_files/". $req->GAME_NAME. '/' . $nameLogo;
+        $game->GAME_SS              = "game_files/". $req->GAME_NAME. '/' . $nameSS;
+        $game->GAME_STATUS          = "PENDING";
+        $game->save(); 
+
+        $history = new UploadHistory();
+        $history->USERNAME          = session("loggedUser");
+        $history->GAME_ID           = session("loggedUser"). '_' .$req->GAME_NAME;
+        $history->save();
+
+        return redirect()->route('developer.index'); 
+        
+
     }
 
     public function updateGames(){
