@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2019 at 08:03 AM
+-- Generation Time: Apr 21, 2019 at 09:28 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -116,8 +116,9 @@ CREATE TABLE `gamers` (
 --
 
 CREATE TABLE `games` (
-  `GAME_ID` int(50) NOT NULL,
+  `GAME_ID` varchar(100) NOT NULL,
   `GAME_NAME` varchar(200) NOT NULL,
+  `TYPE_ID` int(20) NOT NULL,
   `GAME_PRICE` varchar(50) NOT NULL,
   `GAME_DESCRIPTION` varchar(500) NOT NULL,
   `GAME_FILES` varchar(200) NOT NULL,
@@ -134,6 +135,13 @@ CREATE TABLE `games` (
   `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `games`
+--
+
+INSERT INTO `games` (`GAME_ID`, `GAME_NAME`, `TYPE_ID`, `GAME_PRICE`, `GAME_DESCRIPTION`, `GAME_FILES`, `GAME_REQ_OS`, `GAME_REQ_CPU`, `GAME_REQ_RAM`, `GAME_REQ_HDD`, `GAME_REQ_GPU`, `GAME_REQ_NETWORK`, `GAME_LOGO`, `GAME_SS`, `GAME_STATUS`, `updated_at`, `created_at`) VALUES
+('dd_Deep Fall', 'Deep Fall', 3, '10', 'Avoid crushing walls and any obstacles and the crushing walls in this quick-witted game of reflexes, as you try to keep your ball on the screen and help control its fall so it can reach as deep down as possible!', 'game_files/Deep Fall/Deep Fall_FILE_5cbcc43fde829.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Deep Fall/Deep Fall_LOGO_5cbcc43fde829.jpg', 'game_files/Deep Fall/Deep Fall_SS_5cbcc43fde829.jpg', 'PENDING', '2019-04-21 19:27:59', '2019-04-21 19:27:59');
+
 -- --------------------------------------------------------
 
 --
@@ -146,6 +154,41 @@ CREATE TABLE `game_review` (
   `USERNAME` varchar(50) NOT NULL,
   `SCORE` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `game_type`
+--
+
+CREATE TABLE `game_type` (
+  `TYPE_ID` int(20) NOT NULL,
+  `TYPE_NAME` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `game_type`
+--
+
+INSERT INTO `game_type` (`TYPE_ID`, `TYPE_NAME`) VALUES
+(1, 'Action'),
+(2, 'Adventure'),
+(3, 'Acrade'),
+(4, 'Board'),
+(5, 'Card'),
+(6, 'Casino'),
+(7, 'Casual'),
+(8, 'Educational'),
+(9, 'Music'),
+(10, 'Puzzle'),
+(11, 'Racing'),
+(12, 'Role Playing'),
+(13, 'Simulation'),
+(14, 'Sports'),
+(15, 'Strategy'),
+(16, 'Trivia'),
+(17, 'Word'),
+(18, 'Family');
 
 -- --------------------------------------------------------
 
@@ -221,8 +264,17 @@ CREATE TABLE `purchase_history` (
 
 CREATE TABLE `upload_history` (
   `USERNAME` varchar(50) NOT NULL,
-  `GAME_ID` int(20) NOT NULL
+  `GAME_ID` varchar(100) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `upload_history`
+--
+
+INSERT INTO `upload_history` (`USERNAME`, `GAME_ID`, `updated_at`, `created_at`) VALUES
+('dd', 'dd_Deep Fall', '2019-04-21 19:28:00', '2019-04-21 19:28:00');
 
 --
 -- Indexes for dumped tables
@@ -271,6 +323,12 @@ ALTER TABLE `game_review`
   ADD PRIMARY KEY (`GR_ID`);
 
 --
+-- Indexes for table `game_type`
+--
+ALTER TABLE `game_type`
+  ADD PRIMARY KEY (`TYPE_ID`);
+
+--
 -- Indexes for table `login_credentials`
 --
 ALTER TABLE `login_credentials`
@@ -311,16 +369,16 @@ ALTER TABLE `forum_comments`
   MODIFY `C_ID` int(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `games`
---
-ALTER TABLE `games`
-  MODIFY `GAME_ID` int(50) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `game_review`
 --
 ALTER TABLE `game_review`
   MODIFY `GR_ID` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `game_type`
+--
+ALTER TABLE `game_type`
+  MODIFY `TYPE_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `purchase_history`
