@@ -67,6 +67,10 @@ class DeveloperController extends Controller
         return view('developer.addGames')->with("data", $data); 
     }
 
+    public function addGamesToDB(){
+       
+    }
+
     public function updateGames(){
         $data = Developer::find(session("loggedUser"));
         return view('developer.updateGames')->with("data", $data); 

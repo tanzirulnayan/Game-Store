@@ -84,61 +84,178 @@
                 <h5 class="text-on-back">{{$data->USERNAME}}</h5>
               </div>
               <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Username</label>
-                        <h3 class="text-success">{{$data->USERNAME}}</h3>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Name</label>
-                        <h3 class="text-info">{{$data->DEV_NAME}}</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Description</label>
-                        <h3 class="text-danger">{{$data->DEV_DESCRIPTION}}</h3>
-                      </div>
-                    </div>
-                  </div>
+                <form method="POST" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>Email</label>
-                        <h3 class="text-primary">{{$data->DEV_EMAIL}}</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Address</label>
-                        <h3 class="text-info">{{$data->DEV_ADDRESS}}</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>Website</label>
-                          <h3 class="text-warning">{{$data->DEV_WEBSITE}}</h3>
+                        <label>NAME</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-tablet-2"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="GAME_NAME" placeholder="Game Name...">
                         </div>
                       </div>
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>Credit Card Number</label>
-                        <h3 class="text-info">{{$data->DEV_CREDIT_CARD}}</h3>
+                        <label>DESCRIPTION</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-notes"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="GAME_DESCRIPTION" placeholder="Game Description...">
+                        </div>
                       </div>
                     </div>
-                </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>PRICE</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-money-coins"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" name="GAME_PRICE" placeholder="Game Price...">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>FILES</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-upload"></i>
+                            </div>
+                          </div>
+                          <input type="file" name="GAME_FILES" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED OPERATING SYSTEM</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_OS" class="form-control"
+                          placeholder="Required Operating System...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED CPU</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_CPU" class="form-control"
+                          placeholder="Required CPU...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED RAM</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_RAM" class="form-control"
+                          placeholder="Required RAM...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED HARD DRIVE</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_HDD" class="form-control"
+                          placeholder="Required Hard Drive...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED GPU</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_GPU" class="form-control"
+                          placeholder="Required GPU...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>REQUIRED NETWORK</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-settings"></i>
+                            </div>
+                          </div>
+                          <input type="text" name="GAME_REQ_NETWORK" class="form-control"
+                          placeholder="Required Network...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>GAME LOGO</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-upload"></i>
+                            </div>
+                          </div>
+                          <input type="file" name="GAME_LOGO" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label>GAME SCREENSHOT</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-upload"></i>
+                            </div>
+                          </div>
+                          <input type="file" name="GAME_SS" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-round" type="submit">
+                    <i class="tim-icons icon-simple-add"></i> ADD GAME
+                </button>
                 </form>
               </div>
             </div>
