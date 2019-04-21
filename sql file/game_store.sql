@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2019 at 06:20 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Apr 21, 2019 at 08:03 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,9 @@ CREATE TABLE `abuse_reports` (
 CREATE TABLE `advertisements` (
   `AD_ID` int(20) NOT NULL,
   `AD_IMAGE` varchar(200) NOT NULL,
-  `USERNAME` varchar(50) NOT NULL
+  `USERNAME` varchar(50) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -61,8 +63,17 @@ CREATE TABLE `developers` (
   `DEV_EMAIL` varchar(50) NOT NULL,
   `DEV_WEBSITE` varchar(50) NOT NULL,
   `DEV_CREDIT_CARD` varchar(100) NOT NULL,
-  `DEV_LOGO` varchar(200) NOT NULL
+  `DEV_LOGO` varchar(200) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `developers`
+--
+
+INSERT INTO `developers` (`USERNAME`, `DEV_NAME`, `DEV_DESCRIPTION`, `DEV_ADDRESS`, `DEV_EMAIL`, `DEV_WEBSITE`, `DEV_CREDIT_CARD`, `DEV_LOGO`, `updated_at`, `created_at`) VALUES
+('dd', 'Developer one', 'We are the craziest developer company in BD', 'Comilla', 'DeveloperOne@gmail.com', 'DeveloperOne.com.bd', '9876543210', 'Image_Folder/developerLogo_5cbb7154b5b72.png', '2019-04-20 19:21:56', '2019-04-20 18:04:09');
 
 -- --------------------------------------------------------
 
@@ -93,7 +104,9 @@ CREATE TABLE `gamers` (
   `G_GENDER` varchar(20) NOT NULL,
   `G_DOB` varchar(50) NOT NULL,
   `G_CREDIT_CARD` varchar(100) NOT NULL,
-  `G_IMAGE` varchar(200) NOT NULL
+  `G_IMAGE` varchar(200) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -107,15 +120,18 @@ CREATE TABLE `games` (
   `GAME_NAME` varchar(200) NOT NULL,
   `GAME_PRICE` varchar(50) NOT NULL,
   `GAME_DESCRIPTION` varchar(500) NOT NULL,
+  `GAME_FILES` varchar(200) NOT NULL,
   `GAME_REQ_OS` varchar(100) NOT NULL,
   `GAME_REQ_CPU` varchar(100) NOT NULL,
   `GAME_REQ_RAM` varchar(100) NOT NULL,
   `GAME_REQ_HDD` varchar(100) NOT NULL,
   `GAME_REQ_GPU` varchar(100) NOT NULL,
-  `GAME_REW_NETWORK` varchar(100) NOT NULL,
+  `GAME_REQ_NETWORK` varchar(100) NOT NULL,
   `GAME_LOGO` varchar(200) NOT NULL,
   `GAME_SS` varchar(200) NOT NULL,
-  `GAME_STATUS` varchar(100) NOT NULL
+  `GAME_STATUS` varchar(100) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -155,8 +171,17 @@ CREATE TABLE `login_credentials` (
   `USERNAME` varchar(50) NOT NULL,
   `PASSWORD` varchar(100) NOT NULL,
   `USER_TYPE` varchar(50) NOT NULL,
-  `STATUS` varchar(50) NOT NULL
+  `STATUS` varchar(50) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_credentials`
+--
+
+INSERT INTO `login_credentials` (`USERNAME`, `PASSWORD`, `USER_TYPE`, `STATUS`, `updated_at`, `created_at`) VALUES
+('dd', 'dd', 'DEVELOPER', 'ACTIVE', '2019-04-20 19:48:15', '2019-04-20 18:04:09');
 
 -- --------------------------------------------------------
 
@@ -171,7 +196,9 @@ CREATE TABLE `moderators` (
   `MOD_EMAIL` varchar(50) NOT NULL,
   `MOD_GENDER` varchar(20) NOT NULL,
   `MOD_DOB` varchar(50) NOT NULL,
-  `MOD_IMAGE` varchar(200) NOT NULL
+  `MOD_IMAGE` varchar(200) NOT NULL,
+  `updated_at` varchar(50) NOT NULL,
+  `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
