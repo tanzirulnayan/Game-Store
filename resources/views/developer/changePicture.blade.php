@@ -21,40 +21,58 @@
 </head>
 
 <body class="profile-page">
-{{-- ------------------------------------- Navbar ------------------------------------- --}}
-<nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
-  <div class="container">
-    <div class="navbar-translate">
-      <a class="navbar-brand" href="{{route('developer.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom">
-        <span>Game•</span> Store
-      </a>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-      <ul class="navbar-nav">
+  {{-- ------------------------------------- Navbar ------------------------------------- --}}
+  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="{{route('developer.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom">
+          <span>Game•</span> Store
+        </a>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="{{route('developer.index')}}">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p>
+                GAMES
+              </p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
+              <a class="dropdown-item" href="{{route('developer.updateGames')}}">UPDATE Games</a>
+              <a class="dropdown-item" href="{{route('developer.deleteGames')}}">DELETE Games</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>
+        </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('developer.index')}}">HOME</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <p>
-              <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
-            </p>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
-            <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
-            <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
-            <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
-        </li>
-      </ul>
+          <a class="nav-link" href="{{route('developer.developerAdvertisement')}}">Advertisement</a>
+      </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p>
+                <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
+              </p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
+              <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
+              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
+              <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-{{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
+  </nav>
+  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">

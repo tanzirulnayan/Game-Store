@@ -35,7 +35,6 @@ class DeveloperController extends Controller
         return redirect()->route('developer.viewProfile'); 
     }
     public function changePicture(){
-
         $data = Developer::find(session("loggedUser"));
         return view('developer.changePicture')->with("data", $data); 
     }
@@ -62,8 +61,32 @@ class DeveloperController extends Controller
             $changePassword->save();
             return redirect()->route('logout.index');
         }
-      
     }
+    public function addGames(){
+        $data = Developer::find(session("loggedUser"));
+        return view('developer.addGames')->with("data", $data); 
+    }
+
+    public function updateGames(){
+        $data = Developer::find(session("loggedUser"));
+        return view('developer.updateGames')->with("data", $data); 
+    }
+
+    public function deleteGames(){
+        $data = Developer::find(session("loggedUser"));
+        return view('developer.deleteGames')->with("data", $data); 
+    }
+
+    public function helpline(){
+        $data = Developer::find(session("loggedUser"));
+        return view('developer.helpline')->with("data", $data); 
+    }
+
+    public function developerAdvertisement(){
+        $data = Developer::find(session("loggedUser"));
+        return view('developer.developerAdvertisement')->with("data", $data); 
+    }
+      
 
 
 
