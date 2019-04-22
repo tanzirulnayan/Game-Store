@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2019 at 09:28 PM
+-- Generation Time: Apr 22, 2019 at 10:07 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -140,7 +140,10 @@ CREATE TABLE `games` (
 --
 
 INSERT INTO `games` (`GAME_ID`, `GAME_NAME`, `TYPE_ID`, `GAME_PRICE`, `GAME_DESCRIPTION`, `GAME_FILES`, `GAME_REQ_OS`, `GAME_REQ_CPU`, `GAME_REQ_RAM`, `GAME_REQ_HDD`, `GAME_REQ_GPU`, `GAME_REQ_NETWORK`, `GAME_LOGO`, `GAME_SS`, `GAME_STATUS`, `updated_at`, `created_at`) VALUES
-('dd_Deep Fall', 'Deep Fall', 3, '10', 'Avoid crushing walls and any obstacles and the crushing walls in this quick-witted game of reflexes, as you try to keep your ball on the screen and help control its fall so it can reach as deep down as possible!', 'game_files/Deep Fall/Deep Fall_FILE_5cbcc43fde829.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Deep Fall/Deep Fall_LOGO_5cbcc43fde829.jpg', 'game_files/Deep Fall/Deep Fall_SS_5cbcc43fde829.jpg', 'PENDING', '2019-04-21 19:27:59', '2019-04-21 19:27:59');
+('dd_Clash of Clans', 'Clash of Clans', 2, '50', 'Clash of Clans is a freemium mobile strategy video game developed and published by Finnish game developer Supercell.', 'game_files/Clash of Clans/Clash of Clans_FILE_5cbe1e44671ea.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Clash of Clans/Clash of Clans_LOGO_5cbe1e44671ea.jpg', 'game_files/Clash of Clans/Clash of Clans_SS_5cbe1e44671ea.jpg', 'PENDING', '2019-04-22 20:04:20', '2019-04-22 20:04:20'),
+('dd_Clash Royale', 'Clash Royale', 2, '40', 'Clash Royale is a video game developed and published by Supercell. The game combines elements from collectible card games, tower defense, and multiplayer online battle arena.', 'game_files/Clash Royale/Clash Royale_FILE_5cbe1ea243dec.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Clash Royale/Clash Royale_LOGO_5cbe1ea243dec.jpg', 'game_files/Clash Royale/Clash Royale_SS_5cbe1ea243dec.jpg', 'PENDING', '2019-04-22 20:05:54', '2019-04-22 20:05:54'),
+('dd_Deep Fall', 'Deep Fall', 3, '10', 'Avoid crushing walls and any obstacles and the crushing walls in this quick-witted game of reflexes, as you try to keep your ball on the screen and help control its fall so it can reach as deep down as possible!', 'game_files/Deep Fall/Deep Fall_FILE_5cbcc43fde829.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Deep Fall/Deep Fall_LOGO_5cbcc43fde829.jpg', 'game_files/Deep Fall/Deep Fall_SS_5cbcc43fde829.jpg', 'PENDING', '2019-04-21 19:27:59', '2019-04-21 19:27:59'),
+('dd_Temple Run 2', 'Temple Run 2', 2, '50', 'Avoid crushing walls and any obstacles and the crushing walls in this quick-witted game of reflexes, as you try to keep your ball on the screen and help control its fall so it can reach as deep down as possible!', 'game_files/Temple Run 2/Temple Run 2_FILE_5cbdd394dfe48.apk', '64-bit Windows 7 or later', 'Intel i3 6300 @ 3.8GHz or AMD FX 8150 @ 3.6GH', '6GB', '30GB', 'NVIDIA GeForce® GTX 750 Ti', '512 KBPS or faster Internet connection', 'game_files/Temple Run 2/Temple Run 2_LOGO_5cbdd394dfe48.jpg', 'game_files/Temple Run 2/Temple Run 2_SS_5cbdd394dfe48.jpg', 'PENDING', '2019-04-22 14:45:40', '2019-04-22 14:45:40');
 
 -- --------------------------------------------------------
 
@@ -263,18 +266,21 @@ CREATE TABLE `purchase_history` (
 --
 
 CREATE TABLE `upload_history` (
+  `GAME_ID` varchar(50) NOT NULL,
   `USERNAME` varchar(50) NOT NULL,
-  `GAME_ID` varchar(100) NOT NULL,
-  `updated_at` varchar(50) NOT NULL,
-  `created_at` varchar(50) NOT NULL
+  `updated_at` varchar(100) NOT NULL,
+  `created_at` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `upload_history`
 --
 
-INSERT INTO `upload_history` (`USERNAME`, `GAME_ID`, `updated_at`, `created_at`) VALUES
-('dd', 'dd_Deep Fall', '2019-04-21 19:28:00', '2019-04-21 19:28:00');
+INSERT INTO `upload_history` (`GAME_ID`, `USERNAME`, `updated_at`, `created_at`) VALUES
+('dd_Clash of Clans', 'dd', '2019-04-22 20:04:20', '2019-04-22 20:04:20'),
+('dd_Clash Royale', 'dd', '2019-04-22 20:05:54', '2019-04-22 20:05:54'),
+('dd_Deep Fall', 'dd', '2019-04-21 19:27:59', '2019-04-21 19:27:59'),
+('dd_Temple Run 2', 'dd', '2019-04-22 14:45:41', '2019-04-22 14:45:41');
 
 --
 -- Indexes for dumped tables
@@ -345,6 +351,12 @@ ALTER TABLE `moderators`
 --
 ALTER TABLE `purchase_history`
   ADD PRIMARY KEY (`P_ID`);
+
+--
+-- Indexes for table `upload_history`
+--
+ALTER TABLE `upload_history`
+  ADD PRIMARY KEY (`GAME_ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
