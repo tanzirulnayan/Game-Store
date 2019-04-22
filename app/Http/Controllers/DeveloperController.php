@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Developer;
 use App\LoginCredential;
@@ -112,15 +113,26 @@ class DeveloperController extends Controller
         $history->USERNAME          = session("loggedUser");
         $history->GAME_ID           = session("loggedUser"). '_' .$req->GAME_NAME;
         $history->save();
-
         return redirect()->route('developer.index'); 
-        
+    }
 
+    public function viewGames(){
+        $data = Developer::find(session("loggedUser"));
+        $game = DB::table('games')
+        ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
+        ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
+        ->where(['USERNAME' => session("loggedUser")])
+        ->get();
+    
+        return view('developer.viewGames')->with("data", $data)
+                                          ->with("game", $game);
     }
 
     public function updateGames(){
         $data = Developer::find(session("loggedUser"));
-        return view('developer.updateGames')->with("data", $data); 
+        $list = GameType::all();
+        return view('developer.updateGames')->with("data", $data) 
+                                           ->with("list", $list); 
     }
 
     public function deleteGames(){

@@ -42,6 +42,9 @@ Route::post('/Developer/Change_Picture', 'DeveloperController@changePictureToDB'
 Route::get('/Developer/Change_Password', 'DeveloperController@changePassword')->name('developer.changePassword');
 Route::post('/Developer/Change_Password', 'DeveloperController@changePasswordToDB');
 
+Route::get('/Developer/VIEW_Games', 'DeveloperController@viewGames')->name('developer.viewGames');
+
+
 Route::get('/Developer/ADD_Games', 'DeveloperController@addGames')->name('developer.addGames');
 Route::post('/Developer/ADD_Games', 'DeveloperController@addGamesToDB');
 
