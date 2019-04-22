@@ -8,4 +8,5 @@ class Game extends Model
 {
     protected $primaryKey ="GAME_ID";
     //public $timestamps =false;
+    public $incrementing = false;
 }

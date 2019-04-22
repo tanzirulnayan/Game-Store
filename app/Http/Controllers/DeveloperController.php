@@ -9,6 +9,8 @@ use App\LoginCredential;
 use App\Game;
 use App\GameType;
 use App\UploadHistory;
+use File;
+USE Illuminate\Filesystem\Filesystem;
 
 class DeveloperController extends Controller
 {
@@ -116,7 +118,7 @@ class DeveloperController extends Controller
         return redirect()->route('developer.index'); 
     }
 
-    public function viewGames(){
+    public function allGames(){
         $data = Developer::find(session("loggedUser"));
         $game = DB::table('games')
         ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
@@ -124,8 +126,17 @@ class DeveloperController extends Controller
         ->where(['USERNAME' => session("loggedUser")])
         ->get();
     
-        return view('developer.viewGames')->with("data", $data)
+        return view('developer.allGames')->with("data", $data)
                                           ->with("game", $game);
+    }
+
+    public function viewGames($gameID){
+        $dev = Developer::find(session("loggedUser"));
+        $data = Game::find($gameID);
+        $type = GameType::where("TYPE_ID", $data->TYPE_ID)->first();
+        return view('developer.viewGames')->with("data", $data)
+                                          ->with("dev", $dev)
+                                          ->with("type", $type);
     }
 
     public function updateGames(){
@@ -135,9 +146,26 @@ class DeveloperController extends Controller
                                            ->with("list", $list); 
     }
 
-    public function deleteGames(){
-        $data = Developer::find(session("loggedUser"));
-        return view('developer.deleteGames')->with("data", $data); 
+    public function deleteGames($gameID){
+        $dev = Developer::find(session("loggedUser"));
+        $data = Game::find($gameID);
+        return view('developer.deleteGames')->with("data", $data)
+                                          ->with("dev", $dev);
+    }
+
+    public function deleteGamesToDB($gameID){
+
+        $data = Game::find($gameID);
+        // File::delete($data->GAME_FILES);
+        // File::delete($data->GAME_LOGO);
+        // File::delete($data->GAME_SS);
+        File::deleteDirectory(public_path('game_files/'.$data->GAME_NAME));
+        $data->delete();
+
+        $up = UploadHistory::find($gameID);
+        $up->delete();
+
+        return redirect()->route('developer.allGames');
     }
 
     public function helpline(){

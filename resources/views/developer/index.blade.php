@@ -39,10 +39,11 @@
               </p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
-              <a class="dropdown-item" href="{{route('developer.viewGames')}}">UPDATE Games</a>
-              <a class="dropdown-item" href="{{route('developer.viewGames')}}">DELETE Games</a>
-            </div>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">VIEW Games</a>
+                <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">UPDATE Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">DELETE Games</a>
+              </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>

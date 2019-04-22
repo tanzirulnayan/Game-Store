@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
   <title>
-      ADD Games | Developer
+      Delete Game | Developer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -41,10 +41,11 @@
               </p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
-              <a class="dropdown-item" href="{{route('developer.viewGames')}}">UPDATE Games</a>
-              <a class="dropdown-item" href="{{route('developer.viewGames')}}">DELETE Games</a>
-            </div>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">VIEW Games</a>
+                <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">UPDATE Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">DELETE Games</a>
+              </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>
@@ -55,7 +56,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <p>
-                <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
+                <img src="{{asset($dev->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
               </p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -73,7 +74,49 @@
     </div>
   </nav>
   {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  
+  <div class="wrapper">
+    <div class="page-header">
+      <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
+      <img src="{{asset('custom')}}/assets/img/path4.png" class="path">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <h1 class="profile-title text-left">{{$data->GAME_NAME}}</h1>
+            <h5 class="text-on-back">Games</h5>
+            <h3 class="text-danger">Are you sure You want to DELETE this game ?</h3>
+            <form method="POST">
+                <button class="btn btn-danger" type="submit">YES</button>
+                <a class="btn btn-success" href="{{route('developer.allGames')}}">NO</a>
+
+          </form>
+          </div>
+          <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+            <div class="card card-coin card-plain">
+              <div class="card-header">
+                <img src="{{asset($data->GAME_LOGO)}}" class="img-center img-fluid rounded-circle">
+                <h4 class="title">{{$data->GAME_NAME}}</h4>
+              </div>
+              <div class="card-body">
+              <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#linka">
+                    ScreenShot
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content tab-subcategories">
+                <div class="tab-pane active" id="linka">
+                  <img src="{{asset($data->GAME_SS)}}" class="img-fluid rounded shadow-lg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
   <!--   Core JS Files   -->
   <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="{{asset('custom')}}/assets/js/core/popper.min.js" type="text/javascript"></script>
