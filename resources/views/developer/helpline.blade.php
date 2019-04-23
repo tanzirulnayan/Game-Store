@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
   <title>
-      ADD Games | Developer
+      Help Line | Developer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -74,6 +74,37 @@
     </div>
   </nav>
   {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   <!--   Core JS Files   -->
   <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>

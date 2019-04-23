@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+USE Illuminate\Filesystem\Filesystem;
+use File;
 use App\Developer;
 use App\LoginCredential;
 use App\Game;
 use App\GameType;
 use App\UploadHistory;
-use File;
-USE Illuminate\Filesystem\Filesystem;
+use App\Advertisement;
+
 
 class DeveloperController extends Controller
 {
@@ -179,7 +181,7 @@ class DeveloperController extends Controller
             $game->GAME_FILES       = $req->GAME_FILES_OLD;                
             }
 
-        if( $req->file('GAME_LOGO') ){
+            if( $req->file('GAME_LOGO') ){
             File::delete($game->GAME_LOGO);
             $gameLogo               = $req->file('GAME_LOGO');
             $nameLogo               = $req->GAME_NAME . "_LOGO_" . $unique . "." . 
@@ -191,7 +193,7 @@ class DeveloperController extends Controller
             $game->GAME_LOGO      = $req->GAME_LOGO_OLD;                
             }
 
-        if( $req->file('GAME_SS') ){
+            if( $req->file('GAME_SS') ){
             File::delete($game->GAME_SS);
             $gameSS              = $req->file('GAME_SS');
             $nameSS               = $req->GAME_NAME . "_SS_" . $unique . "." . 
@@ -202,14 +204,13 @@ class DeveloperController extends Controller
             else if ($req->GAME_SS_OLD){
             $game->GAME_SS      = $req->GAME_SS_OLD;                
             }
+            $game->save(); 
 
-        $game->save(); 
-
-        $history                    = UploadHistory::find($req->GAME_ID); 
-        $history->USERNAME          = session("loggedUser");
-        $history->GAME_ID           = $req->GAME_ID;
-        $history->save();
-        return redirect()->route('developer.viewGames', $req->GAME_ID); 
+            $history                    = UploadHistory::find($req->GAME_ID); 
+            $history->USERNAME          = session("loggedUser");
+            $history->GAME_ID           = $req->GAME_ID;
+            $history->save();
+            return redirect()->route('developer.viewGames', $req->GAME_ID); 
     }
 
     public function deleteGames($gameID){
@@ -241,7 +242,26 @@ class DeveloperController extends Controller
 
     public function developerAdvertisement(){
         $data = Developer::find(session("loggedUser"));
-        return view('developer.developerAdvertisement')->with("data", $data); 
+        $ad   = Advertisement::where("USERNAME", session("loggedUser"))->get();
+        return view('developer.developerAdvertisement')->with("data", $data)
+                                                        ->with("ad", $ad); 
+    }
+    public function developerAdvertisementToDB(Request $req){
+
+        $file = $req->file('AD_IMAGE');
+        $name = "AD_" . uniqid() . "." . $file->getClientOriginalExtension();
+        $file->move('AD_IMAGE', $name);
+
+        $ad                  = new Advertisement();
+        $ad->AD_IMAGE        =  "AD_IMAGE/" . $name;
+        $ad->USERNAME        = session("loggedUser");
+        $ad->STATUS          = "PENDING";
+        $ad->save();
+        return redirect()->route('developer.developerAdvertisement');
+
+
+        
+    
     }
       
 
