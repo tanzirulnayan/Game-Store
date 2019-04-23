@@ -49,8 +49,8 @@ Route::get('/Developer/{gameID}/VIEW_Games', 'DeveloperController@viewGames')->n
 Route::get('/Developer/ADD_Games', 'DeveloperController@addGames')->name('developer.addGames');
 Route::post('/Developer/ADD_Games', 'DeveloperController@addGamesToDB');
 
-Route::get('/Developer/UPDATE_Games', 'DeveloperController@updateGames')->name('developer.updateGames');
-Route::post('/Developer/UPDATE_Games', 'DeveloperController@updateGamesToDB');
+Route::get('/Developer/{gameID}/UPDATE_Games', 'DeveloperController@updateGames')->name('developer.updateGames');
+Route::post('/Developer/{gameID}/UPDATE_Games', 'DeveloperController@updateGamesToDB');
 
 Route::get('/Developer/{gameID}/DELETE_Games', 'DeveloperController@deleteGames')->name('developer.deleteGames');
 Route::post('/Developer/{gameID}/DELETE_Games', 'DeveloperController@deleteGamesToDB');

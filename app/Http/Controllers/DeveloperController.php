@@ -139,11 +139,77 @@ class DeveloperController extends Controller
                                           ->with("type", $type);
     }
 
-    public function updateGames(){
-        $data = Developer::find(session("loggedUser"));
-        $list = GameType::all();
-        return view('developer.updateGames')->with("data", $data) 
-                                           ->with("list", $list); 
+    public function updateGames($gameID){
+        $dev = Developer::find(session("loggedUser"));
+        $data = Game::find($gameID);
+        $types = GameType::all();
+        $type = GameType::where("TYPE_ID", $data->TYPE_ID)->first();
+        return view('developer.updateGames')->with("data", $data)
+                                          ->with("dev", $dev)
+                                          ->with("type", $type)
+                                          ->with("types", $types);
+    }
+
+    public function updateGamesToDB(Request $req){
+
+        $game                       = Game::find($req->GAME_ID); 
+        $game->GAME_NAME            = $req->GAME_NAME;
+        $game->TYPE_ID              = $req->type;
+        $game->GAME_PRICE           = $req->GAME_PRICE;
+        $game->GAME_DESCRIPTION     = $req->GAME_DESCRIPTION;
+        $game->GAME_REQ_OS          = $req->GAME_REQ_OS;
+        $game->GAME_REQ_CPU         = $req->GAME_REQ_CPU;
+        $game->GAME_REQ_RAM         = $req->GAME_REQ_RAM;
+        $game->GAME_REQ_HDD         = $req->GAME_REQ_HDD;
+        $game->GAME_REQ_GPU         = $req->GAME_REQ_GPU;
+        $game->GAME_REQ_NETWORK     = $req->GAME_REQ_NETWORK;
+        $game->GAME_STATUS          = "PENDING";
+
+
+        $unique                     = uniqid();
+        if( $req->file('GAME_FILES') ){
+            File::delete($game->GAME_FILES);
+            $gameFile               = $req->file('GAME_FILES'); 
+            $nameFile               = $req->GAME_NAME . "_FILE_" . $unique . "." . 
+                                           $gameFile->getClientOriginalExtension();
+            $gameFile->move('game_files/'.$req->GAME_NAME, $nameFile);
+            $game->GAME_FILES       = "game_files/". $req->GAME_NAME. '/' . $nameFile;
+            }
+            else if ($req->GAME_FILES_OLD){
+            $game->GAME_FILES       = $req->GAME_FILES_OLD;                
+            }
+
+        if( $req->file('GAME_LOGO') ){
+            File::delete($game->GAME_LOGO);
+            $gameLogo               = $req->file('GAME_LOGO');
+            $nameLogo               = $req->GAME_NAME . "_LOGO_" . $unique . "." . 
+                                            $gameLogo->getClientOriginalExtension();
+            $gameLogo ->move('game_files/'.$req->GAME_NAME, $nameLogo);
+            $game->GAME_LOGO       = "game_files/". $req->GAME_NAME. '/' . $nameLogo ;
+            }
+            else if ($req->GAME_LOGO_OLD){
+            $game->GAME_LOGO      = $req->GAME_LOGO_OLD;                
+            }
+
+        if( $req->file('GAME_SS') ){
+            File::delete($game->GAME_SS);
+            $gameSS              = $req->file('GAME_SS');
+            $nameSS               = $req->GAME_NAME . "_SS_" . $unique . "." . 
+                                    $gameSS->getClientOriginalExtension();
+            $gameSS ->move('game_files/'.$req->GAME_NAME, $nameSS);
+            $game->GAME_SS       = "game_files/". $req->GAME_NAME. '/' . $nameSS ;
+            }
+            else if ($req->GAME_SS_OLD){
+            $game->GAME_SS      = $req->GAME_SS_OLD;                
+            }
+
+        $game->save(); 
+
+        $history                    = UploadHistory::find($req->GAME_ID); 
+        $history->USERNAME          = session("loggedUser");
+        $history->GAME_ID           = $req->GAME_ID;
+        $history->save();
+        return redirect()->route('developer.viewGames', $req->GAME_ID); 
     }
 
     public function deleteGames($gameID){
