@@ -50,7 +50,7 @@
             <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
                 <div id="square7" class="square square-7"></div>
                 <h1 style="color:white; fontisize:400%;">E  X  P  L  O  R  E</h1>
-                <h1 style="color:white; fontisize:400%;">THE WORLD OF GAME</h1>
+                <h1 style="color:white; fontisize:400%;">THE WORLD OF GAMES</h1>
             <div class="register-bg"></div>
             <div id="square1" class="square square-1"></div>
             <div id="square2" class="square square-2"></div>
