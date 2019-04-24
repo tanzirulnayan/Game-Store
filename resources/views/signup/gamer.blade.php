@@ -21,7 +21,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="{{route('landingPage.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="{{route('landingPage.index')}}">
           <span>Game•</span> Store
         </a>
       </div>
@@ -86,21 +86,12 @@
                     </div>
 
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-square-pin"></i>
-                          </div>
-                        </div>
-                        <input type="text" class="form-control" name="G_COUNTRY" placeholder="Country">
-                      </div>
-
-                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-tablet-2"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" name="G_MOBILE" placeholder="Mobile Number" >
+                      <input type="number" class="form-control" name="G_MOBILE" placeholder="Mobile Number" >
                     </div>
 
                   <div class="input-group">
@@ -118,7 +109,7 @@
                             <i class="tim-icons icon-money-coins"></i>
                           </div>
                         </div>
-                        <input type="text" class="form-control" name="G_DOB" placeholder="Date of Birth">
+                        <input type="date" class="form-control" name="G_DOB" placeholder="Date of Birth">
                       </div>
 
                     <div class="input-group">

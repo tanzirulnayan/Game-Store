@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
       <div class="container">
         <div class="navbar-translate">
-          <a class="navbar-brand" href="{{route('landingPage.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom" target="_blank">
+          <a class="navbar-brand" href="{{route('landingPage.index')}}">
             <span>Game•</span> Store
           </a>
         </div>

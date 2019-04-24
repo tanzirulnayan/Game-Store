@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
-  <title>
-    Login
-  </title>
+  <title>Sign Up</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -25,7 +23,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
       <div class="container">
         <div class="navbar-translate">
-          <a class="navbar-brand" href="{{route('landingPage.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom" target="_blank">
+          <a class="navbar-brand" href="{{route('landingPage.index')}}">
             <span>Game•</span> Store
           </a>
         </div>
