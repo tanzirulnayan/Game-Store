@@ -133,9 +133,6 @@
                   <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
                 </form>
                 </div>
-                {{-- <div class="card-footer">
-                  <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
-                </div> --}}
               </div>
             </div>
           </div>

@@ -16,8 +16,7 @@ class SignupController extends Controller
     }
 /**************************** Gamer ****************************/
     public function gamer(){
-        $country = Country::all();
-    	return view('signup.gamer')->with("country", $country);
+    	return view('signup.gamer');
     }
 
     public function gamerToDB(Request $req){
@@ -30,11 +29,8 @@ class SignupController extends Controller
         $gamer->USERNAME         = $req->USERNAME;
         $gamer->G_NAME           = $req->G_NAME;
         $gamer->G_EMAIL          = $req->G_EMAIL;
-        $gamer->G_COUNTRY        = $req->G_COUNTRY;
         $gamer->G_MOBILE         = $req->G_MOBILE;
-        $gamer->G_GENDER         = $req->G_GENDER;
         $gamer->G_DOB            = $req->G_DOB;
-        $gamer->G_CREDIT_CARD    = $req->G_CREDIT_CARD;
         $gamer->G_IMAGE          = "Image_Folder/" . $name;
         $gamer->save();  
 
