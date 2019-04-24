@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/', function () {
     return redirect()->route('landingPage.index');
 });

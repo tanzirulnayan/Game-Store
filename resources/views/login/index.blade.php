@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{route('landingPage.index')}}">HOME</a>
+                <a class="nav-link" href="{{route('landingPage.index')}}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('login.index')}}">Login</a>
