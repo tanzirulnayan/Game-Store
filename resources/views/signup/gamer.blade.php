@@ -94,15 +94,6 @@
                       <input type="number" class="form-control" name="G_MOBILE" placeholder="Mobile Number" >
                     </div>
 
-                  <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-single-02"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" name="G_GENDER" placeholder="Gender">
-                    </div>
-
                     <div class="input-group">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
