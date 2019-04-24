@@ -59,7 +59,7 @@
               <div class="card card-register">
                 <div class="card-header">
                   <img class="card-img" src="assets/img/square1.png" alt="Card image">
-                  <h4 class="card-title">Signup</h4>
+                  <h4 class="card-title" style="color:white;">Sign Up</h4>
                 </div>
               </div>
             </div>

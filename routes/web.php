@@ -26,7 +26,7 @@ Route::get('/logout', 'LogoutController@index')->name('logout.index');
 Route::group(["middleware"=>['session']], function(){
 
 /**************************** GAMER ****************************/
-Route::get('/Gamer/Home', 'GamerController@index')->name('gamer.index');
+Route::get('/Gamer/Index', 'GamerController@index')->name('gamer.index');
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');

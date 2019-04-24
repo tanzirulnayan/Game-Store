@@ -55,8 +55,8 @@
               <div class="card card-register">
                 <div class="card-header">
                   <img class="card-img" src="{{asset('custom')}}/assets/img/square1.png" alt="Card image">
-                  <h4 class="card-title">Register</h4>
-                  <h4 class="card-title">Developer</h4>
+                  <h4 class="card-title" style="color:white;">Register</h4>
+                  <h4 class="card-title" style="color:white;">Developer</h4>
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST" enctype="multipart/form-data">
