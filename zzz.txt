@@ -1,9 +1,0 @@
-php artisan serve --port 3000
-
-php artisan make:controller LandingPageController
-php artisan make:controller RegistrationController
-php artisan make:controller LoginController
-php artisan make:controller HomeController
-
-php artisan make:Middleware VerifyUserSession
-

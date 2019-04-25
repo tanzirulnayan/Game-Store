@@ -25,14 +25,14 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
       <div class="container">
         <div class="navbar-translate">
-          <a class="navbar-brand" href="{{route('landingPage.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom" target="_blank">
+          <a class="navbar-brand" href="{{route('landingPage.index')}}">
             <span>Game•</span> Store
           </a>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{route('landingPage.index')}}">HOME</a>
+                <a class="nav-link" href="{{route('landingPage.index')}}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('login.index')}}">Login</a>
@@ -46,7 +46,6 @@
     </nav>
     {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
   <div class="wrapper">
-
     <div class="main">
       <div class="section section-signup">
         <div class="container">
@@ -62,7 +61,7 @@
               <div class="card card-register">
                 <div class="card-header">
                   <img class="card-img" src="assets/img/square1.png" alt="Card image">
-                  <h4 class="card-title">Login</h4>
+                  <h4 class="card-title" style="color:white;">Login</h4>
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST">
@@ -80,7 +79,7 @@
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" name="PASSWORD" placeholder="Password...">
+                      <input type="password" class="form-control" name="PASSWORD" placeholder="Password...">
                     </div>
                     <button class="btn btn-primary btn-round" type="submit">
                         <i class="tim-icons icon-controller"></i> Login
