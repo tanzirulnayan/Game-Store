@@ -12,6 +12,7 @@ use App\Game;
 use App\GameType;
 use App\UploadHistory;
 use App\Advertisement;
+use App\HotlineMessage;
 
 
 class DeveloperController extends Controller
@@ -235,11 +236,6 @@ class DeveloperController extends Controller
         return redirect()->route('developer.allGames');
     }
 
-    public function helpline(){
-        $data = Developer::find(session("loggedUser"));
-        return view('developer.helpline')->with("data", $data); 
-    }
-
     public function developerAdvertisement(){
         $data = Developer::find(session("loggedUser"));
         $ad   = Advertisement::where("USERNAME", session("loggedUser"))->get();
@@ -258,10 +254,14 @@ class DeveloperController extends Controller
         $ad->STATUS          = "PENDING";
         $ad->save();
         return redirect()->route('developer.developerAdvertisement');
+    }
 
-
-        
-    
+    public function helpline(){
+        $data = Developer::find(session("loggedUser"));
+        $chat = HotlineMessage::where("RECEIVER_ID", session("loggedUser"))
+                                ->get();
+        dd($chat);
+        // return view('developer.helpline')->with("data", $data); 
     }
       
 
