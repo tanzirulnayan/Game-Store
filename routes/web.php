@@ -12,6 +12,7 @@ Route::post('/signup/Gamer', 'SignupController@gamerToDB');
 Route::get('/signup/Developer', 'SignupController@developer')->name('signup.developer');
 Route::post('/signup/Developer', 'SignupController@developerToDB');
 Route::get('/signup/Moderator', 'SignupController@moderator')->name('signup.moderator');
+Route::post('/signup/Moderator', 'SignupController@moderatorToBD');
 
 /**************************** Login ****************************/
 Route::get('/login', 'LoginController@index')->name('login.index');
@@ -67,6 +68,9 @@ Route::post('/Developer/Help_Line', 'DeveloperController@helplineToDB');
 Route::get('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chat')->name('developer.chat');
 Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB');
 
+/**************************** MODERATOR ****************************/
+
+Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');
 
 /****************************UNDER SESSION CHECK END****************************/
 });

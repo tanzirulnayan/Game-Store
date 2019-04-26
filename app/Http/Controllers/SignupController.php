@@ -7,6 +7,7 @@ use App\Gamer;
 use App\Developer;
 use App\LoginCredential;
 use App\Country;
+use App\Moderator;
 
 class SignupController extends Controller
 {
@@ -79,6 +80,34 @@ class SignupController extends Controller
 
 /**************************** MODERATOR ****************************/
 
+public function moderator(){
+    return view('signup.moderator');
+}
+
+public function moderatorToBD(Request $req){
+
+    $file = $req->file('MOD_IMAGE');
+    $name = "profilePicture_" . uniqid() . "." . $file->getClientOriginalExtension();
+    $file->move('Image_Folder', $name);
+
+    $moderator = new Moderator;
+    $moderator->USERNAME         = $req->USERNAME;
+    $moderator->MOD_NAME           = $req->MOD_NAME;
+    $moderator->MOD_EMAIL          = $req->MOD_EMAIL;
+    $moderator->MOD_ADDRESS         = $req->MOD_ADDRESS;
+    $moderator->MOD_DOB            = $req->MOD_DOB;
+    $moderator->MOD_IMAGE          = "Image_Folder/" . $name;
+    $moderator->save();  
+
+    $loginModerator               = new LoginCredential();
+    $loginModerator->USERNAME       = $req->USERNAME;
+    $loginModerator->PASSWORD       = $req->PASSWORD;
+    $loginModerator->USER_TYPE      = "MODERATOR";
+    $loginModerator->STATUS         = "PENDING";
+    $loginModerator->save();  
+
+    return view('login.index');          
+}
 
 
 
