@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 USE Illuminate\Filesystem\Filesystem;
 use File;
+use DateTime;
 use App\Developer;
 use App\LoginCredential;
 use App\Game;
@@ -282,12 +283,22 @@ class DeveloperController extends Controller
         return view('developer.chat')->with("data", $data)
                                      ->with("gamer", $gamer) 
                                      ->with("sender", $sender)
-                                     ->with("receiver", $receiver);
-                                     
+                                     ->with("receiver", $receiver);                                 
     }
 
-    public function chatToDB(Request $req){
-       
+    public function chatToDB(Request $req , $gamerID){
+
+        $message                    =   new HotlineMessage();
+        $message->CHAT_ID           =   $gamerID . "_" . session("loggedUser");
+        $message->SENDER_ID         =   session("loggedUser");
+        $message->RECEIVER_ID       =   $gamerID;
+        $message->MESSAGE           =   $req->MESSAGE;
+        $dt = new DateTime();
+        $message->DATE              =   $dt->format('Y-m-d H:i:s');
+        $message->save();
+        
+        return redirect()->route('developer.chat' , $gamerID);
+  
     }
       
 

@@ -128,43 +128,38 @@
         <div class="tab-content tab-subcategories">
             <div class="tab-pane active" id="linka">
 
-                @foreach ($sender as $sender)
-                <h1>{{$sender->MESSAGE}}</h1>    
-              @endforeach 
+        @for ($i = 0; $i < count($sender); $i++)
+              <h3 align="left"><img src="{{asset($gamer->G_IMAGE)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px"> {{$sender[$i]->MESSAGE}}</h3>
 
-              @foreach ($receiver as $receiver)
-                <h1>{{$receiver->MESSAGE}}</h1>    
-              @endforeach
-              
-            
-         
+        @for ($j = 0; $j < count($receiver); $j++)
+              <h3 align="right">{{$receiver[$j]->MESSAGE}} <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;"></h3> 
+        @endfor
+        @endfor
+          
 
-            {{-- @for ($i = 0 ; $i < $sender.length ; $i++ )
-            <h1>{{$sender[i]->MESSAGE}}___{{$receiver[i]->MESSAGE}}</h1>  
-            @endfor --}}
-
-
-
-              <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#">
-                      Send Message
-                    </a>
-                  </li>
-                </ul>
-                <form method="POST">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="tim-icons icon-chat-33"></i>
-                    </div>
-                  </div>
-                  <input type="text" class="form-control" name="MESSAGE" placeholder="Type...">
-                </div>
-              <button class="btn btn-primary btn-round" type="submit">
-                <i class="tim-icons icon-settings-gear-63"></i> SEND
-              </button>
-            </form>
+       <br><br>
+      <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#">
+              Send Message
+            </a>
+          </li>
+        </ul>
+        <br>
+        <form method="POST">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="tim-icons icon-chat-33"></i>
+            </div>
+          </div>
+          <input type="text" class="form-control" name="MESSAGE" placeholder="Type...">
+        </div>
+        <br>
+      <button class="btn btn-primary btn-round" type="submit">
+        <i class="tim-icons icon-settings-gear-63"></i> SEND
+      </button>
+    </form>
         </div>
       </div>
       </div>
