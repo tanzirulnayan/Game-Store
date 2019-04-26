@@ -73,7 +73,7 @@ class SignupController extends Controller
         $loginDeveloper->STATUS         = "PENDING";
         $loginDeveloper->save();  
 
-        return view('login.index');          
+        return redirect()->route('login.index');         
     }
 
 

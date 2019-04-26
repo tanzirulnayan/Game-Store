@@ -58,12 +58,14 @@ Route::post('/Developer/{gameID}/UPDATE_Games', 'DeveloperController@updateGames
 Route::get('/Developer/{gameID}/DELETE_Games', 'DeveloperController@deleteGames')->name('developer.deleteGames');
 Route::post('/Developer/{gameID}/DELETE_Games', 'DeveloperController@deleteGamesToDB');
 
-Route::get('/Developer/Help_Line', 'DeveloperController@helpline')->name('developer.helpline');
-Route::post('/Developer/Help_Line', 'DeveloperController@helplineToDB');
-
 Route::get('/Developer/Developer_Advertisement', 'DeveloperController@developerAdvertisement')->name('developer.developerAdvertisement');
 Route::post('/Developer/Developer_Advertisement', 'DeveloperController@developerAdvertisementToDB');
 
+Route::get('/Developer/Help_Line', 'DeveloperController@helpline')->name('developer.helpline');
+Route::post('/Developer/Help_Line', 'DeveloperController@helplineToDB');
+
+Route::get('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chat')->name('developer.chat');
+Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB');
 
 
 /****************************UNDER SESSION CHECK END****************************/

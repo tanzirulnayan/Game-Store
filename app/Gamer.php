@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Gamer extends Model
 {
     protected $primaryKey ="USERNAME";
+    public $incrementing = false;
+
 }

@@ -13,7 +13,7 @@ use App\GameType;
 use App\UploadHistory;
 use App\Advertisement;
 use App\HotlineMessage;
-
+use App\Gamer;
 
 class DeveloperController extends Controller
 {
@@ -259,9 +259,35 @@ class DeveloperController extends Controller
     public function helpline(){
         $data = Developer::find(session("loggedUser"));
         $chat = HotlineMessage::where("RECEIVER_ID", session("loggedUser"))
+                                ->groupBy('CHAT_ID')
+                                ->orderBy('DATE', 'ASC')
                                 ->get();
-        dd($chat);
-        // return view('developer.helpline')->with("data", $data); 
+        //  dd($chat);
+        return view('developer.helpline')->with("data", $data)
+                                         ->with("chat", $chat); 
+    }
+
+    public function chat($gamerID){
+        $data = Developer::find(session("loggedUser"));
+        $gamer= Gamer::find($gamerID);
+        $sender = HotlineMessage::where("RECEIVER_ID", session("loggedUser"))
+                                ->where("SENDER_ID", $gamerID)
+                                ->orderBy('DATE', 'ASC')
+                                ->get();
+        $receiver = HotlineMessage::where("RECEIVER_ID", $gamerID)
+                                ->where("SENDER_ID", session("loggedUser"))
+                                ->orderBy('DATE', 'ASC')
+                                ->get();
+                            
+        return view('developer.chat')->with("data", $data)
+                                     ->with("gamer", $gamer) 
+                                     ->with("sender", $sender)
+                                     ->with("receiver", $receiver);
+                                     
+    }
+
+    public function chatToDB(Request $req){
+       
     }
       
 
