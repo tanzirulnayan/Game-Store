@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2019 at 08:31 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Generation Time: Apr 26, 2019 at 05:20 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -373,9 +373,7 @@ CREATE TABLE `gamers` (
   `USERNAME` varchar(50) NOT NULL,
   `G_NAME` varchar(100) NOT NULL,
   `G_EMAIL` varchar(100) NOT NULL,
-  `G_COUNTRY` varchar(50) NOT NULL,
   `G_MOBILE` varchar(50) NOT NULL,
-  `G_GENDER` varchar(20) NOT NULL,
   `G_DOB` varchar(50) NOT NULL,
   `G_CREDIT_CARD` varchar(100) NOT NULL,
   `G_IMAGE` varchar(200) NOT NULL,
@@ -387,8 +385,9 @@ CREATE TABLE `gamers` (
 -- Dumping data for table `gamers`
 --
 
-INSERT INTO `gamers` (`USERNAME`, `G_NAME`, `G_EMAIL`, `G_COUNTRY`, `G_MOBILE`, `G_GENDER`, `G_DOB`, `G_CREDIT_CARD`, `G_IMAGE`, `updated_at`, `created_at`) VALUES
-('gg', 'Gamer One', 'Gamer01@gmail.com', 'Bangladesh', '01689605510', 'male', '2019-04-30', '987654321', 'Image_Folder/profilePicture_5cbf4841eddb1.png', '2019-04-23 17:15:45', '2019-04-23 17:15:45');
+INSERT INTO `gamers` (`USERNAME`, `G_NAME`, `G_EMAIL`, `G_MOBILE`, `G_DOB`, `G_CREDIT_CARD`, `G_IMAGE`, `updated_at`, `created_at`) VALUES
+('gg', 'Gamer One', 'Gamer01@gmail.com', '01689605510', '2019-04-30', '987654321', 'Image_Folder/profilePicture_5cbf4841eddb1.png', '2019-04-23 17:15:45', '2019-04-23 17:15:45'),
+('gg2', 'Gamer Two', 'Gamer02@gmail.com', '01965610956', '2019-04-30', '', 'Image_Folder/profilePicture_5cc31aafe1d68.jpg', '2019-04-26 14:50:23', '2019-04-26 14:50:23');
 
 -- --------------------------------------------------------
 
@@ -481,21 +480,26 @@ INSERT INTO `game_type` (`TYPE_ID`, `TYPE_NAME`) VALUES
 --
 
 CREATE TABLE `hotline_messages` (
+  `CHAT_ID` varchar(50) NOT NULL,
   `SENDER_ID` varchar(50) NOT NULL,
   `RECEIVER_ID` varchar(50) NOT NULL,
-  `MESSAGE` varchar(500) NOT NULL,
-  `DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `MESSAGE` varchar(200) NOT NULL,
+  `DATE` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotline_messages`
 --
 
-INSERT INTO `hotline_messages` (`SENDER_ID`, `RECEIVER_ID`, `MESSAGE`, `DATE`) VALUES
-('GG', 'DD', 'Hello !! Are you there', '2019-04-24 00:00:00'),
-('DD', 'GG', 'Yes. How can I help you ?', '2019-04-25 00:00:00'),
-('GG', 'DD', 'I am facing problem installing a game', '2019-04-26 04:00:00'),
-('DD', 'GG', 'Which game you are trying to install ?', '2019-04-27 08:00:00');
+INSERT INTO `hotline_messages` (`CHAT_ID`, `SENDER_ID`, `RECEIVER_ID`, `MESSAGE`, `DATE`) VALUES
+('gg_dd', 'gg', 'dd', 'Hello !! Are you there', '2019-04-01 10:41:00.000000'),
+('gg_dd', 'dd', 'gg', 'Yes. How can I help you ?', '2019-04-02 14:46:00.000000'),
+('gg_dd', 'gg', 'dd', 'I am facing problem installing a game', '2019-04-03 09:00:00.000000'),
+('gg_dd', 'dd', 'gg', 'Which game you are trying to install ?', '2019-04-05 07:00:00.000000'),
+('gg2_dd', 'gg2', 'dd', 'Hi', '2019-04-06 18:00:00.000000'),
+('gg2_dd', 'dd', 'gg2', 'Hello, Sir', '2019-04-07 11:44:00.000000'),
+('gg2_dd', 'gg2', 'dd', 'what is the price of Need for speed Payback?', '2019-04-10 09:00:00.000000'),
+('gg2_dd', 'dd', 'gg2', 'It\'s only 40$ sir', '2019-04-11 11:17:00.000000');
 
 -- --------------------------------------------------------
 
@@ -518,7 +522,8 @@ CREATE TABLE `login_credentials` (
 
 INSERT INTO `login_credentials` (`USERNAME`, `PASSWORD`, `USER_TYPE`, `STATUS`, `updated_at`, `created_at`) VALUES
 ('dd', 'dd', 'DEVELOPER', 'ACTIVE', '2019-04-20 19:48:15', '2019-04-20 18:04:09'),
-('gg', 'gg', 'GAMER', 'ACTIVE', '2019-04-23 17:15:46', '2019-04-23 17:15:46');
+('gg', 'gg', 'GAMER', 'ACTIVE', '2019-04-23 17:15:46', '2019-04-23 17:15:46'),
+('gg2', 'gg2', 'GAMER', 'ACTIVE', '2019-04-26 14:50:24', '2019-04-26 14:50:24');
 
 -- --------------------------------------------------------
 
