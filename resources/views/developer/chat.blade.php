@@ -129,11 +129,12 @@
             <div class="tab-pane active" id="linka">
 
         @for ($i = 0; $i < count($sender); $i++)
-              <h3 align="left"><img src="{{asset($gamer->G_IMAGE)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px"> {{$sender[$i]->MESSAGE}}</h3>
+              <h3 align="left"><img src="{{asset($gamer->G_IMAGE)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:30px"> {{$sender[$i]->MESSAGE}}</h3>
 
-        @for ($j = 0; $j < count($receiver); $j++)
-              <h3 align="right">{{$receiver[$j]->MESSAGE}} <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;"></h3> 
-        @endfor
+            @for ($j = 0; $j < count($receiver); $j++)
+                  <h3 align="right">{{$receiver[$j]->MESSAGE}} <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:30px"></h3>
+                         
+            @endfor
         @endfor
           
 
