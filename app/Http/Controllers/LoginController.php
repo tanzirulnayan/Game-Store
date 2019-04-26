@@ -25,7 +25,8 @@ class LoginController extends Controller
             return redirect()->route('developer.index');
         }
         else if($validate->USER_TYPE == "MODERATOR" && $validate->STATUS == "ACTIVE"){
-            //
+            $req->session()->put('loggedUser', $req->USERNAME);
+            return redirect()->route('moderator.index');
         } 
         else{
             return view('login.index');

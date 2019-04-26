@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('custom')}}/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{asset('custom')}}/assets/img/favicon.png">
-  <title>Sign Up</title>
+  <title>
+    Home | Moderator
+  </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -14,77 +16,80 @@
   <link href="{{asset('custom')}}/assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{asset('custom')}}/assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{asset('custom')}}/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="index-page">
+<body class="register-page">
   {{-- ------------------------------------- Navbar ------------------------------------- --}}
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
-      <div class="container">
-        <div class="navbar-translate">
-          <a class="navbar-brand" href="{{route('landingPage.index')}}">
-            <span>Game•</span> Store
-          </a>
-        </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navigation">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('landingPage.index')}}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('login.index')}}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('signup.index')}}">Signup</a>
-            </li>
-          </ul>
-        </div>
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="{{route('moderator.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom">
+          <span>Game•</span> Store
+        </a>
       </div>
-    </nav>
-    {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  <div class="wrapper">
-
-    <div class="main">
-      <div class="section section-signup">
-        <div class="container">
-          <div class="squares square-1"></div>
-          <div class="squares square-2"></div>
-          <div class="squares square-3"></div>
-          <div class="squares square-4"></div>
-          <div class="row row-grid justify-content-between align-items-center">
-            <div class="col-lg-6 mb-lg-auto">
-              <div class="card card-register">
-                <div class="card-header">
-                  <img class="card-img" src="assets/img/square1.png" alt="Card image">
-                  <h4 class="card-title" style="color:white;">Sign Up</h4>
-                </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="{{route('moderator.index')}}">HOME</a>
+          </li>
+          {{-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p>
+                GAMES
+              </p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">VIEW Games</a>
+                <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">UPDATE Games</a>
+                <a class="dropdown-item" href="{{route('developer.allGames')}}">DELETE Games</a>
               </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('developer.developerAdvertisement')}}">Advertisement</a>
+      </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p>
+                <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
+              </p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
+              <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
+              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
+              <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
             </div>
-            <nav class="navbar navbar-expand-lg bg-success">
-                <div class="container">   
-                    <a class="navbar-brand" href="{{route('signup.gamer')}}">Signup as GAMER</a> 
-                </div>
-            </nav>
-            <nav class="navbar navbar-expand-lg bg-info">
-                <div class="container">
-                    <a class="navbar-brand" href="{{route('signup.developer')}}">Signup as DEVELOPER</a>    
-                </div>
-            </nav>
-            <nav class="navbar navbar-expand-lg bg-primary">
-                <div class="container">
-                    <a class="navbar-brand" href="{{route('signup.moderator')}}">Signup as MODERATOR</a>    
-                </div>
-            </nav>
-          </div>
-        </div>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
+  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
+  {{-- -- ------------------------------------- Cards -------------------------------------- --}}
+      <div id="square1" class="square square-1"></div>
+      <div id="square2" class="square square-2"></div>
+      <div id="square3" class="square square-3"></div>
+      <div id="square4" class="square square-4"></div>
+      <div id="square5" class="square square-5"></div>
+      <div id="square6" class="square square-6"></div>
+      <div id="square7" class="square square-7"></div>
+      <div id="square8" class="square square-8"></div>
+    {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
+
+
+
     {{-- <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <h1 class="title">BLK•</h1>
+            <h1 class="title">Game•Store</h1>
           </div>
           <div class="col-md-3">
             <ul class="nav">
@@ -166,25 +171,8 @@
   <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
   <script src="{{asset('custom')}}/assets/js/plugins/moment.min.js"></script>
   <script src="{{asset('custom')}}/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{asset('custom')}}/assets/demo/demo.js"></script>
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
-  <script>
-    $(document).ready(function() {
-      blackKit.initDatePicker();
-      blackKit.initSliders();
-    });
-
-    function scrollToDownload() {
-
-      if ($('.section-download').length != 0) {
-        $("html, body").animate({
-          scrollTop: $('.section-download').offset().top
-        }, 1000);
-      }
-    }
-  </script>
 </body>
 
 </html>
