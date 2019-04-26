@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2019 at 05:20 PM
+-- Generation Time: Apr 26, 2019 at 05:21 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -536,7 +536,6 @@ CREATE TABLE `moderators` (
   `MOD_NAME` varchar(100) NOT NULL,
   `MOD_ADDRESS` varchar(100) NOT NULL,
   `MOD_EMAIL` varchar(50) NOT NULL,
-  `MOD_GENDER` varchar(20) NOT NULL,
   `MOD_DOB` varchar(50) NOT NULL,
   `MOD_IMAGE` varchar(200) NOT NULL,
   `updated_at` varchar(50) NOT NULL,
