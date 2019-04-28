@@ -16,6 +16,8 @@
   <link href="{{asset('custom')}}/assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{asset('custom')}}/assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{asset('custom')}}/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 
@@ -81,7 +83,6 @@
 
 
 
-  <!--   Core JS Files   -->
 <!--   Core JS Files   -->
 <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script src="{{asset('custom')}}/assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -101,11 +102,11 @@
 <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
 <script>
-  $(document).ready(function() {
-    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-    demo.initLandingPageChart();
-  });
-</script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initLandingPageChart();
+    });
+  </script>
 </body>
 
 </html>
