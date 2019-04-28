@@ -31,4 +31,9 @@ class GamerController extends Controller
         $update->save(); 
         return redirect()->route('gamer.ViewProfile'); 
     }
+
+    public function changePicture(){
+        $data = Gamer::find(session("loggedUser"));
+        return view('gamer.changePicture')->with("data", $data); 
+    }
 }
