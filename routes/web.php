@@ -36,7 +36,9 @@ Route::post('/Gamer/EditProfile', 'GamerController@updateProfile');
 Route::get('/Gamer/ChangePicture', 'GamerController@changePicture')->name('gamer.ChangePicture');
 Route::post('/Gamer/ChangePicture', 'GamerController@updatePicture');
 
-Route::get('/Gamer/ChangePassword', 'GamerController@index')->name('gamer.ChangePassword');
+Route::get('/Gamer/ChangePassword', 'GamerController@changePassword')->name('gamer.ChangePassword');
+Route::post('/Gamer/ChangePassword', 'GamerController@updatePassword');
+
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');

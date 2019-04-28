@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gamer;
+use App\LoginCredential;
 
 class GamerController extends Controller
 {
@@ -46,5 +47,28 @@ class GamerController extends Controller
         $changePicture->G_IMAGE      = "Image_Folder/" . $name;
         $changePicture->save();
         return redirect()->route('gamer.ViewProfile');
+    }
+
+    public function changePassword(){
+        $data = Gamer::find(session("loggedUser"));
+        return view('gamer.changePassword')->with("data", $data); 
+    }
+
+    public function updatePassword(Request $req){
+        $changePassword = LoginCredential::find(session("loggedUser"));
+
+        if($req->old_password == $changePassword->PASSWORD){
+            if($req->new_password == $req->con_password){
+                $changePassword->PASSWORD = $req->new_password;
+                $changePassword->save();
+                return redirect()->route('gamer.index');
+            }
+            else{
+                return redirect()->route('gamer.ChangePassword');
+            }
+        }
+        else{
+            return redirect()->route('gamer.ChangePassword');
+        }
     }
 }
