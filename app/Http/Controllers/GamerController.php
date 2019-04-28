@@ -21,4 +21,14 @@ class GamerController extends Controller
         $data = Gamer::where("USERNAME", session("loggedUser"))->first();
         return view('gamer.editProfile')->with("data", $data);
     }
+
+    public function updateProfile(Request $req){
+        $update             = Gamer::find(session("loggedUser"));
+        $update->G_NAME     = $req->G_NAME;
+        $update->G_EMAIL    = $req->G_EMAIL;
+        $update->G_MOBILE   = $req->G_MOBILE;
+        $update->G_DOB      = $req->G_DOB;
+        $update->save(); 
+        return redirect()->route('gamer.ViewProfile'); 
+    }
 }
