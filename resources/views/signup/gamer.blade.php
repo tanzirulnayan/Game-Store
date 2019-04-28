@@ -97,7 +97,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <i class="tim-icons icon-money-coins"></i>
+                            <i class="tim-icons icon-calendar-60"></i>
                           </div>
                         </div>
                         <input type="date" class="form-control" name="G_DOB" placeholder="Date of Birth">
