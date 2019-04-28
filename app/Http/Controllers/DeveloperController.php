@@ -135,21 +135,21 @@ class DeveloperController extends Controller
     }
 
     public function viewGames($gameID){
-        $dev = Developer::find(session("loggedUser"));
-        $data = Game::find($gameID);
-        $type = GameType::where("TYPE_ID", $data->TYPE_ID)->first();
-        return view('developer.viewGames')->with("data", $data)
-                                          ->with("dev", $dev)
+        $data = Developer::find(session("loggedUser"));
+        $game = Game::find($gameID);
+        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('developer.viewGames')->with("game", $game)
+                                          ->with("data", $data)
                                           ->with("type", $type);
     }
 
     public function updateGames($gameID){
-        $dev = Developer::find(session("loggedUser"));
-        $data = Game::find($gameID);
+        $data = Developer::find(session("loggedUser"));
+        $game = Game::find($gameID);
         $types = GameType::all();
-        $type = GameType::where("TYPE_ID", $data->TYPE_ID)->first();
-        return view('developer.updateGames')->with("data", $data)
-                                          ->with("dev", $dev)
+        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('developer.updateGames')->with("game", $game)
+                                          ->with("data", $data)
                                           ->with("type", $type)
                                           ->with("types", $types);
     }
@@ -216,10 +216,10 @@ class DeveloperController extends Controller
     }
 
     public function deleteGames($gameID){
-        $dev = Developer::find(session("loggedUser"));
-        $data = Game::find($gameID);
-        return view('developer.deleteGames')->with("data", $data)
-                                          ->with("dev", $dev);
+        $data = Developer::find(session("loggedUser"));
+        $game = Game::find($gameID);
+        return view('developer.deleteGames')->with("game", $game)
+                                          ->with("data", $data);
     }
 
     public function deleteGamesToDB($gameID){
