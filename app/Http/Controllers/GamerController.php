@@ -12,6 +12,11 @@ class GamerController extends Controller
         return view('gamer.index')->with("data", $data);
     }
 
+    public function viewProfile(){
+        $data = Gamer::where("USERNAME", session("loggedUser"))->first();
+        return view('gamer.profile')->with("data", $data);
+    }
+
 
 
 

@@ -27,9 +27,13 @@ Route::group(["middleware"=>['session']], function(){
 
 /**************************** GAMER ****************************/
 Route::get('/Gamer/Index', 'GamerController@index')->name('gamer.index');
-Route::get('/Gamer/ViewProfile', 'GamerController@index')->name('gamer.ViewProfile');
+
+Route::get('/Gamer/ViewProfile', 'GamerController@viewProfile')->name('gamer.ViewProfile');
+
 Route::get('/Gamer/EditProfile', 'GamerController@index')->name('gamer.EditProfile');
+
 Route::get('/Gamer/ChangePicture', 'GamerController@index')->name('gamer.ChangePicture');
+
 Route::get('/Gamer/ChangePassword', 'GamerController@index')->name('gamer.ChangePassword');
 
 /**************************** DEVELOPER ****************************/
