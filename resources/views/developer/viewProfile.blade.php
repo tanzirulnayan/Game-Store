@@ -1,8 +1,8 @@
 @extends('layouts.developer.app')
 
-
 @section('content')
 <body class="profile-page">
+  
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
