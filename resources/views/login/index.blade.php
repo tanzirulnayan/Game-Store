@@ -93,7 +93,7 @@
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" name="PASSWORD" 
+                      <input type="password" class="form-control" name="PASSWORD" 
                       placeholder=" {{$errors->getBag('default')->first('PASSWORD')}}" >
                     </div>
                   @else
@@ -103,7 +103,7 @@
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" name="PASSWORD" placeholder="Password..." >
+                      <input type="password" class="form-control" name="PASSWORD" placeholder="Password..." >
                     </div>
                 @endif
 
