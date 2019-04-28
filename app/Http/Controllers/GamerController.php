@@ -36,4 +36,15 @@ class GamerController extends Controller
         $data = Gamer::find(session("loggedUser"));
         return view('gamer.changePicture')->with("data", $data); 
     }
+
+    public function updatePicture(Request $req){
+        $file = $req->file('G_IMAGE');
+        $name = "GamerPicture_" . uniqid() . "." . $file->getClientOriginalExtension();
+        $file->move('Image_Folder', $name);
+
+        $changePicture                = Gamer::find(session("loggedUser"));
+        $changePicture->G_IMAGE      = "Image_Folder/" . $name;
+        $changePicture->save();
+        return redirect()->route('gamer.ViewProfile');
+    }
 }
