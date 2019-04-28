@@ -33,7 +33,7 @@ Route::get('/Gamer/ViewProfile', 'GamerController@viewProfile')->name('gamer.Vie
 Route::get('/Gamer/EditProfile', 'GamerController@editProfile')->name('gamer.EditProfile');
 Route::post('/Gamer/EditProfile', 'GamerController@updateProfile');
 
-Route::get('/Gamer/ChangePicture', 'GamerController@index')->name('gamer.ChangePicture');
+Route::get('/Gamer/ChangePicture', 'GamerController@changePicture')->name('gamer.ChangePicture');
 
 Route::get('/Gamer/ChangePassword', 'GamerController@index')->name('gamer.ChangePassword');
 
