@@ -83,7 +83,26 @@
       <div id="square8" class="square square-8"></div>
     {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
 
-
+    {{-- <section class="section section-lg">
+      <div class="col-md-12">
+        <div class="card card-chart card-plain">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-6 text-left">
+                <hr class="line-primary">
+                <h5 class="card-category">Total Investments</h5>
+                <h2 class="card-title">Performance</h2>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="chartBig"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> --}}
 
     {{-- <footer class="footer">
       <div class="container">
@@ -158,21 +177,30 @@
     </footer> --}}
   </div>
   <!--   Core JS Files   -->
-  <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="{{asset('custom')}}/assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="{{asset('custom')}}/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-  <script src="{{asset('custom')}}/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-  <script src="{{asset('custom')}}/assets/js/plugins/bootstrap-switch.js"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="{{asset('custom')}}/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <!-- Chart JS -->
-  <script src="{{asset('custom')}}/assets/js/plugins/chartjs.min.js"></script>
-  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-  <script src="{{asset('custom')}}/assets/js/plugins/moment.min.js"></script>
-  <script src="{{asset('custom')}}/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
-  <script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
+<!--   Core JS Files   -->
+<script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="{{asset('custom')}}/assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="{{asset('custom')}}/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{asset('custom')}}/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="{{asset('custom')}}/assets/js/plugins/bootstrap-switch.js"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{{asset('custom')}}/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!-- Chart JS -->
+<script src="{{asset('custom')}}/assets/js/plugins/chartjs.min.js"></script>
+<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+<script src="{{asset('custom')}}/assets/js/plugins/moment.min.js"></script>
+<script src="{{asset('custom')}}/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!-- Black Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{asset('custom')}}/assets/demo/demo.js"></script>
+<!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
+<script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
+<script>
+  $(document).ready(function() {
+    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+    demo.initLandingPageChart();
+  });
+</script>
 </body>
 
 </html>
