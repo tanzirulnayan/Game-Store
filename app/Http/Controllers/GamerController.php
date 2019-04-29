@@ -12,6 +12,7 @@ use App\LoginCredential;
 use App\Abuse_Report;
 use App\Game;
 use App\GameType;
+use App\Forum_Comment;
 
 class GamerController extends Controller
 {
@@ -91,7 +92,7 @@ class GamerController extends Controller
     public function saveReportAbuse(Request $req){
         $gamer              = Gamer::find(session("loggedUser"));
         $report             = new Abuse_Report;
-        $report->AR_ID ;
+        $report->AR_ID;
         $report->USERNAME   = $gamer->USERNAME;
         $report->AR_TEXT    = $req->AR_TEXT;
         $date = new DateTime();
@@ -101,12 +102,18 @@ class GamerController extends Controller
     }
 
     public function viewGame($gameId){
-        $data = Gamer::find(session("loggedUser"));
-        $game = Game::find($gameId);
-        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        $data       = Gamer::find(session("loggedUser"));
+        $game       = Game::find($gameId);
+        $comment    = DB::table('forum_comments')
+                                ->select('forum_comments.USERNAME','forum_comments.COMMENT', 'gamers.G_IMAGE')
+                                ->join('gamers','gamers.USERNAME','=','forum_comments.USERNAME')
+                                ->where(['GAME_ID' => $gameId])
+                                ->get();
+        $type       = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
         return view('gamer.viewGame')->with("game", $game)
                                      ->with("data", $data)
-                                     ->with("type", $type);
+                                     ->with("type", $type)
+                                     ->with("comment", $comment);
     }
 
     public function viewDeveloper($devId){
@@ -115,4 +122,18 @@ class GamerController extends Controller
         return view('gamer.viewDeveloper')->with("dev", $dev)
                                      ->with("data", $data);
     }
+
+    public function saveComment(Request $req, $gameId){
+        $date = new DateTime();
+        $gamer = Gamer::find(session("loggedUser"));
+        $comment = new Forum_Comment;
+        $comment->C_ID;
+        $comment->GAME_ID   = $gameId;
+        $comment->COMMENT   = $req->COMMENT;
+        $comment->C_TIME    = $date->format('Y-m-d H:i:s');
+        $comment->USERNAME  = $gamer->USERNAME;
+        $comment->save();
+        return redirect()->route('gamer.ViewGame', $gameId); 
+    }
+
 }

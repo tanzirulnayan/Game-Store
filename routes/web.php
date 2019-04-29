@@ -43,6 +43,7 @@ Route::get('/Gamer/ReportAbuse', 'GamerController@reportAbuse')->name('gamer.Rep
 Route::post('/Gamer/ReportAbuse', 'GamerController@saveReportAbuse');
 
 Route::get('/Gamer/ViewGame/{gameId}', 'GamerController@viewGame')->name('gamer.ViewGame');
+Route::post('/Gamer/ViewGame/{gameId}', 'GamerController@saveComment');
 
 Route::get('/Gamer/ViewDeveloper/{devId}', 'GamerController@viewDeveloper')->name('gamer.ViewDeveloper');
 
