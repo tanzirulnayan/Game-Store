@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use File;
 use DateTime;
 use App\Gamer;
+use App\Developer;
 use App\LoginCredential;
 use App\Abuse_Report;
 use App\Game;
@@ -104,7 +105,14 @@ class GamerController extends Controller
         $game = Game::find($gameId);
         $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
         return view('gamer.viewGame')->with("game", $game)
-                                          ->with("data", $data)
-                                          ->with("type", $type);
+                                     ->with("data", $data)
+                                     ->with("type", $type);
+    }
+
+    public function viewDeveloper($devId){
+        $data = Gamer::find(session("loggedUser"));
+        $dev = Developer::find($devId);
+        return view('gamer.viewDeveloper')->with("dev", $dev)
+                                     ->with("data", $data);
     }
 }
