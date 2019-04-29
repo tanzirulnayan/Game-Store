@@ -301,6 +301,23 @@ class DeveloperController extends Controller
   
     }
       
+    function action(Request $req){
+
+        if($req->search){
+            $search = DB::table('games')
+                        // ->where('GAME_ID' , 'like' , '%'.$req->search.'%')
+                        ->where('GAME_NAME' , 'like' , '%'.$req->search.'%')
+                        ->get();
+        }
+
+        if($search){
+            foreach ($search as $row) {
+                // echo '<h1>'. $row->GAME_NAME . '</h1>';
+                echo  $row->GAME_NAME ;
+            }
+        }
+       
+    }
 
 
 

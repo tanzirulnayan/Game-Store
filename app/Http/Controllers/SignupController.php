@@ -8,6 +8,7 @@ use App\Developer;
 use App\LoginCredential;
 use App\Country;
 use App\Moderator;
+use App\Http\Requests\GamerSignup;
 
 class SignupController extends Controller
 {
@@ -20,7 +21,7 @@ class SignupController extends Controller
     	return view('signup.gamer');
     }
 
-    public function gamerToDB(Request $req){
+    public function gamerToDB(GamerSignup $req){
 
         $file = $req->file('G_IMAGE');
         $name = "profilePicture_" . uniqid() . "." . $file->getClientOriginalExtension();

@@ -58,6 +58,16 @@
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST" enctype="multipart/form-data">
+                    @if ($errors->has('USERNAME'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="USERNAME" placeholder="{{$errors->getBag('default')->first('USERNAME')}}">
+                    </div>
+                    @else
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -66,8 +76,18 @@
                       </div>
                       <input type="text" class="form-control" name="USERNAME" placeholder="Username">
                     </div>
-
-                  <div class="input-group">
+                    @endif
+                    @if ($errors->has('G_NAME'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="G_NAME" placeholder="{{$errors->getBag('default')->first('G_NAME')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-single-02"></i>
@@ -75,8 +95,18 @@
                       </div>
                       <input type="text" class="form-control" name="G_NAME" placeholder="Full Name">
                     </div>
-
-                  <div class="input-group">
+                    @endif
+                    @if ($errors->has('G_EMAIL'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-email-85"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="G_EMAIL" placeholder="{{$errors->getBag('default')->first('G_EMAIL')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-email-85"></i>
@@ -84,7 +114,17 @@
                       </div>
                       <input type="text" class="form-control" name="G_EMAIL" placeholder="Email">
                     </div>
-
+                    @endif
+                    @if ($errors->has('G_MOBILE'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-tablet-2"></i>
+                        </div>
+                      </div>
+                      <input type="number" class="form-control" name="G_MOBILE" placeholder="{{$errors->getBag('default')->first('G_MOBILE')}}" >
+                    </div>
+                    @else
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -93,16 +133,36 @@
                       </div>
                       <input type="number" class="form-control" name="G_MOBILE" placeholder="Mobile Number" >
                     </div>
-
+                    @endif
+                    @if ($errors->has('G_DOB'))
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-calendar-60"></i>
-                          </div>
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-calendar-60"></i>
                         </div>
-                        <input type="date" class="form-control" name="G_DOB" placeholder="Date of Birth">
                       </div>
-
+                      <input type="date" class="form-control" name="G_DOB" placeholder="{{$errors->getBag('default')->first('G_DOB')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-calendar-60"></i>
+                        </div>
+                      </div>
+                      <input type="date" class="form-control" name="G_DOB" placeholder="Date of Birth">
+                    </div>
+                    @endif
+                    @if ($errors->has('PASSWORD'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-lock-circle"></i>
+                        </div>
+                      </div>
+                      <input type="password" class="form-control" name="PASSWORD" placeholder="{{$errors->getBag('default')->first('PASSWORD')}}">
+                    </div>
+                    @else
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -111,25 +171,45 @@
                       </div>
                       <input type="password" class="form-control" name="PASSWORD" placeholder="Password">
                     </div>
-
-                  <div class="input-group">
+                    @endif
+                    @if ($errors->has('CONFIRM_PASSWORD'))
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-lock-circle"></i>
+                          </div>
+                        </div>
+                        <input type="password" class="form-control" name="CONFIRM_PASSWORD" placeholder="{{$errors->getBag('default')->first('CONFIRM_PASSWORD')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-lock-circle"></i>
+                          </div>
+                        </div>
+                        <input type="password" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password">
+                    </div>
+                    @endif
+                    @if ($errors->has('G_IMAGE'))
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
-                          <i class="tim-icons icon-lock-circle"></i>
+                          <i class="tim-icons icon-upload"></i>
                         </div>
                       </div>
-                      <input type="password" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password">
-                  </div>
-
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-upload"></i>
-                      </div>
+                      <input type="file" name="G_IMAGE" class="form-control" placeholder={{$errors->getBag('default')->first('G_IMAGE')}}>
                     </div>
-                    <input type="file" name="G_IMAGE" class="form-control">
-                  </div>
-                  
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-upload"></i>
+                        </div>
+                      </div>
+                      <input type="file" name="G_IMAGE" class="form-control">
+                    </div>
+                    @endif
                   <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
                 </form>
                 </div>

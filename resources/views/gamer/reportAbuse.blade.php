@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-round" type="submit">
+                            <button class="btn btn-info btn-round" type="submit">
                                 <i class="tim-icons icon-send"></i> Send
                             </button>
                         </form>
