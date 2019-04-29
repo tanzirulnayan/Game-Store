@@ -86,5 +86,6 @@ Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB
 
 Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');
 
+
 /****************************UNDER SESSION CHECK END****************************/
 });
