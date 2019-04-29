@@ -80,7 +80,18 @@ Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB
 
 /**************************** MODERATOR ****************************/
 
+//index
+
 Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');
+
+//profile
+Route::get('/Moderator/View_Profile', 'ModeratorController@viewProfile')->name('moderator.viewProfile');
+Route::get('/Moderator/EDIT_Profile', 'ModeratorController@editProfile')->name('moderator.editProfile');
+Route::post('/Moderator/EDIT_Profile', 'ModeratorController@editProfileToDB');
+Route::get('/Moderator/Change_Picture', 'ModeratorController@changePicture')->name('moderator.changePicture');
+Route::post('/Moderator/Change_Picture', 'ModeratorController@changePictureToDB');
+Route::get('/Moderator/Change_Password', 'ModeratorController@changePassword')->name('moderator.changePassword');
+Route::post('/Moderator/Change_Password', 'ModeratorController@changePasswordToDB');
 
 
 /****************************UNDER SESSION CHECK END****************************/
