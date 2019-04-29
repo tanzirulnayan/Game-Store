@@ -104,17 +104,12 @@ class GamerController extends Controller
     public function viewGame($gameId){
         $data       = Gamer::find(session("loggedUser"));
         $game       = Game::find($gameId);
-        $comment    = DB::table('forum_comments')
-                                ->select('forum_comments.USERNAME','forum_comments.COMMENT', 'gamers.G_IMAGE', 'forum_comments.GAME_ID')
-                                ->join('gamers','gamers.USERNAME','=','forum_comments.USERNAME')
-                                ->where(['forum_comments.GAME_ID' => $gameId])
-                                ->get();
-        
+        $comment    = Forum_Comment::where("GAME_ID", $gameId)->get();
         $type       = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
         return view('gamer.viewGame')->with("game", $game)
-                                    ->with("data", $data)
-                                    ->with("type", $type)
-                                    ->with("comment", $comment);
+                                     ->with("data", $data)
+                                     ->with("type", $type)
+                                     ->with("comment", $comment);
     }
 
     public function viewDeveloper($devId){
