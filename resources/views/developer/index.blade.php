@@ -13,7 +13,7 @@
 <div id="square7" class="square square-7"></div>
 <div id="square8" class="square square-8"></div>
 {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
-<<<<<<< HEAD
+<form method="POST">
 <br><br><br>
 <div class="wrapper">
     <section class="section">
@@ -26,35 +26,36 @@
                       <i class="tim-icons icon-zoom-split"></i>
                     </div>
                   </div>
-                  <input type="text" name="search" onkeyup="gameSearch()" id="search" class="form-control"  placeholder="Search Games..." style="height:50px">
-                  {{-- <button class="btn btn-success" type="button">
-                      <i class="tim-icons icon-zoom-split"></i> SEARCH
-                  </button> --}}
+                  <input type="text" name="search" onkeyup="gameSearch()" id="search" list="gameList" class="form-control"  placeholder="Search Games..." style="height:50px">
+                  <datalist id="gameList">
+                    </datalist>
+
+                    <button class="btn btn-primary btn-round" type="submit">
+                        <i class="tim-icons icon-controller"></i> SEARCH
+                    </button>
+                </a>
              </div>
           </div>
         </div>
      </div>
   </section>
 </div>
-
-<h1 id="success">
-
-</h1>
+</form>
 
 <script type="text/javascript">
 
   function gameSearch(){
       var search = document.getElementById("search").value; 
       $.ajax({
-                type: "POST",
-                url:'{{url("/Developer/Home")}}',
+                type: "GET",
+                url:'{{route('search.games')}}',
                 data: {
                   search : search,
                 },
                 dataType: 'html',
                 success: function(response){
                    //alert(response);
-                   document.getElementById("success").innerHTML = response;
+                   document.getElementById("gameList").innerHTML = response;
 
                 }
       });
