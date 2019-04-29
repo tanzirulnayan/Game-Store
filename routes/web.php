@@ -27,10 +27,20 @@ Route::group(["middleware"=>['session']], function(){
 
 /**************************** GAMER ****************************/
 Route::get('/Gamer/Index', 'GamerController@index')->name('gamer.index');
-Route::get('/Gamer/ViewProfile', 'GamerController@index')->name('gamer.ViewProfile');
-Route::get('/Gamer/EditProfile', 'GamerController@index')->name('gamer.EditProfile');
-Route::get('/Gamer/ChangePicture', 'GamerController@index')->name('gamer.ChangePicture');
-Route::get('/Gamer/ChangePassword', 'GamerController@index')->name('gamer.ChangePassword');
+
+Route::get('/Gamer/ViewProfile', 'GamerController@viewProfile')->name('gamer.ViewProfile');
+
+Route::get('/Gamer/EditProfile', 'GamerController@editProfile')->name('gamer.EditProfile');
+Route::post('/Gamer/EditProfile', 'GamerController@updateProfile');
+
+Route::get('/Gamer/ChangePicture', 'GamerController@changePicture')->name('gamer.ChangePicture');
+Route::post('/Gamer/ChangePicture', 'GamerController@updatePicture');
+
+Route::get('/Gamer/ChangePassword', 'GamerController@changePassword')->name('gamer.ChangePassword');
+Route::post('/Gamer/ChangePassword', 'GamerController@updatePassword');
+
+Route::get('/Gamer/ReportAbuse', 'GamerController@reportAbuse')->name('gamer.ReportAbuse');
+
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');

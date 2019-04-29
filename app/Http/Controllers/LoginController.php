@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\LoginCredential;
+use App\Http\Requests\LoginRequest;
+
 
 class LoginController extends Controller
 {
@@ -11,20 +13,22 @@ class LoginController extends Controller
     	return view('login.index');
     }
 
-    public function verify(Request $req){
-    	$validate = LoginCredential::where('USERNAME' , $req->USERNAME)
+    public function verify(LoginRequest $req){
+
+
+    	$check = LoginCredential::where('USERNAME' , $req->USERNAME)
                                    ->where ('PASSWORD', $req->PASSWORD)
                                    ->first();
                                         
-        if($validate->USER_TYPE == "GAMER" && $validate->STATUS == "ACTIVE"){
+        if($check->USER_TYPE == "GAMER" && $check->STATUS == "ACTIVE"){
             $req->session()->put('loggedUser', $req->USERNAME);
             return redirect()->route('gamer.index');
         }
-        else if($validate->USER_TYPE == "DEVELOPER" && $validate->STATUS == "ACTIVE"){
+        else if($check->USER_TYPE == "DEVELOPER" && $check->STATUS == "ACTIVE"){
             $req->session()->put('loggedUser', $req->USERNAME);
             return redirect()->route('developer.index');
         }
-        else if($validate->USER_TYPE == "MODERATOR" && $validate->STATUS == "ACTIVE"){
+        else if($check->USER_TYPE == "MODERATOR" && $check->STATUS == "ACTIVE"){
             $req->session()->put('loggedUser', $req->USERNAME);
             return redirect()->route('moderator.index');
         } 

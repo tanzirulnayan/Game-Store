@@ -55,7 +55,6 @@
           <div class="squares square-4"></div>
           <div class="row row-grid justify-content-between align-items-center">
             <div class="col-lg-6">
-
             </div>
             <div class="col-lg-6 mb-lg-auto">
               <div class="card card-register">
@@ -65,22 +64,49 @@
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-single-02"></i>
+
+                    @if ($errors->has('USERNAME'))
+                    <div class="input-group has-danger">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-single-02"></i>
+                          </div>
                         </div>
+                        <input type="text" class="form-control" name="USERNAME" 
+                        placeholder="{{$errors->getBag('default')->first('USERNAME')}}" >
+                        
                       </div>
-                      <input type="text" class="form-control" name="USERNAME" placeholder="Username..." >
-                    </div>
+                    @else
                     <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-single-02"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="USERNAME" placeholder="Username..." >
+                      </div>
+                  @endif
+                  @if ($errors->has('PASSWORD'))
+                  <div class="input-group has-danger">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="password" class="form-control" name="PASSWORD" placeholder="Password...">
+                      <input type="password" class="form-control" name="PASSWORD" 
+                      placeholder=" {{$errors->getBag('default')->first('PASSWORD')}}" >
                     </div>
+                  @else
+                  <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-lock-circle"></i>
+                        </div>
+                      </div>
+                      <input type="password" class="form-control" name="PASSWORD" placeholder="Password..." >
+                    </div>
+                @endif
+
                     <button class="btn btn-primary btn-round" type="submit">
                         <i class="tim-icons icon-controller"></i> Login
                     </button>
