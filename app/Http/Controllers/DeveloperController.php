@@ -312,11 +312,32 @@ class DeveloperController extends Controller
 
         if($search){
             foreach ($search as $row) {
-                // echo '<h1>'. $row->GAME_NAME . '</h1>';
-                echo  $row->GAME_NAME ;
+                echo '<option>'. $row->GAME_NAME . '</option>';
+                
+                // echo '<a class="nav-link" href="{{route(developer.viewGames, '.$row->GAME_ID.')}}><option>'. $row->GAME_NAME . '</option></a>';
+
+
+                // echo '
+                // <option>
+
+                // <a  href="{{route("developer.viewGames"),' .$row->GAME_ID.')}}>'.$row->GAME_NAME.'</a>
+                
+                // </option>';
             }
         }
+        
        
+    }
+
+    function actionView(Request $req){
+            
+        $game = Game::where("GAME_NAME", "=", $req->search)->first();
+        if($game){
+            return redirect()->route('developer.viewGames' , $game->GAME_ID );      
+        }
+        // else{
+        //     return view("developer.");
+        // }
     }
 
 
