@@ -88,8 +88,44 @@ Route::post('/Developer/Home', 'DeveloperController@actionView');
 
 /**************************** MODERATOR ****************************/
 
+//index
 Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');
 
+//profile
+Route::get('/Moderator/View_Profile', 'ModeratorController@viewProfile')->name('moderator.viewProfile');
+
+Route::get('/Moderator/EDIT_Profile', 'ModeratorController@editProfile')->name('moderator.editProfile');
+Route::post('/Moderator/EDIT_Profile', 'ModeratorController@editProfileToDB');
+
+Route::get('/Moderator/Change_Picture', 'ModeratorController@changePicture')->name('moderator.changePicture');
+Route::post('/Moderator/Change_Picture', 'ModeratorController@changePictureToDB');
+
+//change_password
+Route::get('/Moderator/Change_Password', 'ModeratorController@changePassword')->name('moderator.changePassword');
+Route::post('/Moderator/Change_Password', 'ModeratorController@changePasswordToDB');
+
+//pending list
+Route::get('/Moderator/Pending_List', 'ModeratorController@pendingList')->name('moderator.pendingList');
+Route::get('/Moderator/{USERNAME}/Pending_List', 'ModeratorController@pendingListToDB')->name("moderator.pendingListToDB");
+
+//gamer_list-->delete
+Route::get('/Moderator/gamer_list', 'ModeratorController@gamerList')->name('moderator.gamerList');
+Route::get('/Moderator/{USERNAME}/gamer_List', 'ModeratorController@deleteGamerToDB')->name("moderator.deleteGamerToDB");
+//gamer_list-->profile
+Route::get('/Moderator/{USERNAME}/viewProfileGamer', 'ModeratorController@viewProfileGamer')->name("moderator.viewProfileGamer");
+
+
+
+
+//developer_list
+Route::get('/Moderator/Developer_List', 'ModeratorController@developerList')->name('moderator.developerList');
+
+//developerlist-->delete
+Route::get('/Moderator/developer_list', 'ModeratorController@developerList')->name('moderator.developerList');
+Route::get('/Moderator/{USERNAME}/developer_List', 'ModeratorController@deleteDeveloperToDB')->name("moderator.deleteDeveloperToDB");
+
+
+Route::get('/Moderator/{USERNAME}/Developer_Games', 'ModeratorController@allGames')->name('moderator.allGames');
 
 /****************************UNDER SESSION CHECK END****************************/
 });

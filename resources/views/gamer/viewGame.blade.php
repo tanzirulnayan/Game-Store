@@ -83,7 +83,7 @@
                         <div class="form-group">
                             <label>SCREENSHOT</label>
                             <br>
-                            <img src="{{asset($game->GAME_SS)}}" class="img-fluid rounded shadow-lg"> 
+                            <img src="{{asset($game->GAME_SS)}}" class="img-fluid rounded shadow-lg" style="max-width:40%; max-height:20%"> 
                         </div>
                     </div>
                 </div>

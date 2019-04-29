@@ -8,4 +8,6 @@ class LoginCredential extends Model
 {
     protected $primaryKey ="USERNAME";
     //public $timestamps =false;
+    public $incrementing = false;
+    
 }

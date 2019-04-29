@@ -13,6 +13,7 @@ use App\Abuse_Report;
 use App\Game;
 use App\GameType;
 use App\Forum_Comment;
+use App\Http\Requests\GamerRequest;
 
 class GamerController extends Controller
 {
@@ -35,7 +36,7 @@ class GamerController extends Controller
         return view('gamer.editProfile')->with("data", $data);
     }
 
-    public function updateProfile(Request $req){
+    public function updateProfile(GamerRequest $req){
         $update             = Gamer::find(session("loggedUser"));
         $update->G_NAME     = $req->G_NAME;
         $update->G_EMAIL    = $req->G_EMAIL;
@@ -50,7 +51,7 @@ class GamerController extends Controller
         return view('gamer.changePicture')->with("data", $data); 
     }
 
-    public function updatePicture(Request $req){
+    public function updatePicture(GamerRequest $req){
         $file = $req->file('G_IMAGE');
         $name = "GamerPicture_" . uniqid() . "." . $file->getClientOriginalExtension();
         $file->move('Image_Folder', $name);
@@ -66,7 +67,7 @@ class GamerController extends Controller
         return view('gamer.changePassword')->with("data", $data); 
     }
 
-    public function updatePassword(Request $req){
+    public function updatePassword(GamerRequest $req){
         $changePassword = LoginCredential::find(session("loggedUser"));
 
         if($req->old_password == $changePassword->PASSWORD){

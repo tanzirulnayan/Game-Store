@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Moderator;
 use App\LoginCredential;
+use App\Gamer;
+use App\Developer;
+use App\Game;
+use App\GameType;
+use App\UploadHistory;
 
 class ModeratorController extends Controller
 {
@@ -62,5 +68,113 @@ class ModeratorController extends Controller
             return redirect()->route('logout.index');
         }
     }
+
+    public function pendingList(){
+        $data = Moderator::find(session("loggedUser"));
+        $list = LoginCredential::where("STATUS", '=', "PENDING")
+                                ->where("USER_TYPE" , "=" , "GAMER")
+                                ->get();
+
+       
+       
+        return view('moderator.pendingList')->with("data", $data) 
+                                           ->with("list", $list);
+    }
+
+    public function pendingListToDB($USERNAME){
+        
+        $active = LoginCredential::find($USERNAME);
+        $active->STATUS = "ACTIVE";
+        $active->save();
+        return redirect()->route('moderator.pendingList'); 
+       
+    }
+
+    public function gamerList(){
+        $data = Moderator::find(session("loggedUser"));
+        $list = Gamer::all();
+   
+        return view('moderator.gamerList')->with("data", $data) 
+                                           ->with("list", $list);
+    }
+
+    public function deleteGamerToDB($USERNAME){
+
+        $data = Gamer::find($USERNAME);
+        $value = LoginCredential::find($USERNAME);
+        //File::deleteDirectory(public_path("Image_Folder/".$data->G));
+        $data->delete();
+        $value->delete();
+
+        return redirect()->route('moderator.gamerList');
+    }
+
+    public function viewProfileGamer($USERNAME){
+
+        $data = Moderator::find(session("loggedUser"));
+        $value = Gamer::find($USERNAME);
+        
+        return view('moderator.viewProfileGamer')->with("value", $value)
+                                                ->with("data", $data);  
+    }
+
+
+    public function developerList(){
+        $data = Moderator::find(session("loggedUser"));
+        $list = Developer::all();
+   
+        return view('moderator.developerList')->with("data", $data) 
+                                           ->with("list", $list);
+    }
+   
+    
+    public function deleteDeveloperToDB($USERNAME){
+
+        $data = Developer::find($USERNAME);
+        $value = LoginCredential::find($USERNAME);
+        //File::deleteDirectory(public_path("Image_Folder/".$data->G));
+        $data->delete();
+        $value->delete();
+
+        return redirect()->route('moderator.developerList');
+    }
+
+    
+    // public function allGames($gameID){
+    //     $data = Moderator::find(session("loggedUser"));
+    //     $game = Game::find($gameID);
+    //     $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+    //     return view('Moderator.viewGames')->with("game", $game)
+    //                                       ->with("data", $data)
+    //                                       ->with("type", $type);
+    // }
+
+    public function allGames($USERNAME){
+        $data = Moderator::find(session("loggedUser"));
+
+        $game = DB::table('games')
+        ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
+        ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
+        ->where(['USERNAME' => $USERNAME])
+        ->get();
+    
+        return view('moderator.allGames')->with("data", $data)
+                                          ->with("game", $game);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
