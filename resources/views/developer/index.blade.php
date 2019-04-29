@@ -15,7 +15,6 @@
 {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
 <form method="POST">
 <br><br><br>
-<div class="wrapper">
     <section class="section">
       <div class="container">
         <div class="row">
@@ -29,17 +28,21 @@
                   <input type="text" name="search" onkeyup="gameSearch()" id="search" list="gameList" class="form-control"  placeholder="Search Games..." style="height:50px">
                   <datalist id="gameList">
                     </datalist>
-
-                    <button class="btn btn-primary btn-round" type="submit">
-                        <i class="tim-icons icon-controller"></i> SEARCH
+                    <button class="btn btn-success" type="submit">
+                        <i class="tim-icons icon-zoom-split"></i> SEARCH
                     </button>
-                </a>
              </div>
           </div>
+          <div class="col-md-12">
+              @if( Session::has( 'error' ))
+              <h1>{{ Session::get( 'error' ) }}😱</h1>
+            @else 
+            <h1></h1>
+            @endif
+        </div>
         </div>
      </div>
   </section>
-</div>
 </form>
 
 <script type="text/javascript">
@@ -64,26 +67,12 @@
 
 
 
-{{-- <section class="section section-lg">
-<div class="col-md-12">
-  <div class="card card-chart card-plain">
-    <div class="card-header">
-      <div class="row">
-        <div class="col-sm-6 text-left">
-          <hr class="line-primary">
-          <h5 class="card-category">Total Investments</h5>
-          <h2 class="card-title">Performance</h2>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart-area">
-        <canvas id="chartBig"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-</section> --}}
+
+
+
+
+
+
 
 @endsection
 
