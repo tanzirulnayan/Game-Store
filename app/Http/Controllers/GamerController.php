@@ -71,4 +71,9 @@ class GamerController extends Controller
             return redirect()->route('gamer.ChangePassword');
         }
     }
+
+    public function reportAbuse(Request $req){
+        $data = Gamer::find(session("loggedUser"));
+        return view('gamer.reportAbuse')->with("data", $data);
+    }
 }

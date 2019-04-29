@@ -44,6 +44,9 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('gamer.ReportAbuse')}}">Report Abuse</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
           </li>
         </ul>

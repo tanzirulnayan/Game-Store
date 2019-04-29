@@ -39,6 +39,8 @@ Route::post('/Gamer/ChangePicture', 'GamerController@updatePicture');
 Route::get('/Gamer/ChangePassword', 'GamerController@changePassword')->name('gamer.ChangePassword');
 Route::post('/Gamer/ChangePassword', 'GamerController@updatePassword');
 
+Route::get('/Gamer/ReportAbuse', 'GamerController@reportAbuse')->name('gamer.ReportAbuse');
+
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
