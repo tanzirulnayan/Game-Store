@@ -86,6 +86,7 @@ public function moderator(){
 
 public function moderatorToBD(Request $req){
 
+
     $file = $req->file('MOD_IMAGE');
     $name = "profilePicture_" . uniqid() . "." . $file->getClientOriginalExtension();
     $file->move('Image_Folder', $name);

@@ -39,6 +39,13 @@ Route::post('/Gamer/ChangePicture', 'GamerController@updatePicture');
 Route::get('/Gamer/ChangePassword', 'GamerController@changePassword')->name('gamer.ChangePassword');
 Route::post('/Gamer/ChangePassword', 'GamerController@updatePassword');
 
+Route::get('/Gamer/ReportAbuse', 'GamerController@reportAbuse')->name('gamer.ReportAbuse');
+Route::post('/Gamer/ReportAbuse', 'GamerController@saveReportAbuse');
+
+Route::get('/Gamer/ViewGame/{gameId}', 'GamerController@viewGame')->name('gamer.ViewGame');
+Route::post('/Gamer/ViewGame/{gameId}', 'GamerController@saveComment');
+
+Route::get('/Gamer/ViewDeveloper/{devId}', 'GamerController@viewDeveloper')->name('gamer.ViewDeveloper');
 
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
@@ -82,6 +89,7 @@ Route::post('/Developer/Search/Games', 'DeveloperController@action')->name('sear
 /**************************** MODERATOR ****************************/
 
 Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');
+
 
 /****************************UNDER SESSION CHECK END****************************/
 });

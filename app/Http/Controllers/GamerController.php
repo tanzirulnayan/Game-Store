@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use File;
+use DateTime;
 use App\Gamer;
+use App\Developer;
 use App\LoginCredential;
+use App\Abuse_Report;
+use App\Game;
+use App\GameType;
+use App\Forum_Comment;
 
 class GamerController extends Controller
 {
     public function index(){
         $data = Gamer::where("USERNAME", session("loggedUser"))->first();
-        return view('gamer.index')->with("data", $data);
+        $game = DB::table('games')
+        ->select('games.GAME_ID','games.GAME_NAME', 'games.GAME_LOGO','upload_history.USERNAME')
+        ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
+        ->get();
+        return view('gamer.index')->with("data", $data)->with("game", $game);
     }
 
     public function viewProfile(){
@@ -71,4 +83,57 @@ class GamerController extends Controller
             return redirect()->route('gamer.ChangePassword');
         }
     }
+
+    public function reportAbuse(){
+        $data = Gamer::find(session("loggedUser"));
+        return view('gamer.reportAbuse')->with("data", $data);
+    }
+
+    public function saveReportAbuse(Request $req){
+        $gamer              = Gamer::find(session("loggedUser"));
+        $report             = new Abuse_Report;
+        $report->AR_ID;
+        $report->USERNAME   = $gamer->USERNAME;
+        $report->AR_TEXT    = $req->AR_TEXT;
+        $date = new DateTime();
+        $report->DATE       = $date->format('Y-m-d H:i:s');
+        $report->save(); 
+        return redirect()->route('gamer.index'); 
+    }
+
+    public function viewGame($gameId){
+        $data       = Gamer::find(session("loggedUser"));
+        $game       = Game::find($gameId);
+        $comment    = DB::table('forum_comments')
+                                ->select('forum_comments.USERNAME','forum_comments.COMMENT', 'gamers.G_IMAGE')
+                                ->join('gamers','gamers.USERNAME','=','forum_comments.USERNAME')
+                                ->where(['GAME_ID' => $gameId])
+                                ->get();
+        $type       = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('gamer.viewGame')->with("game", $game)
+                                     ->with("data", $data)
+                                     ->with("type", $type)
+                                     ->with("comment", $comment);
+    }
+
+    public function viewDeveloper($devId){
+        $data = Gamer::find(session("loggedUser"));
+        $dev = Developer::find($devId);
+        return view('gamer.viewDeveloper')->with("dev", $dev)
+                                     ->with("data", $data);
+    }
+
+    public function saveComment(Request $req, $gameId){
+        $date = new DateTime();
+        $gamer = Gamer::find(session("loggedUser"));
+        $comment = new Forum_Comment;
+        $comment->C_ID;
+        $comment->GAME_ID   = $gameId;
+        $comment->COMMENT   = $req->COMMENT;
+        $comment->C_TIME    = $date->format('Y-m-d H:i:s');
+        $comment->USERNAME  = $gamer->USERNAME;
+        $comment->save();
+        return redirect()->route('gamer.ViewGame', $gameId); 
+    }
+
 }
