@@ -126,5 +126,6 @@ Route::get('/Moderator/{USERNAME}/developer_List', 'ModeratorController@deleteDe
 
 Route::get('/Moderator/{USERNAME}/Developer_Games', 'ModeratorController@allGames')->name('moderator.allGames');
 
+
 /****************************UNDER SESSION CHECK END****************************/
 });
