@@ -34,8 +34,6 @@ class LoginRequest extends FormRequest
         return [
             'USERNAME.required'=>'The Username field is required',
             'PASSWORD.required'=>'The Password field is required',
-            // 'USERNAME.exists:login_credentials,USERNAME'=>'Incorrect USERNAME',
-            // 'USERNAME.exists:login_credentials,PASSWORD'=>'Incorrect PASSWORD',
 
         ];
     }
