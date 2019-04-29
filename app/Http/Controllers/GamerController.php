@@ -10,6 +10,7 @@ use App\Gamer;
 use App\LoginCredential;
 use App\Abuse_Report;
 use App\Game;
+use App\GameType;
 
 class GamerController extends Controller
 {
@@ -96,5 +97,14 @@ class GamerController extends Controller
         $report->DATE       = $date->format('Y-m-d H:i:s');
         $report->save(); 
         return redirect()->route('gamer.index'); 
+    }
+
+    public function viewGame($gameId){
+        $data = Gamer::find(session("loggedUser"));
+        $game = Game::find($gameId);
+        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('gamer.viewGame')->with("game", $game)
+                                          ->with("data", $data)
+                                          ->with("type", $type);
     }
 }
