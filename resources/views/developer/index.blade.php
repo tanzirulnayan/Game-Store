@@ -13,41 +13,6 @@
 <div id="square7" class="square square-7"></div>
 <div id="square8" class="square square-8"></div>
 {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
-<br><br><br>
-<div class="wrapper">
-    <section class="section">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="tim-icons icon-zoom-split"></i>
-                    </div>
-                  </div>
-                  <input type="text" name="search" id="search" class="form-control" placeholder="Search Games..." style="height:50px">
-                  {{-- <button class="btn btn-success" type="button">
-                      <i class="tim-icons icon-zoom-split"></i> SEARCH
-                  </button> --}}
-             </div>
-          </div>
-        </div>
-     </div>
-  </section>
-</div>
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 {{-- <section class="section section-lg">
 <div class="col-md-12">

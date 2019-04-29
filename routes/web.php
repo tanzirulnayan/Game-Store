@@ -83,9 +83,6 @@ Route::post('/Developer/Help_Line', 'DeveloperController@helplineToDB');
 Route::get('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chat')->name('developer.chat');
 Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB');
 
-
-Route::post('/Developer/Search/Games', 'DeveloperController@action')->name('search.games');
-
 /**************************** MODERATOR ****************************/
 
 Route::get('/Moderator/Home', 'ModeratorController@index')->name('moderator.index');

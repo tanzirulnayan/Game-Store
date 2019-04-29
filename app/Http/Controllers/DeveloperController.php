@@ -300,11 +300,6 @@ class DeveloperController extends Controller
         return redirect()->route('developer.chat' , $gamerID);
   
     }
-
-    function action(Request $req){
-
-       
-    }
       
 
 
