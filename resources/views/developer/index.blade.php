@@ -13,6 +13,55 @@
 <div id="square7" class="square square-7"></div>
 <div id="square8" class="square square-8"></div>
 {{-- -- ------------------------------------- End Cards -------------------------------------- --}}
+<<<<<<< HEAD
+<br><br><br>
+<div class="wrapper">
+    <section class="section">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-zoom-split"></i>
+                    </div>
+                  </div>
+                  <input type="text" name="search" onkeyup="gameSearch()" id="search" class="form-control"  placeholder="Search Games..." style="height:50px">
+                  {{-- <button class="btn btn-success" type="button">
+                      <i class="tim-icons icon-zoom-split"></i> SEARCH
+                  </button> --}}
+             </div>
+          </div>
+        </div>
+     </div>
+  </section>
+</div>
+
+<h1 id="success">
+
+</h1>
+
+<script type="text/javascript">
+
+  function gameSearch(){
+      var search = document.getElementById("search").value; 
+      $.ajax({
+                type: "POST",
+                url:'{{url("/Developer/Home")}}',
+                data: {
+                  search : search,
+                },
+                dataType: 'html',
+                success: function(response){
+                   //alert(response);
+                   document.getElementById("success").innerHTML = response;
+
+                }
+      });
+  }
+</script>
+
+
 
 {{-- <section class="section section-lg">
 <div class="col-md-12">
