@@ -93,12 +93,12 @@
     <section class="section">
         <div class="container">
             <div class="card-body">
-            @if (empty($comment))
+            @if($comment != "")
                 @foreach($comment as $cmnt)
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group" align="left">
-                            <img src="{{asset($cmnt->G_IMAGE)}}" class="img-center img-fluid rounded-circle" style="height:35px; width:35px;" align="left">
+                            <!-- <img src="{{asset($cmnt->G_IMAGE)}}" class="img-center img-fluid rounded-circle" style="height:35px; width:35px;" align="left"> -->
                             <h3 class="text-info">{{$cmnt->USERNAME}}</h3>
                             <label style="color:white;">{{$cmnt->COMMENT}}</label>
                         </div>
@@ -123,7 +123,6 @@
             </div>
         </div>
     </section>
-
 @section('title')
 Game Details
 @endsection
