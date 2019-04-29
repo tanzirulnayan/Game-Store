@@ -56,7 +56,39 @@
             </div>
         </div>
     </section>
-
+    <section class="section">
+        <div class="container">
+            <div class="card-body">
+            @if ($comment != "")
+                @foreach($comment as $cmnt)
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" align="left">
+                            <img src="{{asset($cmnt->G_IMAGE)}}" class="img-center img-fluid rounded-circle" style="height:35px; width:35px;" align="left">
+                            <h3 class="text-info">{{$cmnt->USERNAME}}</h3>
+                            <label style="color:white;">{{$cmnt->COMMENT}}</label>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <img src="{{asset($data->G_IMAGE)}}" align="left" class="img-center img-fluid rounded-circle" style="height:50px; width:50px;">
+                                <h3 class="text-info">{{$cmnt->USERNAME}}</h3>
+                                <input type="text" class="form-control" name="COMMENT" placeholder="Type your comment">
+                                <button class="btn btn-info btn-round" type="submit">
+                                    <i class="tim-icons icon-send"></i> Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 @section('title')
 Developer Details
 @endsection

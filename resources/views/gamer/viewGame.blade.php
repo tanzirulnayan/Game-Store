@@ -93,7 +93,7 @@
     <section class="section">
         <div class="container">
             <div class="card-body">
-            @if ($comment != "")
+            @if (empty($comment))
                 @foreach($comment as $cmnt)
                 <div class="row">
                     <div class="col-md-6">
