@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use File;
+use DateTime;
 use App\Gamer;
 use App\LoginCredential;
+use App\Abuse_Report;
+use App\Game;
 
 class GamerController extends Controller
 {
     public function index(){
         $data = Gamer::where("USERNAME", session("loggedUser"))->first();
-        return view('gamer.index')->with("data", $data);
+        $game = DB::table('games')
+        ->select('games.GAME_ID','games.GAME_NAME', 'games.GAME_LOGO','upload_history.USERNAME')
+        ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
+        ->get();
+        return view('gamer.index')->with("data", $data)->with("game", $game);
     }
 
     public function viewProfile(){
@@ -72,8 +81,20 @@ class GamerController extends Controller
         }
     }
 
-    public function reportAbuse(Request $req){
+    public function reportAbuse(){
         $data = Gamer::find(session("loggedUser"));
         return view('gamer.reportAbuse')->with("data", $data);
+    }
+
+    public function saveReportAbuse(Request $req){
+        $gamer              = Gamer::find(session("loggedUser"));
+        $report             = new Abuse_Report;
+        $report->AR_ID ;
+        $report->USERNAME   = $gamer->USERNAME;
+        $report->AR_TEXT    = $req->AR_TEXT;
+        $date = new DateTime();
+        $report->DATE       = $date->format('Y-m-d H:i:s');
+        $report->save(); 
+        return redirect()->route('gamer.index'); 
     }
 }
