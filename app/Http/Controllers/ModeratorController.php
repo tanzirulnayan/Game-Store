@@ -153,7 +153,7 @@ class ModeratorController extends Controller
         $data = Moderator::find(session("loggedUser"));
 
         $game = DB::table('games')
-        ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
+        ->select('games.GAME_ID','games.GAME_NAME','games.GAME_STATUS','upload_history.USERNAME')
         ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
         ->where(['USERNAME' => $USERNAME])
         ->get();
@@ -164,14 +164,36 @@ class ModeratorController extends Controller
 
 
 
+    public function viewProfileDeveloper($USERNAME){
+
+        $data = Moderator::find(session("loggedUser"));
+        $value = Developer::find($USERNAME);
+        
+        return view('moderator.viewProfileDeveloper')->with("value", $value)
+                                                ->with("data", $data);  
+    }
+
+
+    public function viewGames($gameID){
+        $data = MOderator::find(session("loggedUser"));
+        $game = Game::find($gameID);
+        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('Moderator.viewGames')->with("game", $game)
+                                          ->with("data", $data)
+                                          ->with("type", $type);
+    }
 
 
 
 
-
-
-
-
+    public function changeGameToDB($gameID){
+        
+        $active = Game::find($gameID);
+        $active->GAME_STATUS = "ACTIVE";
+        $active->save();
+        return redirect()->route('moderator.allGames'); 
+       
+    }
 
 
 

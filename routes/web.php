@@ -124,9 +124,13 @@ Route::get('/Moderator/Developer_List', 'ModeratorController@developerList')->na
 Route::get('/Moderator/developer_list', 'ModeratorController@developerList')->name('moderator.developerList');
 Route::get('/Moderator/{USERNAME}/developer_List', 'ModeratorController@deleteDeveloperToDB')->name("moderator.deleteDeveloperToDB");
 
-
 Route::get('/Moderator/{USERNAME}/Developer_Games', 'ModeratorController@allGames')->name('moderator.allGames');
 
+//developer_list-->profile
+Route::get('/Moderator/{USERNAME}/viewProfileDeveloper', 'ModeratorController@viewProfileDeveloper')->name("moderator.viewProfileDeveloper");
+
+Route::get('/Moderator/{gameID}/viewgamesDev', 'ModeratorController@viewGames')->name('moderator.viewGames');
+Route::get('/Moderator/{gameID}/allGamesDev', 'ModeratorController@changeGameToDB')->name("moderator.changeGameToDB");
 
 /****************************UNDER SESSION CHECK END****************************/
 });
