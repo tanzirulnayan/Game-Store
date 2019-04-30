@@ -11,6 +11,7 @@ use App\Developer;
 use App\Game;
 use App\GameType;
 use App\UploadHistory;
+use Illuminate\Support\Facades\Redirect;
 
 class ModeratorController extends Controller
 {
@@ -153,7 +154,7 @@ class ModeratorController extends Controller
         $data = Moderator::find(session("loggedUser"));
 
         $game = DB::table('games')
-        ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
+        ->select('games.GAME_ID','games.GAME_NAME','games.GAME_STATUS','upload_history.USERNAME')
         ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
         ->where(['USERNAME' => $USERNAME])
         ->get();
@@ -164,16 +165,77 @@ class ModeratorController extends Controller
 
 
 
+    public function viewProfileDeveloper($USERNAME){
+
+        $data = Moderator::find(session("loggedUser"));
+        $value = Developer::find($USERNAME);
+        
+        return view('moderator.viewProfileDeveloper')->with("value", $value)
+                                                ->with("data", $data);  
+    }
+
+
+    public function viewGames($gameID){
+        $data = MOderator::find(session("loggedUser"));
+        $game = Game::find($gameID);
+        $type = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
+        return view('Moderator.viewGames')->with("game", $game)
+                                          ->with("data", $data)
+                                          ->with("type", $type);
+    }
 
 
 
 
+    public function changeGameToDB($gameID){
+        
+        $active = Game::find($gameID);
 
+        if( $active->GAME_STATUS == "PENDING")
+        {
+            $active->GAME_STATUS = "ACTIVE";
+        }
+        else if( $active->GAME_STATUS == "ACTIVE")
+        {
+           $active->GAME_STATUS = "PENDING";
+        }
+    
+        $active->save();
+        return redirect()->route('moderator.developerList'); 
+       
+    }
 
+    function action(Request $req){
 
+        if($req->search){
+            $search = DB::table('gamers')
+                      
+                        ->where('G_NAME' , 'like' , '%'.$req->search.'%')
+                        ->get();
+        }
 
+        if($search){
+            foreach ($search as $row) {
+                echo '<option>'. $row->G_NAME . '</option>';
+    
+            }
+        }
+        
+       
+    }
 
+    function actionView(Request $req){
+            
+        $game = Gamer::where("G_NAME", "=", $req->search)->first();
+        if($game){
+            return redirect()->route('moderator.viewProfileGamer' , $game->USERNAME );      
+        }
+        else{
+            return \Redirect::back()->withError( 'Gamer Not Found ' );
+        }
 
+        
+    }
 
 
 
