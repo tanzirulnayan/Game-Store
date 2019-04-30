@@ -9,6 +9,7 @@ use App\LoginCredential;
 use App\Country;
 use App\Moderator;
 use App\Http\Requests\GamerSignup;
+use App\Http\Requests\SignupDeveloperRequest;
 
 class SignupController extends Controller
 {
@@ -51,7 +52,7 @@ class SignupController extends Controller
         return view('signup.developer');
     }
 
-    public function developerToDB(Request $req){
+    public function developerToDB(SignupDeveloperRequest $req){
 
         $file = $req->file('DEV_LOGO');
         $name = "developerLogo_" . uniqid() . "." . $file->getClientOriginalExtension();
