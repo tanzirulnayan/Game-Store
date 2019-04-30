@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use File;
 use DateTime;
 use App\Gamer;
@@ -14,6 +15,7 @@ use App\Game;
 use App\GameType;
 use App\Forum_Comment;
 use App\Http\Requests\GamerRequest;
+use App\Http\Requests\GamerChangePasswordRequest;
 
 class GamerController extends Controller
 {
@@ -67,7 +69,7 @@ class GamerController extends Controller
         return view('gamer.changePassword')->with("data", $data); 
     }
 
-    public function updatePassword(GamerRequest $req){
+    public function updatePassword(GamerChangePasswordRequest $req){
         $changePassword = LoginCredential::find(session("loggedUser"));
 
         if($req->old_password == $changePassword->PASSWORD){
@@ -111,7 +113,6 @@ class GamerController extends Controller
                                 ->where(['GAME_ID' => $gameId])
                                 ->get();
 
-        //$comment    = Forum_Comment::where("GAME_ID", $gameId)->get();
         $type       = GameType::where("TYPE_ID", $game->TYPE_ID)->first();
         return view('gamer.viewGame')->with("game", $game)
                                      ->with("data", $data)
@@ -150,5 +151,30 @@ class GamerController extends Controller
                                         ->with("developer", $developer)
                                         ->with("game", $game)
                                         ->with("user", $user);
+    }
+
+    function action(Request $req){
+
+        if($req->search){
+            $search = DB::table('games')
+                        ->where('GAME_NAME' , 'like' , '%'.$req->search.'%')
+                        ->get();
+        }
+
+        if($search){
+            foreach ($search as $row) {
+                echo '<option>'. $row->GAME_NAME . '</option>';
+            }
+        }
+    }
+
+    function actionView(Request $req){
+        $game = Game::where("GAME_NAME", "=", $req->search)->first();
+        if($game){
+            return redirect()->route('gamer.ViewGame' , $game->GAME_ID );      
+        }
+        else{
+            return \Redirect::back()->withError( 'Game Not Found ' );
+        }
     }
 }
