@@ -11,6 +11,7 @@ use App\Developer;
 use App\Game;
 use App\GameType;
 use App\UploadHistory;
+use Illuminate\Support\Facades\Redirect;
 
 class ModeratorController extends Controller
 {
@@ -189,13 +190,52 @@ class ModeratorController extends Controller
     public function changeGameToDB($gameID){
         
         $active = Game::find($gameID);
-        $active->GAME_STATUS = "ACTIVE";
+
+        if( $active->GAME_STATUS == "PENDING")
+        {
+            $active->GAME_STATUS = "ACTIVE";
+        }
+        else if( $active->GAME_STATUS == "ACTIVE")
+        {
+           $active->GAME_STATUS = "PENDING";
+        }
+    
         $active->save();
-        return redirect()->route('moderator.allGames'); 
+        return redirect()->route('moderator.developerList'); 
        
     }
 
+    function action(Request $req){
 
+        if($req->search){
+            $search = DB::table('gamers')
+                      
+                        ->where('G_NAME' , 'like' , '%'.$req->search.'%')
+                        ->get();
+        }
+
+        if($search){
+            foreach ($search as $row) {
+                echo '<option>'. $row->G_NAME . '</option>';
+    
+            }
+        }
+        
+       
+    }
+
+    function actionView(Request $req){
+            
+        $game = Gamer::where("G_NAME", "=", $req->search)->first();
+        if($game){
+            return redirect()->route('moderator.viewProfileGamer' , $game->USERNAME );      
+        }
+        else{
+            return \Redirect::back()->withError( 'Gamer Not Found ' );
+        }
+
+        
+    }
 
 
 

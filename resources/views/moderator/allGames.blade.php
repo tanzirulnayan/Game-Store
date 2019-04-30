@@ -51,6 +51,7 @@
                   <td>
                       <a class="nav-link" href="{{route('moderator.viewGames', $gm->GAME_ID)}}">VIEW</a>
                       <a class="nav-link" href="{{route('moderator.changeGameToDB', $gm->GAME_ID)}}">CHANGE</a>
+                      <input type="hidden" name="username" value="$gm->USERNAME">
             
                   </td>
                 </tr>

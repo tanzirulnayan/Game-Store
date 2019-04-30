@@ -134,5 +134,10 @@ Route::get('/Moderator/{USERNAME}/viewProfileDeveloper', 'ModeratorController@vi
 Route::get('/Moderator/{gameID}/viewgamesDev', 'ModeratorController@viewGames')->name('moderator.viewGames');
 Route::get('/Moderator/{gameID}/allGamesDev', 'ModeratorController@changeGameToDB')->name("moderator.changeGameToDB");
 
+
+//search
+Route::get('/Moderator/Home/Search', 'ModeratorController@action')->name('search.gamers');
+Route::post('/Moderator/Home', 'ModeratorController@actionView');
+
 /****************************UNDER SESSION CHECK END****************************/
 });
