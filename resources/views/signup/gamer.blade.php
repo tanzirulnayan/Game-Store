@@ -198,7 +198,7 @@
                           <i class="tim-icons icon-upload"></i>
                         </div>
                       </div>
-                      <input type="file" name="G_IMAGE" class="form-control" placeholder={{$errors->getBag('default')->first('G_IMAGE')}}>
+                      <input type="file" name="G_IMAGE" class="form-control" placeholder="{{$errors->getBag('default')->first('G_IMAGE')}}">
                     </div>
                     @else
                     <div class="input-group">

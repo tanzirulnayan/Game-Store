@@ -49,6 +49,9 @@ Route::get('/Gamer/ViewDeveloper/{devId}', 'GamerController@viewDeveloper')->nam
 
 Route::get('/Gamer/Statistics', 'GamerController@statistics')->name('gamer.Statistics');
 
+Route::get('/Gamer/Index/Search', 'GamerController@action')->name('search.games');
+Route::post('/Gamer/Index', 'GamerController@actionView');
+
 /**************************** DEVELOPER ****************************/
 Route::get('/Developer/Home', 'DeveloperController@index')->name('developer.index');
 

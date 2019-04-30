@@ -60,6 +60,16 @@
                 </div>
                 <div class="card-body">
                   <form class="form" method="POST" enctype="multipart/form-data">
+                    @if ($errors->has('USERNAME'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="USERNAME" placeholder="{{$errors->getBag('default')->first('USERNAME')}}">
+                    </div>
+                    @else
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -68,8 +78,19 @@
                       </div>
                       <input type="text" class="form-control" name="USERNAME" placeholder="Username...">
                     </div>
+                    @endif
 
-                  <div class="input-group">
+                    @if ($errors->has('DEV_NAME'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_NAME" placeholder="{{$errors->getBag('default')->first('DEV_NAME')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-single-02"></i>
@@ -77,8 +98,20 @@
                       </div>
                       <input type="text" class="form-control" name="DEV_NAME" placeholder="Full Name...">
                     </div>
+                    @endif
+                  
 
-                  <div class="input-group">
+                    @if ($errors->has('DEV_DESCRIPTION'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-paper"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_DESCRIPTION" placeholder="{{$errors->getBag('default')->first('DEV_DESCRIPTION')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-paper"></i>
@@ -86,26 +119,62 @@
                       </div>
                       <input type="text" class="form-control" name="DEV_DESCRIPTION" placeholder="Description...">
                     </div>
+                    @endif
+                  
 
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-square-pin"></i>
-                          </div>
-                        </div>
-                        <input type="text" class="form-control" name="DEV_ADDRESS" placeholder="Address...">
-                      </div>
-
+                    @if ($errors->has('DEV_ADDRESS'))
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
-                          <i class="tim-icons icon-email-85"></i>
+                          <i class="tim-icons icon-square-pin"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" name="DEV_EMAIL" placeholder="Email" >
+                      <input type="text" class="form-control" name="DEV_ADDRESS" placeholder="{{$errors->getBag('default')->first('DEV_ADDRESS')}}">
                     </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-square-pin"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_ADDRESS" placeholder="Address...">
+                    </div>
+                    @endif
+                   
 
-                  <div class="input-group">
+                      @if ($errors->has('DEV_EMAIL'))
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-email-85"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="DEV_EMAIL" placeholder="       {{$errors->getBag('default')->first('DEV_EMAIL')}}" >
+                      </div>
+                      @else
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-email-85"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="DEV_EMAIL" placeholder="Email..." >
+                      </div>
+                      @endif
+                    
+
+                    @if ($errors->has('DEV_WEBSITE'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-tablet-2"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_WEBSITE" placeholder="{{$errors->getBag('default')->first('DEV_WEBSITE')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-tablet-2"></i>
@@ -113,35 +182,85 @@
                       </div>
                       <input type="text" class="form-control" name="DEV_WEBSITE" placeholder="Website...">
                     </div>
+                    @endif
+                 
 
+                    @if ($errors->has('DEV_CREDIT_CARD'))
                     <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-money-coins"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_CREDIT_CARD" placeholder="{{$errors->getBag('default')->first('DEV_CREDIT_CARD')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-money-coins"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name="DEV_CREDIT_CARD" placeholder="Credit Card No...">
+                    </div>
+                    @endif
+                   
+
+                      @if ($errors->has('PASSWORD'))
+                      <div class="input-group">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <i class="tim-icons icon-money-coins"></i>
+                            <i class="tim-icons icon-lock-circle"></i>
                           </div>
                         </div>
-                        <input type="text" class="form-control" name="DEV_CREDIT_CARD" placeholder="Credit Card No...">
+                        <input type="text" class="form-control" name="PASSWORD" placeholder="{{$errors->getBag('default')->first('PASSWORD')}}">
                       </div>
+                      @else
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-lock-circle"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="PASSWORD" placeholder="Password...">
+                      </div>
+                      @endif
+                    
 
+                    @if ($errors->has('CONFIRM_PASSWORD'))
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" placeholder="Password">
-                    </div>
-
-                  <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="tim-icons icon-lock-circle"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" name="PASSWORD" placeholder="Confirm Password">
+                      <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="{{$errors->getBag('default')->first('CONFIRM_PASSWORD')}}">
                   </div>
+                      @else
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="tim-icons icon-lock-circle"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password...">
+                    </div>
+                      @endif
+                  
 
-                <div class="input-group">
+                  @if ($errors->has('DEV_LOGO'))
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-upload"></i>
+                      </div>
+                    </div>
+                    <input type="file" name="DEV_LOGO" placeholder="{{$errors->getBag('default')->first('DEV_LOGO')}}" class="form-control">
+                  </div>
+                  <h6>{{$errors->getBag('default')->first('DEV_LOGO')}}</h6>
+
+                  @else
+                  <div class="input-group">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="tim-icons icon-upload"></i>
@@ -149,6 +268,8 @@
                     </div>
                     <input type="file" name="DEV_LOGO" class="form-control">
                   </div>
+                  @endif
+                
                   
                   <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
                 </form>
