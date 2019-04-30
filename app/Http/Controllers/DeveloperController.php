@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
-USE Illuminate\Filesystem\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 use File;
 use DateTime;
 use App\Developer;
@@ -21,7 +22,7 @@ class DeveloperController extends Controller
     public function index(){
 
         $data = Developer::where("USERNAME", session("loggedUser"))->first();
-        return view('developer.index')->with("data", $data);   
+        return view('developer.index')->with("data", $data);     
     }
     public function viewProfile(){
 
@@ -335,9 +336,11 @@ class DeveloperController extends Controller
         if($game){
             return redirect()->route('developer.viewGames' , $game->GAME_ID );      
         }
-        // else{
-        //     return view("developer.");
-        // }
+        else{
+            return \Redirect::back()->withError( 'Game Not Found ' );
+        }
+
+        
     }
 
 

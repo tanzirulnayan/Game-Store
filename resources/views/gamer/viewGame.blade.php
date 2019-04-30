@@ -1,7 +1,7 @@
 @extends('layouts.gamer.app')
 @section('content')
 
-@endsection
+
 <body class="profile-page">
     <section class="section">
         <div class="container">
@@ -123,6 +123,7 @@
             </div>
         </div>
     </section>
+    @endsection
 @section('title')
 Game Details
 @endsection

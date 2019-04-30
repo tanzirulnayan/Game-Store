@@ -139,4 +139,16 @@ class GamerController extends Controller
         return redirect()->route('gamer.ViewGame', $gameId); 
     }
 
+    public function statistics(){
+        $data       = Gamer::find(session("loggedUser"));
+        $gamer      = Gamer::count();
+        $developer  = Developer::count();
+        $game       = Game::count();
+        $user       = $gamer + $developer;
+        return view('gamer.statistics') ->with("data", $data)
+                                        ->with("gamer", $gamer)
+                                        ->with("developer", $developer)
+                                        ->with("game", $game)
+                                        ->with("user", $user);
+    }
 }
