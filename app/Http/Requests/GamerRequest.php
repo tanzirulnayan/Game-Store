@@ -28,7 +28,7 @@ class GamerRequest extends FormRequest
             "G_EMAIL"           => "required | email | bail",
             "G_MOBILE"          => "required | numeric | bail",
             "G_DOB"             => "required | date | bail",
-            "G_IMAGE"           => "required | image | bail",
+
         ];
     }
 
@@ -42,8 +42,6 @@ class GamerRequest extends FormRequest
             'G_MOBILE.numeric'=>'Mobile Number must be Numbers',
             'G_DOB.required'=>'DOB is required',
             'G_DOB.date'=>'DOB must be a valid Date',
-            'G_IMAGE.required'=>'Image is required',
-            'G_IMAGE.image'=>'Image must be JPG/PNG format',
         ];
     }
 }

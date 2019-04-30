@@ -16,6 +16,7 @@ use App\GameType;
 use App\Forum_Comment;
 use App\Http\Requests\GamerRequest;
 use App\Http\Requests\GamerChangePasswordRequest;
+use App\Http\Requests\GamerChangePictureRequest;
 
 class GamerController extends Controller
 {
@@ -53,7 +54,7 @@ class GamerController extends Controller
         return view('gamer.changePicture')->with("data", $data); 
     }
 
-    public function updatePicture(GamerRequest $req){
+    public function updatePicture(GamerChangePictureRequest $req){
         $file = $req->file('G_IMAGE');
         $name = "GamerPicture_" . uniqid() . "." . $file->getClientOriginalExtension();
         $file->move('Image_Folder', $name);
