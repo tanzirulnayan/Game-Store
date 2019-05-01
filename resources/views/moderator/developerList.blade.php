@@ -45,7 +45,7 @@
                   </td>
              
                   <td>
-                    <a class="nav-link" href="{{route('moderator.viewProfileGamer', $list->USERNAME)}}">View Profile</a> 
+                    <a class="nav-link" href="{{route('moderator.viewProfileDeveloper', $list->USERNAME)}}">View Profile</a> 
                     <a class="nav-link" href="{{route('moderator.deleteDeveloperToDB', $list->USERNAME)}}">Remove Account</a> 
                     <a class="nav-link" href="{{route('moderator.allGames', $list->USERNAME)}}">Game List</a> 
 

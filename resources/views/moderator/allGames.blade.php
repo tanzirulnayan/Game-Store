@@ -29,6 +29,9 @@
                     GAME NAME
                   </th>
                   <th class="header">
+                    Status
+                </th>
+                  <th class="header">
                       ACTION
                   </th>
                 </tr>
@@ -43,7 +46,12 @@
                     {{$gm->GAME_NAME}}
                   </td>
                   <td>
-                      <a class="nav-link" href="">VIEW</a>
+                    {{$gm->GAME_STATUS}}
+                  </td>
+                  <td>
+                      <a class="nav-link" href="{{route('moderator.viewGames', $gm->GAME_ID)}}">VIEW</a>
+                      <a class="nav-link" href="{{route('moderator.changeGameToDB', $gm->GAME_ID)}}">CHANGE</a>
+                      <input type="hidden" name="username" value="$gm->USERNAME">
             
                   </td>
                 </tr>
