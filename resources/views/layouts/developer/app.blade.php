@@ -53,6 +53,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('developer.developerAdvertisement')}}">Advertisement</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('developer.developerStatistics')}}">Statistics</a>
+      </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <p>

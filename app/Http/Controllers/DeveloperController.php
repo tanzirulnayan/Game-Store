@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Filesystem\Filesystem;
+use App\Http\Requests\DeveloperChangePasswordRequest;
 use File;
 use DateTime;
 use App\Developer;
@@ -64,7 +65,7 @@ class DeveloperController extends Controller
         $data = Developer::find(session("loggedUser"));
         return view('developer.changePassword')->with("data", $data); 
     }
-    public function changePasswordToDB(Request $req){
+    public function changePasswordToDB(DeveloperChangePasswordRequest $req){
         $changePassword = LoginCredential::find(session("loggedUser"));
 
         if($req->OLD_PASSWORD == $changePassword->PASSWORD){
@@ -261,7 +262,7 @@ class DeveloperController extends Controller
     public function helpline(){
         $data = Developer::find(session("loggedUser"));
         $chat = HotlineMessage::where("RECEIVER_ID", session("loggedUser"))
-                                ->groupBy('CHAT_ID')
+                                ->groupBy('SENDER_ID')
                                 ->orderBy('DATE', 'ASC')
                                 ->get();
         //  dd($chat);
@@ -341,6 +342,24 @@ class DeveloperController extends Controller
         }
 
         
+    }
+
+
+    public function developerStatistics(){
+        $data       = Developer::find(session("loggedUser"));
+        $gamer      = Gamer::count();
+        $developer  = Developer::count();
+        $games = DB::table('games')
+                ->select('games.GAME_ID','games.GAME_NAME','upload_history.USERNAME')
+                ->join('upload_history','upload_history.GAME_ID','=','games.GAME_ID')
+                ->where(['USERNAME' => session("loggedUser")])
+                ->get();
+
+        $game = $games->count();
+        return view('developer.developerStatistics') ->with("data", $data)
+                                        ->with("gamer", $gamer)
+                                        ->with("developer", $developer)
+                                        ->with("game", $game);
     }
 
 

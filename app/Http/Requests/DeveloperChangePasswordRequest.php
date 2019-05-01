@@ -13,7 +13,7 @@ class DeveloperChangePasswordRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class DeveloperChangePasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "OLD_PASSWORD"      => "required | min:4 | bail",
+            "NEW_PASSWORD"      => "required | min:4 | bail",
+            "CONFIRM_PASSWORD"      => "required | min:4 | bail",
+        ];
+    }
+
+    public function messages(){
+
+        return [
+            'OLD_PASSWORD.required'=>'Password is required',
+            'OLD_PASSWORD.min'=>'Password must be at least 4 character long',
+            'NEW_PASSWORD.required'=>'New Password is required',
+            'NEW_PASSWORD.min'=>'Password must be at least 4 character long',
+            'CONFIRM_PASSWORD.required'=>'Confirm Password is required',
+            'CONFIRM_PASSWORD.min'=>'Password must be at least 4 character long',
         ];
     }
 }

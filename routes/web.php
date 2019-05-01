@@ -91,6 +91,8 @@ Route::post('/Developer/Help_Line/{gamerID}/Chat', 'DeveloperController@chatToDB
 Route::get('/Developer/Home/Search', 'DeveloperController@action')->name('search.games');
 Route::post('/Developer/Home', 'DeveloperController@actionView');
 
+Route::get('/Developer/Statistics', 'DeveloperController@developerStatistics')->name('developer.developerStatistics');
+
 /**************************** MODERATOR ****************************/
 
 //index
