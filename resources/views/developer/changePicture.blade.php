@@ -21,9 +21,7 @@
               </div>
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#">
-                    Change Logo
-                  </a>
+                  <a class="nav-link active" data-toggle="tab" href="#">Change Logo</a>
                 </li>
               </ul>
               <form method="POST" enctype="multipart/form-data">
@@ -36,7 +34,7 @@
                   <input type="file" name="DEV_LOGO" class="form-control">
                 </div>
                 <button class="btn btn-primary btn-round" type="submit">
-                  <i class="tim-icons icon-settings-gear-63"></i> CHANGE
+                  <i class="tim-icons icon-settings-gear-63"></i> Change
                 </button>
               </form>
             </div>
@@ -47,7 +45,6 @@
   </div>
 
   @endsection
-
 
   @section('title')
   Change Logo | Developer
