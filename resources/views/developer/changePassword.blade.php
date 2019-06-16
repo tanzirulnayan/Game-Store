@@ -21,9 +21,7 @@
               </div>
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#">
-                    Change Password
-                  </a>
+                  <a class="nav-link active" data-toggle="tab" href="#">Change Password</a>
                 </li>
               </ul>
               <form method="POST">
@@ -46,8 +44,6 @@
                   <input type="text" class="form-control" name="OLD_PASSWORD" placeholder="OLD Password...">
                 </div>
                 @endif
-
-
 
                 @if ($errors->has('NEW_PASSWORD'))
                 <div class="input-group">
@@ -89,7 +85,7 @@
                 </div>
                 @endif
                 <button class="btn btn-primary btn-round" type="submit">
-                  <i class="tim-icons icon-settings-gear-63"></i> CHANGE
+                  <i class="tim-icons icon-settings-gear-63"></i> Change
                 </button>
               </form>
             </div>
@@ -100,7 +96,6 @@
   </div>
 
   @endsection
-
 
   @section('title')
   Change Password | Developer
