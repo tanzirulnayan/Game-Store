@@ -56,21 +56,14 @@
         </div>
         <div class="tab-content tab-subcategories">
           <div class="tab-pane active" id="linka">
-
             @for ($i = 0; $i < count($sender); $i++) <h3 align="left"><img src="{{asset($gamer->G_IMAGE)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:30px"> {{$sender[$i]->MESSAGE}}</h3>
-
               @for ($j = 0; $j < count($receiver); $j++) <h3 align="right">{{$receiver[$j]->MESSAGE}} <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:30px"></h3>
-
                 @endfor
                 @endfor
-
-
                 <br><br>
                 <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#">
-                      Send Message
-                    </a>
+                    <a class="nav-link active" data-toggle="tab" href="#">Send Message</a>
                   </li>
                 </ul>
                 <br>
@@ -85,7 +78,7 @@
                   </div>
                   <br>
                   <button class="btn btn-primary btn-round" type="submit">
-                    <i class="tim-icons icon-settings-gear-63"></i> SEND
+                    <i class="tim-icons icon-settings-gear-63"></i> Send
                   </button>
                 </form>
           </div>
@@ -94,9 +87,7 @@
     </section>
   </div>
 
-
   @endsection
-
 
   @section('title')
   Chat | Developer
