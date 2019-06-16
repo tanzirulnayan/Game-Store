@@ -1,6 +1,7 @@
 @extends('layouts.developer.app')
 
 @section('content')
+
 <body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
@@ -33,20 +34,20 @@
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="OLD_PASSWORD"placeholder="{{$errors->getBag('default')->first('OLD_PASSWORD')}}">
+                  <input type="text" class="form-control" name="OLD_PASSWORD" placeholder="{{$errors->getBag('default')->first('OLD_PASSWORD')}}">
                 </div>
-                @else 
+                @else
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="OLD_PASSWORD"placeholder="OLD Password...">
+                  <input type="text" class="form-control" name="OLD_PASSWORD" placeholder="OLD Password...">
                 </div>
                 @endif
 
-                
+
 
                 @if ($errors->has('NEW_PASSWORD'))
                 <div class="input-group">
@@ -55,16 +56,16 @@
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="NEW_PASSWORD"placeholder="{{$errors->getBag('default')->first('NEW_PASSWORD')}}">
+                  <input type="text" class="form-control" name="NEW_PASSWORD" placeholder="{{$errors->getBag('default')->first('NEW_PASSWORD')}}">
                 </div>
-                @else 
+                @else
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="NEW_PASSWORD"placeholder="NEW_PASSWORD...">
+                  <input type="text" class="form-control" name="NEW_PASSWORD" placeholder="NEW_PASSWORD...">
                 </div>
                 @endif
 
@@ -75,32 +76,32 @@
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="CONFIRM_PASSWORD"placeholder="{{$errors->getBag('default')->first('CONFIRM_PASSWORD')}}">
+                  <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="{{$errors->getBag('default')->first('CONFIRM_PASSWORD')}}">
                 </div>
-                @else 
+                @else
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <i class="tim-icons icon-lock-circle"></i>
                     </div>
                   </div>
-                  <input type="text" class="form-control" name="CONFIRM_PASSWORD"placeholder="CONFIRM_PASSWORD...">
+                  <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="CONFIRM_PASSWORD...">
                 </div>
                 @endif
-              <button class="btn btn-primary btn-round" type="submit">
-                <i class="tim-icons icon-settings-gear-63"></i> CHANGE
-              </button>
-            </form>
+                <button class="btn btn-primary btn-round" type="submit">
+                  <i class="tim-icons icon-settings-gear-63"></i> CHANGE
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- 
+
   @endsection
 
 
-@section('title')
-Change Password | Developer
-@endsection
+  @section('title')
+  Change Password | Developer
+  @endsection

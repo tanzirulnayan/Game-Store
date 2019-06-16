@@ -1,6 +1,7 @@
 @extends('layouts.developer.app')
 
 @section('content')
+
 <body class="profile-page">
     <section class="section">
         <div class="container">
@@ -33,6 +34,6 @@
         </div>
     </section>
     @endsection
-@section('title')
-Statistics | Developer
-@endsection
+    @section('title')
+    Statistics | Developer
+    @endsection

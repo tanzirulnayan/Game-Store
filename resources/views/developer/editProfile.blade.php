@@ -1,6 +1,7 @@
 @extends('layouts.developer.app')
 
 @section('content')
+
 <body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
@@ -51,8 +52,7 @@
                               <i class="tim-icons icon-single-02"></i>
                             </div>
                           </div>
-                          <input type="text" class="form-control" name="DEV_NAME" 
-                          value="{{$data->DEV_NAME}}">
+                          <input type="text" class="form-control" name="DEV_NAME" value="{{$data->DEV_NAME}}">
                         </div>
                       </div>
                     </div>
@@ -82,7 +82,7 @@
                               <i class="tim-icons icon-email-85"></i>
                             </div>
                           </div>
-                          <input type="text" class="form-control" name="DEV_EMAIL" value="{{$data->DEV_EMAIL}}" >
+                          <input type="text" class="form-control" name="DEV_EMAIL" value="{{$data->DEV_EMAIL}}">
                         </div>
                       </div>
                     </div>
@@ -103,19 +103,19 @@
                     </div>
                   </div>
                   <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>Website</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="tim-icons icon-tablet-2"></i>
-                              </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Website</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tim-icons icon-tablet-2"></i>
                             </div>
-                            <input type="text" class="form-control" name="DEV_WEBSITE" value="{{$data->DEV_WEBSITE}}">
                           </div>
+                          <input type="text" class="form-control" name="DEV_WEBSITE" value="{{$data->DEV_WEBSITE}}">
                         </div>
                       </div>
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
@@ -131,10 +131,10 @@
                         </div>
                       </div>
                     </div>
-                </div>
-                <button class="btn btn-primary btn-round" type="submit">
-                  <i class="tim-icons icon-settings-gear-63"></i> UPDATE
-                </button>
+                  </div>
+                  <button class="btn btn-primary btn-round" type="submit">
+                    <i class="tim-icons icon-settings-gear-63"></i> UPDATE
+                  </button>
                 </form>
               </div>
             </div>
@@ -147,6 +147,6 @@
   @endsection
 
 
-@section('title')
-Edit Profile | Developer
-@endsection
+  @section('title')
+  Edit Profile | Developer
+  @endsection

@@ -1,8 +1,9 @@
 @extends('layouts.developer.app')
 
 @section('content')
+
 <body class="profile-page">
-  
+
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -17,50 +18,50 @@
           </div>
         </div>
         <div class="tab-content tab-subcategories">
-            <div class="tab-pane active" id="linka">
-         <div class="table-responsive">
-            <table class="table tablesorter " id="plain-table">
-              <thead class=" text-primary">
-                <tr>
-                  <th class="header">
-                    GAME ID
-                  </th>
-                  <th class="header">
-                    GAME NAME
-                  </th>
-                  <th class="header">
+          <div class="tab-pane active" id="linka">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="plain-table">
+                <thead class=" text-primary">
+                  <tr>
+                    <th class="header">
+                      GAME ID
+                    </th>
+                    <th class="header">
+                      GAME NAME
+                    </th>
+                    <th class="header">
                       ACTION
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-              @foreach($game as $gm)
-                <tr>
-                  <td>
-                    {{$gm->GAME_ID}}
-                  </td>
-                  <td>
-                    {{$gm->GAME_NAME}}
-                  </td>
-                  <td>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($game as $gm)
+                  <tr>
+                    <td>
+                      {{$gm->GAME_ID}}
+                    </td>
+                    <td>
+                      {{$gm->GAME_NAME}}
+                    </td>
+                    <td>
                       <a class="nav-link" href="{{route('developer.viewGames', $gm->GAME_ID)}}">VIEW</a>
                       <a class="nav-link" href="{{route('developer.updateGames', $gm->GAME_ID)}}">UPDATE</a>
-                      <a class="nav-link" href="{{route('developer.deleteGames', $gm->GAME_ID)}}">DELETE</a> 
-                  </td>
-                </tr>
-               @endforeach
-              </tbody>
-            </table>
+                      <a class="nav-link" href="{{route('developer.deleteGames', $gm->GAME_ID)}}">DELETE</a>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
-   </div>
+  </div>
 
-   @endsection
+  @endsection
 
 
-@section('title')
-ALL Games | Developer
-@endsection
+  @section('title')
+  ALL Games | Developer
+  @endsection

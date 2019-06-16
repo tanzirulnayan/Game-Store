@@ -1,6 +1,7 @@
 @extends('layouts.developer.app')
 
 @section('content')
+
 <body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
@@ -26,28 +27,28 @@
                 </li>
               </ul>
               <form method="POST" enctype="multipart/form-data">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="tim-icons icon-upload"></i>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-upload"></i>
+                    </div>
                   </div>
+                  <input type="file" name="DEV_LOGO" class="form-control">
                 </div>
-                <input type="file" name="DEV_LOGO" class="form-control">
-              </div>
-              <button class="btn btn-primary btn-round" type="submit">
-                <i class="tim-icons icon-settings-gear-63"></i> CHANGE
-              </button>
-            </form>
+                <button class="btn btn-primary btn-round" type="submit">
+                  <i class="tim-icons icon-settings-gear-63"></i> CHANGE
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- 
+
   @endsection
 
 
-@section('title')
-Change Logo | Developer
-@endsection
+  @section('title')
+  Change Logo | Developer
+  @endsection
