@@ -3,7 +3,6 @@
 @section('content')
 
 <body class="profile-page">
-
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -23,26 +22,16 @@
               <table class="table tablesorter " id="plain-table">
                 <thead class=" text-primary">
                   <tr>
-                    <th class="header">
-                      GAME ID
-                    </th>
-                    <th class="header">
-                      GAME NAME
-                    </th>
-                    <th class="header">
-                      ACTION
-                    </th>
+                    <th class="header">Game ID</th>
+                    <th class="header">Game Title</th>
+                    <th class="header">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($game as $gm)
                   <tr>
-                    <td>
-                      {{$gm->GAME_ID}}
-                    </td>
-                    <td>
-                      {{$gm->GAME_NAME}}
-                    </td>
+                    <td>{{$gm->GAME_ID}}</td>
+                    <td>{{$gm->GAME_NAME}}</td>
                     <td>
                       <a class="nav-link" href="{{route('developer.viewGames', $gm->GAME_ID)}}">VIEW</a>
                       <a class="nav-link" href="{{route('developer.updateGames', $gm->GAME_ID)}}">UPDATE</a>
@@ -60,7 +49,6 @@
   </div>
 
   @endsection
-
 
   @section('title')
   ALL Games | Developer
