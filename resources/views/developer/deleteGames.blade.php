@@ -44,6 +44,7 @@
       </div>
     </div>
   </div>
+
   @endsection
 
   @section('title')
