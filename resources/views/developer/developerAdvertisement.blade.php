@@ -21,9 +21,7 @@
               </div>
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#">
-                    Upload Image
-                  </a>
+                  <a class="nav-link active" data-toggle="tab" href="#">Upload Image</a>
                 </li>
               </ul>
               <form method="POST" enctype="multipart/form-data">
@@ -45,7 +43,6 @@
       </div>
     </div>
   </div>
-
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -65,15 +62,9 @@
               <table class="table tablesorter " id="plain-table">
                 <thead class=" text-primary">
                   <tr>
-                    <th class="header">
-                      AD_ID
-                    </th>
-                    <th class="header">
-                      STATUS
-                    </th>
-                    <th class="header">
-                      IMAGE
-                    </th>
+                    <th class="header">AD_ID</th>
+                    <th class="header">STATUS</th>
+                    <th class="header">IMAGE</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -99,9 +90,7 @@
     </section>
   </div>
 
-
   @endsection
-
 
   @section('title')
   Advertisement | Developer
