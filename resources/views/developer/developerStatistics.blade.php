@@ -33,7 +33,9 @@
             </div>
         </div>
     </section>
+
     @endsection
+    
     @section('title')
     Statistics | Developer
     @endsection
