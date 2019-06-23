@@ -3,7 +3,6 @@
 @section('content')
 
 <body class="profile-page">
-
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -23,20 +22,14 @@
               <table class="table tablesorter " id="plain-table">
                 <thead class=" text-primary">
                   <tr>
-                    <th class="header">
-                      GAMER ID
-                    </th>
-                    <th class="header">
-                      ACTION
-                    </th>
+                    <th class="header">GAMER ID</th>
+                    <th class="header">ACTION</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($chat as $chats)
                   <tr>
-                    <td>
-                      {{$chats->SENDER_ID}}
-                    </td>
+                    <td>{{$chats->SENDER_ID}}</td>
                     <td>
                       <a class="nav-link" href="{{route('developer.chat', $chats->SENDER_ID)}}">Open</a>
                     </td>
@@ -52,7 +45,6 @@
   </div>
 
   @endsection
-
 
   @section('title')
   Help Line | Developer
