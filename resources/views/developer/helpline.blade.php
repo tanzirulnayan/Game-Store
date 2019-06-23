@@ -22,8 +22,8 @@
               <table class="table tablesorter " id="plain-table">
                 <thead class=" text-primary">
                   <tr>
-                    <th class="header">GAMER ID</th>
-                    <th class="header">ACTION</th>
+                    <th class="header">Gamer ID</th>
+                    <th class="header">Action</th>
                   </tr>
                 </thead>
                 <tbody>
