@@ -1,6 +1,5 @@
 @extends('layouts.developer.app')
 
-
 @section('content')
 
 <body class="register-page">
@@ -30,7 +29,7 @@
               <datalist id="gameList">
               </datalist>
               <button class="btn btn-success" type="submit">
-                <i class="tim-icons icon-zoom-split"></i> SEARCH
+                <i class="tim-icons icon-zoom-split"></i> Search
               </button>
             </div>
           </div>
@@ -66,17 +65,7 @@
     }
   </script>
 
-
-
-
-
-
-
-
-
-
   @endsection
-
 
   @section('title')
   Home | Developer
