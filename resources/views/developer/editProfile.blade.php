@@ -146,7 +146,6 @@
 
   @endsection
 
-
   @section('title')
   Edit Profile | Developer
   @endsection
