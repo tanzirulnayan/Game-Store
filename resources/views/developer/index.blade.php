@@ -57,9 +57,7 @@
         },
         dataType: 'html',
         success: function(response) {
-          //alert(response);
           document.getElementById("gameList").innerHTML = response;
-
         }
       });
     }
