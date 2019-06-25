@@ -20,9 +20,7 @@
                 <div class="card-body">
                   <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                     <li class="nav-item">
-                      <a class="nav-link active" game-toggle="tab" href="#linka">
-                        Change Logo
-                      </a>
+                      <a class="nav-link active" game-toggle="tab" href="#linka">Change Logo</a>
                     </li>
                   </ul>
                   <div class="tab-content tab-subcategories">
@@ -37,7 +35,7 @@
                         <input type="hidden" class="form-control" name="GAME_LOGO_OLD" value="{{$game->GAME_LOGO}}">
                       </div>
                       <button class="btn btn-primary btn-round" type="submit">
-                        <i class="tim-icons icon-settings-gear-63"></i> CHANGE
+                        <i class="tim-icons icon-settings-gear-63"></i> Change
                       </button>
                     </div>
                   </div>
@@ -85,7 +83,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>TYPE</label>
+                <label>Type</label>
                 <select name="type" class="form-control" style="background-color:#171941">
                   <option value="no" disabled selected>Game Type</option>
                   <option value="{{$type->TYPE_ID}}" selected>{{$type->TYPE_NAME}}</option>
@@ -97,7 +95,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>PRICE</label>
+                <label>Price</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -112,7 +110,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <label>DESCRIPTION</label>
+                <label>Description</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -127,7 +125,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED OS</label>
+                <label>Required OS</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -140,7 +138,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED CPU</label>
+                <label>Required CPU</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -155,7 +153,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED RAM</label>
+                <label>Required RAM</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -168,7 +166,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED HARD DRIVE</label>
+                <label>Required HDD</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -183,7 +181,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED GPU</label>
+                <label>Required GPU</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -196,7 +194,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>REQUIRED NETWORK</label>
+                <label>Required Network</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -210,7 +208,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <label>CHANGE FILES</label>
+              <label>Change Files</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -227,7 +225,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <label>CHANGE SCREENSHOT</label>
+              <label>Change Screenshot</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -244,18 +242,15 @@
           </div>
           <br><br>
           <button class="btn btn-primary btn-round" type="submit">
-            <i class="tim-icons icon-settings-gear-63"></i> UPDATE
+            <i class="tim-icons icon-settings-gear-63"></i> Update
           </button>
         </div>
       </div>
     </section>
   </div>
-
   </form>
 
-
   @endsection
-
 
   @section('title')
   Update Game | Developer
