@@ -1,6 +1,5 @@
 @extends('layouts.developer.app')
 
-
 @section('content')
 
 <body class="profile-page">
@@ -24,9 +23,7 @@
               <div class="card-body">
                 <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" game-toggle="tab" href="#linka">
-                      ScreenShot
-                    </a>
+                    <a class="nav-link active" game-toggle="tab" href="#linka">ScreenShot</a>
                   </li>
                 </ul>
                 <div class="tab-content tab-subcategories">
@@ -68,13 +65,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>TYPE</label>
+                        <label>Type</label>
                         <h3 class="text-info">{{$type->TYPE_NAME}}</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>PRICE</label>
+                        <label>Price</label>
                         <h3 class="text-success">{{$game->GAME_PRICE}}</h3>
                       </div>
                     </div>
@@ -82,7 +79,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>DESCRIPTION</label>
+                        <label>Description</label>
                         <h3 class="text-primary">{{$game->GAME_DESCRIPTION}}</h3>
                       </div>
                     </div>
@@ -90,13 +87,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED OS</label>
+                        <label>Required OS</label>
                         <h3 class="text-info">{{$game->GAME_REQ_OS}}</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED CPU</label>
+                        <label>Required CPU</label>
                         <h3 class="text-warning">{{$game->GAME_REQ_CPU}}</h3>
                       </div>
                     </div>
@@ -104,13 +101,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED RAM</label>
+                        <label>Required RAM</label>
                         <h3 class="text-success">{{$game->GAME_REQ_RAM}}</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED HARD DRIVE</label>
+                        <label>Required HDD</label>
                         <h3 class="text-info">{{$game->GAME_REQ_HDD}}</h3>
                       </div>
                     </div>
@@ -118,13 +115,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED GPU</label>
+                        <label>Required GPU</label>
                         <h3 class="text-primary">{{$game->GAME_REQ_GPU}}</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>REQUIRED NETWORK</label>
+                        <label>Required Network</label>
                         <h3 class="text-info">{{$game->GAME_REQ_NETWORK}}</h3>
                       </div>
                     </div>
@@ -132,13 +129,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>Game STATUS</label>
+                        <label>Game Status</label>
                         <h3 class="text-success">{{$game->GAME_STATUS}}</h3>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>FILES</label>
+                        <label>Files</label>
                         <h3 class="text-info">
                           <a href="{{asset($game->GAME_FILES)}}">{{$game->GAME_FILES}}</a>
                         </h3>
@@ -148,7 +145,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>UPLOAD DATE & TIME</label>
+                        <label>Upload Date & Time</label>
                         <h3 class="text-success">{{$game->created_at}}</h3>
                       </div>
                     </div>
@@ -156,7 +153,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>SCREENSHOT</label>
+                        <label>ScreenShot</label>
                         <br>
                         <img src="{{asset($game->GAME_SS)}}" class="img-fluid rounded shadow-lg">
                       </div>
@@ -169,6 +166,8 @@
         </div>
       </div>
     </section>
+    
+    @endsection
 
     @section('title')
     View Game | Developer
