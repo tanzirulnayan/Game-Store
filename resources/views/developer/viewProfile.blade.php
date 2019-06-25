@@ -3,7 +3,6 @@
 @section('content')
 
 <body class="profile-page">
-
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
@@ -99,8 +98,8 @@
       </div>
     </section>
   </div>
-  @endsection
 
+  @endsection
 
   @section('title')
   View Profile | Developer
