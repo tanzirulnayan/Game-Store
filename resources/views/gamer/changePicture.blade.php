@@ -28,10 +28,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-              <a class="nav-link" href="{{route('gamer.index')}}">Home</a>
+            <a class="nav-link" href="{{route('gamer.index')}}">Home</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{{route('gamer.Statistics')}}">Statistics</a>
+            <a class="nav-link" href="{{route('gamer.Statistics')}}">Statistics</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,43 +59,43 @@
   {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
   <div class="wrapper">
     <div class="page-header">
-        <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
-        <img src="{{asset('custom')}}/assets/img/path4.png" class="path">
-        <div class="container align-items-center">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <h1 class="profile-title text-left">{{$data->G_NAME}}</h1>
-                </div>
-                <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <img src="{{asset($data->G_IMAGE)}}" class="img-center img-fluid rounded-circle">
-                            <h4 class="title">{{$data->G_NAME}}</h4>
-                        </div>
-                        <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
-                            <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#">Change Picture</a>
-                            </li>
-                        </ul>
-                        <form method="POST" enctype="multipart/form-data">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="tim-icons icon-upload"></i>
-                                    </div>
-                                </div>
-                                <input type="file" name="G_IMAGE" class="form-control">
-                            </div>
-                            <button class="btn btn-primary btn-round" type="submit">
-                                <i class="tim-icons icon-settings-gear-63"></i> CHANGE
-                            </button>
-                        </form>
+      <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
+      <img src="{{asset('custom')}}/assets/img/path4.png" class="path">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <h1 class="profile-title text-left">{{$data->G_NAME}}</h1>
+          </div>
+          <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+            <div class="card card-coin card-plain">
+              <div class="card-header">
+                <img src="{{asset($data->G_IMAGE)}}" class="img-center img-fluid rounded-circle">
+                <h4 class="title">{{$data->G_NAME}}</h4>
+              </div>
+              <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#">Change Picture</a>
+                </li>
+              </ul>
+              <form method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-upload"></i>
                     </div>
+                  </div>
+                  <input type="file" name="G_IMAGE" class="form-control">
                 </div>
+                <button class="btn btn-primary btn-round" type="submit">
+                  <i class="tim-icons icon-settings-gear-63"></i> Change
+                </button>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
   <!--   Core JS Files   -->
   <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="{{asset('custom')}}/assets/js/core/popper.min.js" type="text/javascript"></script>
