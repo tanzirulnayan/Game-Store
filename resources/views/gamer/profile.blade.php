@@ -50,12 +50,12 @@
                 </div>
               </div>
               <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Date of Birth:</label>
-                      <h3 class="text-info">{{$data->G_DOB}}</h3>
-                    </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Date of Birth:</label>
+                    <h3 class="text-info">{{$data->G_DOB}}</h3>
                   </div>
+                </div>
               </div>
             </form>
           </div>
