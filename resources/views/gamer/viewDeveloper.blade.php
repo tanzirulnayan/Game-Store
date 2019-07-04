@@ -1,5 +1,6 @@
 @extends('layouts.gamer.app')
 @section('content')
+
 <body class="profile-page">
     <section class="section">
         <div class="container">
@@ -22,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>DESCRIPTION</label>
+                            <label>Description</label>
                             <h3 class="text-info">{{$dev->DEV_DESCRIPTION}}</h3>
                         </div>
                     </div>
@@ -30,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>ADDRESS</label>
+                            <label>Address</label>
                             <h3 class="text-info">{{$dev->DEV_ADDRESS}}</h3>
                         </div>
                     </div>
@@ -38,7 +39,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>WEBSITE</label>
+                            <label>Email</label>
                             <h3 class="text-info">{{$dev->DEV_EMAIL}}</h3>
                         </div>
                     </div>
@@ -46,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>WEBSITE</label>
+                            <label>Website</label>
                             <h3 class="text-info">{{$dev->DEV_WEBSITE}}</h3>
                         </div>
                     </div>
@@ -54,7 +55,9 @@
             </div>
         </div>
     </section>
+
     @endsection
-@section('title')
-Developer Details
-@endsection
+    
+    @section('title')
+    Developer Details
+    @endsection
