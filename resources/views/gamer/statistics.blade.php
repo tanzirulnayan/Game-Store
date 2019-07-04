@@ -42,7 +42,7 @@
     </section>
 
     @endsection
-    
+
     @section('title')
     Statistics
     @endsection
