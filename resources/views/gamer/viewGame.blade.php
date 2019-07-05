@@ -1,13 +1,12 @@
 @extends('layouts.gamer.app')
 @section('content')
 
-
 <body class="profile-page">
     <section class="section">
         <div class="container">
             <div class="card-body">
                 <div class="row">
-                <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <img src="{{asset($game->GAME_LOGO)}}" class="img-center img-fluid rounded-circle" style="height:100px; width:100px;">
                         </div>
@@ -21,17 +20,17 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <a href="{{asset($game->GAME_FILES)}}">
-                            <button class="btn btn-info btn-round" type="button">
-                                <i class="tim-icons icon-cloud-download-93"></i> Download
-                            </button>
-                            </a> 
+                                <button class="btn btn-info btn-round" type="button">
+                                    <i class="tim-icons icon-cloud-download-93"></i> Download
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>DESCRIPTION</label>
+                            <label>Description</label>
                             <h3 class="text-info">{{$game->GAME_DESCRIPTION}}</h3>
                         </div>
                     </div>
@@ -39,13 +38,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED OS</label>
+                            <label>Required OS</label>
                             <h3 class="text-info">{{$game->GAME_REQ_OS}}</h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED CPU</label>
+                            <label>Required CPU</label>
                             <h3 class="text-info">{{$game->GAME_REQ_CPU}}</h3>
                         </div>
                     </div>
@@ -53,13 +52,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED RAM</label>
+                            <label>Required RAM</label>
                             <h3 class="text-info">{{$game->GAME_REQ_RAM}}</h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED HARD DRIVE</label>
+                            <label>Required HDD</label>
                             <h3 class="text-info">{{$game->GAME_REQ_HDD}}</h3>
                         </div>
                     </div>
@@ -67,13 +66,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED GPU</label>
+                            <label>Required GPU</label>
                             <h3 class="text-info">{{$game->GAME_REQ_GPU}}</h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>REQUIRED NETWORK</label>
+                            <label>Required Network</label>
                             <h3 class="text-info">{{$game->GAME_REQ_NETWORK}}</h3>
                         </div>
                     </div>
@@ -81,9 +80,9 @@
                 <div class="row">
                     <div>
                         <div class="form-group">
-                            <label>SCREENSHOT</label>
+                            <label>Screenshot</label>
                             <br>
-                            <img src="{{asset($game->GAME_SS)}}" class="img-fluid rounded shadow-lg" style="max-width:40%; max-height:20%"> 
+                            <img src="{{asset($game->GAME_SS)}}" class="img-fluid rounded shadow-lg" style="max-width:40%; max-height:20%">
                         </div>
                     </div>
                 </div>
@@ -93,7 +92,7 @@
     <section class="section">
         <div class="container">
             <div class="card-body">
-            @if($comment != "")
+                @if($comment != "")
                 @foreach($comment as $cmnt)
                 <div class="row">
                     <div class="col-md-6">
@@ -123,7 +122,8 @@
             </div>
         </div>
     </section>
+    
     @endsection
-@section('title')
-Game Details
-@endsection
+    @section('title')
+    Game Details
+    @endsection
