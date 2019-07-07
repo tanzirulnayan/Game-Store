@@ -16,75 +16,68 @@
   <link href="{{asset('custom')}}/assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{asset('custom')}}/assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{asset('custom')}}/assets/demo/demo.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{{asset('custom')}}/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 
-  {{-- ------------------------------------- Navbar ------------------------------------- --}}
-  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="{{route('developer.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom">
-          <span>Game•</span> Store
-        </a>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" href="{{route('developer.index')}}">HOME</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>
-                GAMES
-              </p>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{route('developer.allGames')}}">VIEW Games</a>
-                <a class="dropdown-item" href="{{route('developer.addGames')}}">ADD Games</a>
-                <a class="dropdown-item" href="{{route('developer.allGames')}}">UPDATE Games</a>
-                <a class="dropdown-item" href="{{route('developer.allGames')}}">DELETE Games</a>
-              </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>
+{{-- ------------------------------------- Navbar ------------------------------------- --}}
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="{{route('developer.index')}}" rel="tooltip" title="Explore the Gaming World" data-placement="bottom">
+        <span>Game•</span> Store
+      </a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('developer.index')}}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p>Games</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{route('developer.allGames')}}">View Games</a>
+            <a class="dropdown-item" href="{{route('developer.addGames')}}">Add Games</a>
+            <a class="dropdown-item" href="{{route('developer.allGames')}}">Update Games</a>
+            <a class="dropdown-item" href="{{route('developer.allGames')}}">Delete Games</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('developer.helpline')}}">Helpline</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('developer.developerAdvertisement')}}">Advertisement</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('developer.developerStatistics')}}">Statistics</a>
-      </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>
-                <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
-              </p>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('developer.viewProfile')}}">VIEW Profile</a>
-              <a class="dropdown-item" href="{{route('developer.editProfile')}}">EDIT Profile</a>
-              <a class="dropdown-item" href="{{route('developer.changePicture')}}">CHANGE Logo</a>
-              <a class="dropdown-item" href="{{route('developer.changePassword')}}">CHANGE Password</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
-          </li>
-        </ul>
-      </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('developer.developerStatistics')}}">Statistics</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p>
+              <img src="{{asset($data->DEV_LOGO)}}" alt="Circle image" class="img-fluid rounded-circle shadow" style="width:25px;">Profile
+            </p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{route('developer.viewProfile')}}">View Profile</a>
+            <a class="dropdown-item" href="{{route('developer.editProfile')}}">Edit Profile</a>
+            <a class="dropdown-item" href="{{route('developer.changePicture')}}">Change Logo</a>
+            <a class="dropdown-item" href="{{route('developer.changePassword')}}">Change Password</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
+  </div>
+</nav>
+{{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
 
 <!--- content here --->
 @yield('content')
-
-  
-
-
-
 
 <!--   Core JS Files   -->
 <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -105,11 +98,11 @@
 <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
 <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initLandingPageChart();
-    });
-  </script>
+  $(document).ready(function() {
+    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+    demo.initLandingPageChart();
+  });
+</script>
 </body>
 
 </html>
