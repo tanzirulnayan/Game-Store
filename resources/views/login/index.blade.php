@@ -132,43 +132,29 @@
                 <a href="{{asset('custom')}}/index.html" class="nav-link">Home</a>
     </li>
     <li class="nav-item">
-      <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">
-        Landing
-      </a>
+      <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">Landing</a>
     </li>
     <li class="nav-item">
-      <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">
-        Register
-      </a>
+      <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">Register</a>
     </li>
     <li class="nav-item">
-      <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">
-        Profile
-      </a>
+      <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">Profile</a>
     </li>
     </ul>
   </div>
   <div class="col-md-3">
     <ul class="nav">
       <li class="nav-item">
-        <a href="https://creative-tim.com/contact-us" class="nav-link">
-          Contact Us
-        </a>
+        <a href="https://creative-tim.com/contact-us" class="nav-link">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a href="https://creative-tim.com/about-us" class="nav-link">
-          About Us
-        </a>
+        <a href="https://creative-tim.com/about-us" class="nav-link">About Us</a>
       </li>
       <li class="nav-item">
-        <a href="https://creative-tim.com/blog" class="nav-link">
-          Blog
-        </a>
+        <a href="https://creative-tim.com/blog" class="nav-link">Blog</a>
       </li>
       <li class="nav-item">
-        <a href="https://opensource.org/licenses/MIT" class="nav-link">
-          License
-        </a>
+        <a href="https://opensource.org/licenses/MIT" class="nav-link">License</a>
       </li>
     </ul>
   </div>
