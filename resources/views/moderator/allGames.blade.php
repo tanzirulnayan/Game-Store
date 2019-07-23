@@ -1,8 +1,9 @@
 @extends('layouts.moderator.app')
 
 @section('content')
+
 <body class="profile-page">
-  
+
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -17,57 +18,41 @@
           </div>
         </div>
         <div class="tab-content tab-subcategories">
-            <div class="tab-pane active" id="linka">
-         <div class="table-responsive">
-            <table class="table tablesorter " id="plain-table">
-              <thead class=" text-primary">
-                <tr>
-                  <th class="header">
-                    GAME ID
-                  </th>
-                  <th class="header">
-                    GAME NAME
-                  </th>
-                  <th class="header">
-                    Status
-                </th>
-                  <th class="header">
-                      ACTION
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-              @foreach($game as $gm)
-                <tr>
-                  <td>
-                    {{$gm->GAME_ID}}
-                  </td>
-                  <td>
-                    {{$gm->GAME_NAME}}
-                  </td>
-                  <td>
-                    {{$gm->GAME_STATUS}}
-                  </td>
-                  <td>
-                      <a class="nav-link" href="{{route('moderator.viewGames', $gm->GAME_ID)}}">VIEW</a>
-                      <a class="nav-link" href="{{route('moderator.changeGameToDB', $gm->GAME_ID)}}">CHANGE</a>
+          <div class="tab-pane active" id="linka">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="plain-table">
+                <thead class=" text-primary">
+                  <tr>
+                    <th class="header">ID</th>
+                    <th class="header">Title</th>
+                    <th class="header">Status</th>
+                    <th class="header">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($game as $gm)
+                  <tr>
+                    <td> {{$gm->GAME_ID}} </td>
+                    <td> {{$gm->GAME_NAME}} </td>
+                    <td> {{$gm->GAME_STATUS}} </td>
+                    <td>
+                      <a class="nav-link" href="{{route('moderator.viewGames', $gm->GAME_ID)}}">View</a>
+                      <a class="nav-link" href="{{route('moderator.changeGameToDB', $gm->GAME_ID)}}">Change</a>
                       <input type="hidden" name="username" value="$gm->USERNAME">
-            
-                  </td>
-                </tr>
-               @endforeach
-              </tbody>
-            </table>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
-   </div>
+  </div>
 
-   @endsection
+  @endsection
 
-
-@section('title')
-ALL Games | Developer
-@endsection
+  @section('title')
+  ALL Games | Developer
+  @endsection
