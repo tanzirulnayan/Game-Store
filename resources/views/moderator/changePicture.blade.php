@@ -1,9 +1,8 @@
 @extends('layouts.moderator.app')
 @section('content')
+{{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
 
-
-  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  <body class="profile-page">
+<body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
@@ -22,32 +21,31 @@
               </div>
               <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#">
-                    Change Picture
-                  </a>
+                  <a class="nav-link active" data-toggle="tab" href="#">Change Picture</a>
                 </li>
               </ul>
               <form method="POST" enctype="multipart/form-data">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="tim-icons icon-upload"></i>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tim-icons icon-upload"></i>
+                    </div>
                   </div>
+                  <input type="file" name="MOD_IMAGE" class="form-control">
                 </div>
-                <input type="file" name="MOD_IMAGE" class="form-control">
-              </div>
-              <button class="btn btn-primary btn-round" type="submit">
-                <i class="tim-icons icon-settings-gear-63"></i> CHANGE
-              </button>
-            </form>
+                <button class="btn btn-primary btn-round" type="submit">
+                  <i class="tim-icons icon-settings-gear-63"></i> Change
+                </button>
+              </form>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  @endsection
 
-
-@endsection
-
-
-@section('title')
-Change Profile Picture | Moderator
-@endsection
+  @section('title')
+  Change Profile Picture | Moderator
+  @endsection
