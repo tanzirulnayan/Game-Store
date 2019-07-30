@@ -1,10 +1,8 @@
 @extends('layouts.moderator.app')
 @section('content')
+{{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
 
-
-
-  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  <body class="profile-page">
+<body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
@@ -53,13 +51,11 @@
                               <i class="tim-icons icon-single-02"></i>
                             </div>
                           </div>
-                          <input type="text" class="form-control" name="MOD_NAME" 
-                          value="{{$data->MOD_NAME}}">
+                          <input type="text" class="form-control" name="MOD_NAME" value="{{$data->MOD_NAME}}">
                         </div>
                       </div>
                     </div>
                   </div>
-             
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -70,7 +66,7 @@
                               <i class="tim-icons icon-email-85"></i>
                             </div>
                           </div>
-                          <input type="text" class="form-control" name="MOD_EMAIL" value="{{$data->MOD_EMAIL}}" >
+                          <input type="text" class="form-control" name="MOD_EMAIL" value="{{$data->MOD_EMAIL}}">
                         </div>
                       </div>
                     </div>
@@ -90,7 +86,6 @@
                       </div>
                     </div>
                   </div>
-        
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -105,10 +100,10 @@
                         </div>
                       </div>
                     </div>
-                </div>
-                <button class="btn btn-primary btn-round" type="submit">
-                  <i class="tim-icons icon-settings-gear-63"></i> UPDATE
-                </button>
+                  </div>
+                  <button class="btn btn-primary btn-round" type="submit">
+                    <i class="tim-icons icon-settings-gear-63"></i> UPDATE
+                  </button>
                 </form>
               </div>
             </div>
@@ -117,12 +112,9 @@
       </div>
     </section>
   </div>
+  
+  @endsection
 
-
-
-@endsection
-
-
-@section('title')
-Edit Profile | Moderator
-@endsection
+  @section('title')
+  Edit Profile | Moderator
+  @endsection
