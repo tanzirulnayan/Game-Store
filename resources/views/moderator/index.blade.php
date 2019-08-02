@@ -24,19 +24,13 @@
                 <a href="{{asset('custom')}}/index.html" class="nav-link">Home</a>
   </li>
   <li class="nav-item">
-    <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">
-      Landing
-    </a>
+    <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">Landing</a>
   </li>
   <li class="nav-item">
-    <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">
-      Register
-    </a>
+    <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">Register</a>
   </li>
   <li class="nav-item">
-    <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">
-      Profile
-    </a>
+    <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">Profile</a>
   </li>
   </ul>
   </div>
