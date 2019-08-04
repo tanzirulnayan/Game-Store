@@ -37,24 +37,16 @@
   <div class="col-md-3">
     <ul class="nav">
       <li class="nav-item">
-        <a href="https://creative-tim.com/contact-us" class="nav-link">
-          Contact Us
-        </a>
+        <a href="https://creative-tim.com/contact-us" class="nav-link">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a href="https://creative-tim.com/about-us" class="nav-link">
-          About Us
-        </a>
+        <a href="https://creative-tim.com/about-us" class="nav-link">About Us</a>
       </li>
       <li class="nav-item">
-        <a href="https://creative-tim.com/blog" class="nav-link">
-          Blog
-        </a>
+        <a href="https://creative-tim.com/blog" class="nav-link">Blog</a>
       </li>
       <li class="nav-item">
-        <a href="https://opensource.org/licenses/MIT" class="nav-link">
-          License
-        </a>
+        <a href="https://opensource.org/licenses/MIT" class="nav-link">License</a>
       </li>
     </ul>
   </div>
