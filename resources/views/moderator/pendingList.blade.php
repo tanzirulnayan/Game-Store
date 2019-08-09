@@ -1,8 +1,8 @@
 @extends('layouts.moderator.app')
 
 @section('content')
+
 <body class="profile-page">
-  
   <div class="wrapper">
     <section class="section">
       <div class="container">
@@ -17,55 +17,39 @@
           </div>
         </div>
         <div class="tab-content tab-subcategories">
-            <div class="tab-pane active" id="linka">
-         <div class="table-responsive">
-            <table class="table tablesorter " id="plain-table">
-              <thead class=" text-primary">
-                <tr>
-                  <th class="header">
-                    USERNAME
-                  </th>
-                  <th class="header">
-                    USER TYPE
-                  </th>
-                  <th class="header">
-                    STATUS
-                  </th>
-                  <th class="header">
-                      ACTION
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-              @foreach($list as $list)
-                <tr>
-                  <td>
-                    {{$list->USERNAME}}
-                  </td>
-                  <td>
-                    {{$list->USER_TYPE}}
-                  </td>
-                  <td>
-                    {{$list->STATUS}}
-                  </td>
-                  <td>
-                    <a class="nav-link" href="{{route('moderator.pendingListToDB', $list->USERNAME)}}">CHANGE</a>
-                         
-                  </td>
-                </tr>
-               @endforeach
-              </tbody>
-            </table>
+          <div class="tab-pane active" id="linka">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="plain-table">
+                <thead class=" text-primary">
+                  <tr>
+                    <th class="header">Username</th>
+                    <th class="header">User Type</th>
+                    <th class="header">Status</th>
+                    <th class="header">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($list as $list)
+                  <tr>
+                    <td>{{$list->USERNAME}}</td>
+                    <td>{{$list->USER_TYPE}}</td>
+                    <td>{{$list->STATUS}}</td>
+                    <td>
+                      <a class="nav-link" href="{{route('moderator.pendingListToDB', $list->USERNAME)}}">CHANGE</a>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
-   </div>
+  </div>
 
-   @endsection
+  @endsection
 
-
-@section('title')
-Pending List | Moderator
-@endsection
+  @section('title')
+  Pending List | Moderator
+  @endsection
