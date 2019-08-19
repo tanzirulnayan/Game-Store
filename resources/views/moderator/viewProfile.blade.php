@@ -1,9 +1,8 @@
 @extends('layouts.moderator.app')
 @section('content')
+{{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
 
-
-  {{-- -- ------------------------------------- End Navbar --------------------------------------- --}}
-  <body class="profile-page">
+<body class="profile-page">
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
@@ -13,7 +12,6 @@
           <div class="col-lg-6 col-md-6">
             <h1 class="profile-title text-left">{{$data->MOD_NAME}}</h1>
             <h5 class="text-on-back">{{$data->USERNAME}}</h5>
-
           </div>
           <div class="col-lg-4 col-md-6 ml-auto mr-auto">
             <div class="card card-coin card-plain">
@@ -51,7 +49,6 @@
                       </div>
                     </div>
                   </div>
-             
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -68,7 +65,6 @@
                       </div>
                     </div>
                   </div>
-            
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -76,7 +72,7 @@
                         <h3 class="text-info">{{$data->MOD_DOB}}</h3>
                       </div>
                     </div>
-                </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -85,11 +81,9 @@
       </div>
     </section>
   </div>
+  
+  @endsection
 
-
-@endsection
-
-
-@section('title')
-View Profile | Moderator
-@endsection
+  @section('title')
+  View Profile | Moderator
+  @endsection
