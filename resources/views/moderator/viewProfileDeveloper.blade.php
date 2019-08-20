@@ -1,8 +1,7 @@
 @extends('layouts.moderator.app')
-
 @section('content')
+
 <body class="profile-page">
-  
   <div class="wrapper">
     <div class="page-header">
       <img src="{{asset('custom')}}/assets/img/dots.png" class="dots">
@@ -75,12 +74,12 @@
                     </div>
                   </div>
                   <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>Website</label>
-                          <h3 class="text-warning">{{$value->DEV_WEBSITE}}</h3>
-                        </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Website</label>
+                        <h3 class="text-warning">{{$value->DEV_WEBSITE}}</h3>
                       </div>
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
@@ -89,7 +88,7 @@
                         <h3 class="text-info">{{$value->DEV_CREDIT_CARD}}</h3>
                       </div>
                     </div>
-                </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -98,8 +97,8 @@
       </div>
     </section>
   </div>
+  
   @endsection
-
 
   @section('title')
   View Profile | Developer
