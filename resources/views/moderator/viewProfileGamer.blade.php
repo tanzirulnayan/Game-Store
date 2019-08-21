@@ -1,5 +1,6 @@
 @extends('layouts.moderator.app')
 @section('content')
+
 <section class="section">
   <div class="container">
     <div class="row">
@@ -50,12 +51,12 @@
                 </div>
               </div>
               <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Date of Birth:</label>
-                      <h3 class="text-info">{{$value->G_DOB}}</h3>
-                    </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Date of Birth:</label>
+                    <h3 class="text-info">{{$value->G_DOB}}</h3>
                   </div>
+                </div>
               </div>
             </form>
           </div>
@@ -64,6 +65,7 @@
     </div>
   </div>
 </section>
+
 @endsection
 
 @section('title')
