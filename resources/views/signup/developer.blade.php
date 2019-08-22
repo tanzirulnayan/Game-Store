@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-              <a class="nav-link" href="{{route('landingPage.index')}}">Home</a>
+            <a class="nav-link" href="{{route('landingPage.index')}}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('login.index')}}">Login</a>
@@ -99,7 +99,7 @@
                       <input type="text" class="form-control" name="DEV_NAME" placeholder="Full Name...">
                     </div>
                     @endif
-                  
+
 
                     @if ($errors->has('DEV_DESCRIPTION'))
                     <div class="input-group">
@@ -120,7 +120,7 @@
                       <input type="text" class="form-control" name="DEV_DESCRIPTION" placeholder="Description...">
                     </div>
                     @endif
-                  
+
 
                     @if ($errors->has('DEV_ADDRESS'))
                     <div class="input-group">
@@ -141,28 +141,28 @@
                       <input type="text" class="form-control" name="DEV_ADDRESS" placeholder="Address...">
                     </div>
                     @endif
-                   
 
-                      @if ($errors->has('DEV_EMAIL'))
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-email-85"></i>
-                          </div>
+
+                    @if ($errors->has('DEV_EMAIL'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-email-85"></i>
                         </div>
-                        <input type="text" class="form-control" name="DEV_EMAIL" placeholder="       {{$errors->getBag('default')->first('DEV_EMAIL')}}" >
                       </div>
-                      @else
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-email-85"></i>
-                          </div>
+                      <input type="text" class="form-control" name="DEV_EMAIL" placeholder="       {{$errors->getBag('default')->first('DEV_EMAIL')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-email-85"></i>
                         </div>
-                        <input type="text" class="form-control" name="DEV_EMAIL" placeholder="Email..." >
                       </div>
-                      @endif
-                    
+                      <input type="text" class="form-control" name="DEV_EMAIL" placeholder="Email...">
+                    </div>
+                    @endif
+
 
                     @if ($errors->has('DEV_WEBSITE'))
                     <div class="input-group">
@@ -183,7 +183,7 @@
                       <input type="text" class="form-control" name="DEV_WEBSITE" placeholder="Website...">
                     </div>
                     @endif
-                 
+
 
                     @if ($errors->has('DEV_CREDIT_CARD'))
                     <div class="input-group">
@@ -204,28 +204,28 @@
                       <input type="text" class="form-control" name="DEV_CREDIT_CARD" placeholder="Credit Card No...">
                     </div>
                     @endif
-                   
 
-                      @if ($errors->has('PASSWORD'))
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-lock-circle"></i>
-                          </div>
+
+                    @if ($errors->has('PASSWORD'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-lock-circle"></i>
                         </div>
-                        <input type="text" class="form-control" name="PASSWORD" placeholder="{{$errors->getBag('default')->first('PASSWORD')}}">
                       </div>
-                      @else
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-lock-circle"></i>
-                          </div>
+                      <input type="text" class="form-control" name="PASSWORD" placeholder="{{$errors->getBag('default')->first('PASSWORD')}}">
+                    </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-lock-circle"></i>
                         </div>
-                        <input type="text" class="form-control" name="PASSWORD" placeholder="Password...">
                       </div>
-                      @endif
-                    
+                      <input type="text" class="form-control" name="PASSWORD" placeholder="Password...">
+                    </div>
+                    @endif
+
 
                     @if ($errors->has('CONFIRM_PASSWORD'))
                     <div class="input-group">
@@ -235,44 +235,44 @@
                         </div>
                       </div>
                       <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="{{$errors->getBag('default')->first('CONFIRM_PASSWORD')}}">
-                  </div>
-                      @else
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="tim-icons icon-lock-circle"></i>
-                          </div>
+                    </div>
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-lock-circle"></i>
                         </div>
-                        <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password...">
-                    </div>
-                      @endif
-                  
-
-                  @if ($errors->has('DEV_LOGO'))
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-upload"></i>
                       </div>
+                      <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password...">
                     </div>
-                    <input type="file" name="DEV_LOGO" placeholder="{{$errors->getBag('default')->first('DEV_LOGO')}}" class="form-control">
-                  </div>
-                  <h6>{{$errors->getBag('default')->first('DEV_LOGO')}}</h6>
+                    @endif
 
-                  @else
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-upload"></i>
+
+                    @if ($errors->has('DEV_LOGO'))
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-upload"></i>
+                        </div>
                       </div>
+                      <input type="file" name="DEV_LOGO" placeholder="{{$errors->getBag('default')->first('DEV_LOGO')}}" class="form-control">
                     </div>
-                    <input type="file" name="DEV_LOGO" class="form-control">
-                  </div>
-                  @endif
-                
-                  
-                  <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
-                </form>
+                    <h6>{{$errors->getBag('default')->first('DEV_LOGO')}}</h6>
+
+                    @else
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tim-icons icon-upload"></i>
+                        </div>
+                      </div>
+                      <input type="file" name="DEV_LOGO" class="form-control">
+                    </div>
+                    @endif
+
+
+                    <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
+                  </form>
                 </div>
                 {{-- <div class="card-footer">
                   <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
@@ -300,67 +300,67 @@
             <ul class="nav">
               <li class="nav-item">
                 <a href="{{asset('custom')}}/index.html" class="nav-link">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">
-                  Landing
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">
-                  Register
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">
-                  Profile
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <ul class="nav">
-              <li class="nav-item">
-                <a href="https://creative-tim.com/contact-us" class="nav-link">
-                  Contact Us
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="https://creative-tim.com/about-us" class="nav-link">
-                  About Us
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="https://creative-tim.com/blog" class="nav-link">
-                  Blog
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="https://opensource.org/licenses/MIT" class="nav-link">
-                  License
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h3 class="title">Follow us:</h3>
-            <div class="btn-wrapper profile">
-              <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Like us">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a target="_blank" href="https://dribbble.com/creativetim" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
-                <i class="fab fa-dribbble"></i>
-              </a>
-            </div>
-          </div> --}}
+          Home
+          </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{asset('custom')}}/examples/landing-page.html" class="nav-link">
+              Landing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{asset('custom')}}/examples/register-page.html" class="nav-link">
+              Register
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{asset('custom')}}/examples/profile-page.html" class="nav-link">
+              Profile
+            </a>
+          </li>
+          </ul>
         </div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="https://creative-tim.com/contact-us" class="nav-link">
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://creative-tim.com/about-us" class="nav-link">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://creative-tim.com/blog" class="nav-link">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://opensource.org/licenses/MIT" class="nav-link">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile">
+            <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Like us">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a target="_blank" href="https://dribbble.com/creativetim" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
+        </div> --}}
       </div>
-    </footer>
+  </div>
+  </footer>
   </div>
   <!--   Core JS Files   -->
   <script src="{{asset('custom')}}/assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -379,5 +379,4 @@
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('custom')}}/assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
 </body>
-
 </html>
