@@ -98,7 +98,6 @@
                     </div>
                     @endif
 
-
                     @if ($errors->has('DEV_DESCRIPTION'))
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -118,7 +117,6 @@
                       <input type="text" class="form-control" name="DEV_DESCRIPTION" placeholder="Description...">
                     </div>
                     @endif
-
 
                     @if ($errors->has('DEV_ADDRESS'))
                     <div class="input-group">
@@ -140,7 +138,6 @@
                     </div>
                     @endif
 
-
                     @if ($errors->has('DEV_EMAIL'))
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -160,7 +157,6 @@
                       <input type="text" class="form-control" name="DEV_EMAIL" placeholder="Email...">
                     </div>
                     @endif
-
 
                     @if ($errors->has('DEV_WEBSITE'))
                     <div class="input-group">
@@ -182,7 +178,6 @@
                     </div>
                     @endif
 
-
                     @if ($errors->has('DEV_CREDIT_CARD'))
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -202,7 +197,6 @@
                       <input type="text" class="form-control" name="DEV_CREDIT_CARD" placeholder="Credit Card No...">
                     </div>
                     @endif
-
 
                     @if ($errors->has('PASSWORD'))
                     <div class="input-group">
@@ -224,7 +218,6 @@
                     </div>
                     @endif
 
-
                     @if ($errors->has('CONFIRM_PASSWORD'))
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -244,7 +237,6 @@
                       <input type="text" class="form-control" name="CONFIRM_PASSWORD" placeholder="Confirm Password...">
                     </div>
                     @endif
-
 
                     @if ($errors->has('DEV_LOGO'))
                     <div class="input-group">
@@ -267,7 +259,6 @@
                       <input type="file" name="DEV_LOGO" class="form-control">
                     </div>
                     @endif
-
 
                     <button type="submit" class="btn btn-info btn-round btn-lg">Register</button>
                   </form>
